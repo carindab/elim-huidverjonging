@@ -1,14 +1,14 @@
 /**
- * Zet je Calendly / Cal.com / andere boekingslink hier (optioneel).
- * Leeg laten = alle "Reserveer"-knoppen scrollen naar #reserveren op deze pagina.
+ * Boeking: zet hier je definitieve URL (Cal.com, Typeform, …).
+ * Leeg = knoppen blijven naar #reserveren op deze pagina scrollen.
  */
 const BOOKING_URL = "";
 
 /**
- * YouTube: https://www.youtube.com/embed/VIDEO_ID
- * Vimeo: https://player.vimeo.com/video/ID
+ * Zelfde videospeler-URL als op de oorspronkelijke landingspagina (Adilo).
+ * Vervang door YouTube/Vimeo embed-URL als je wilt.
  */
-const VIDEO_EMBED_URL = "";
+const VIDEO_EMBED_URL = "https://adilo.bigcommand.com/watch/6GWRjnNU";
 
 (() => {
   const yearEl = document.getElementById("year");

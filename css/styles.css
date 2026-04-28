@@ -217,6 +217,18 @@ a:hover {
   gap: 1rem;
 }
 
+.logo-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-block:hover .logo {
+  color: hsl(var(--jade));
+}
+
 .logo {
   font-family: var(--font-serif);
   font-size: 1.05rem;
@@ -225,8 +237,13 @@ a:hover {
   color: hsl(var(--ink));
 }
 
-.logo:hover {
-  color: hsl(var(--jade));
+.logo__sub {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.2;
 }
 
 .nav-toggle {

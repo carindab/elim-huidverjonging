@@ -1,48 +1,51 @@
-# Elim Huidherstel — landingpage (statische versie)
+# Elim Huidherstel — landingspagina (los project)
 
-Statische HTML/CSS/JS-versie van de Elim Huidherstel Formule landingpage, geschikt voor **GitHub Pages** of elke andere host.
+Dit is een **eigen kopie** van de inhoud en vormgeving van de bestaande campagnepagina. Er is **geen koppeling** met een andere GitHub-repo of domein: alle afbeeldingen staan in `assets/`, er staan geen verwijzingen naar `afspraakeliminstituut.nl`, en er is **geen** `git remote` geconfigureerd.
+
+Zo kun je straks tekst, prijs en offers aanpassen voor een **nieuwe campagne**.
 
 ## Lokaal bekijken
 
 ```bash
+cd "/Users/carinda/Elim landingpage huidverjonging"
 python3 -m http.server 8080
 ```
 
-Open daarna `http://127.0.0.1:8080/`.
+Open `http://127.0.0.1:8080/`.
 
-## Naar GitHub pushen
+## Aanpassen
 
-Deze map heeft al `git init`, branch **`main`** en remote **`origin`** → [github.com/carindab/elimhuidherstelformule](https://github.com/carindab/elimhuidherstelformule).
+| Bestand | Waarvoor |
+|---------|----------|
+| `index.html` | Teksten, structuur, secties |
+| `css/styles.css` | Kleuren, layout |
+| `js/main.js` | `BOOKING_URL`, `VIDEO_EMBED_URL` |
+| `assets/` | Afbeeldingen vervangen |
+
+**Canonical & Open Graph:** in `index.html` staat een opmerking bij de canonical; zet na livegang jouw definitieve URL. `og:image` wijst nog naar een externe preview-URL — vervang die desgewenst door een absolute URL naar jouw gehoste afbeelding.
+
+## Op je eigen GitHub zetten
+
+Je hoeft **geen repository-toegang** aan AI of derden te geven.
+
+1. Maak op GitHub een **nieuwe lege repository** (bijv. `mijn-nieuwe-offer`).
+2. In deze map:
 
 ```bash
-cd "/Users/carinda/Elim landingpage huidverjonging"
+git remote add origin https://github.com/JOUW-USERNAME/JOUW-REPO.git
 git push -u origin main
 ```
 
-Als GitHub meldt dat de remote al commits heeft die hier niet in zitten:
+Inloggen: GitHub vraagt om token of gebruik **GitHub Desktop** / ingebouwde Git in Cursor.
 
-```bash
-git pull origin main --allow-unrelated-histories
-# eventuele conflicten oplossen
-git push -u origin main
-```
+Alle stappen met een **bestaande** repo (pull met `--allow-unrelated-histories`, conflicten, enz.) zijn niet nodig als je een **verse** repo gebruikt.
 
-Als GitHub vraagt om inloggen: gebruik een **Personal Access Token** als wachtwoord (GitHub → Settings → Developer settings → Personal access tokens), of push vanuit **GitHub Desktop** / **Cursor** met ingebouwde Git-login.
+## GitHub-toegang “geven” (meestal niet nodig)
 
-### Bestaande repo die al andere bestanden heeft
+Als je iemand wél toegang wilt: **Settings → Collaborators** op die repo, uitnodiging per GitHub-gebruiker. Voor automatische agents levert dat zelden iets op zonder dat jij lokaal clone’t.
 
-Wil je alleen deze statische site in die repo?
+**Repo tijdelijk public** maken kan handig zijn om code te delen; daarna weer private zetten is oké.
 
-- **Optie A:** Nieuwe branch: o.a. `git checkout -b static-site` en push die branch.
-- **Optie B:** Map in de repo, bijv. `docs/` of `static/`, en bestanden daar plaatsen — voor GitHub Pages kun je dan de Pages-root op die map zetten.
+## Video
 
-## Configuratie
-
-In `js/main.js`:
-
-- `BOOKING_URL` — je boekingslink (Cal.com, Calendly, …).
-- `VIDEO_EMBED_URL` — YouTube/Vimeo embed-URL.
-
-## Broncode React (Lovable)
-
-Als je ook de **exacte** React/Lovable-bron in GitHub hebt ([elimhuidherstelformule](https://github.com/carindab/elimhuidherstelformule)), clone die repo **lokaal** (met jouw account), open de map in Cursor en vergelijk daar met deze `index.html` voor tekst/secties. Deze statische map bevat géén kopie van die bundel.
+Standaard staat de **Adilo**-URL van de oorspronkelijke pagina in `js/main.js`. Adilo kan afhankelijk van domein/IP beperkingen hanteren — wijzig `VIDEO_EMBED_URL` naar je eigen host (YouTube/Vimeo embed) als dat nodig is.
