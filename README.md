@@ -10,15 +10,20 @@ python3 -m http.server 8080
 
 Open daarna `http://127.0.0.1:8080/`.
 
-## Naar GitHub pushen (eerste keer)
+## Naar GitHub pushen
 
-1. Maak op [github.com](https://github.com) een lege repository (of gebruik je bestaande `elimhuidherstelformule`).
-2. In deze map op je computer:
+Deze map heeft al `git init`, branch **`main`** en remote **`origin`** → [github.com/carindab/elimhuidherstelformule](https://github.com/carindab/elimhuidherstelformule).
 
 ```bash
 cd "/Users/carinda/Elim landingpage huidverjonging"
-git remote add origin https://github.com/carindab/elimhuidherstelformule.git
-git branch -M main
+git push -u origin main
+```
+
+Als GitHub meldt dat de remote al commits heeft die hier niet in zitten:
+
+```bash
+git pull origin main --allow-unrelated-histories
+# eventuele conflicten oplossen
 git push -u origin main
 ```
 
