@@ -5,10 +5,10 @@
 const BOOKING_URL = "";
 
 /**
- * Zelfde videospeler-URL als op de oorspronkelijke landingspagina (Adilo).
- * Vervang door YouTube/Vimeo embed-URL als je wilt.
+ * Optioneel: andere video-URL (YouTube embed, andere Adilo-url, …).
+ * Leeg = gebruikt de src uit index.html op de hero-iframe.
  */
-const VIDEO_EMBED_URL = "https://adilo.bigcommand.com/watch/6GWRjnNU";
+const HERO_VIDEO_URL = "";
 
 (() => {
   const yearEl = document.getElementById("year");
@@ -23,20 +23,9 @@ const VIDEO_EMBED_URL = "https://adilo.bigcommand.com/watch/6GWRjnNU";
     }
   });
 
-  const shell = document.getElementById("intro-video");
-  const placeholder = document.getElementById("video-placeholder");
-  const embed = VIDEO_EMBED_URL.trim();
-  if (embed && shell) {
-    placeholder?.setAttribute("hidden", "");
-    const iframe = document.createElement("iframe");
-    iframe.title = "Introductievideo Elim Huidherstel Behandeling";
-    iframe.loading = "lazy";
-    iframe.allow =
-      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-    iframe.allowFullscreen = true;
-    iframe.src = embed;
-    shell.appendChild(iframe);
-  }
+  const v = HERO_VIDEO_URL.trim();
+  const heroIframe = document.getElementById("hero-video-iframe");
+  if (v && heroIframe) heroIframe.src = v;
 
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.getElementById("site-nav");

@@ -6,6 +6,8 @@ Zo kun je straks tekst, prijs en offers aanpassen voor een **nieuwe campagne**.
 
 ## Lokaal bekijken
 
+Gebruik een **lokale server** (dubbelklikken op `index.html` kan ervoor zorgen dat fonts, video en stijl anders ogen dan je voorbeeld):
+
 ```bash
 cd "/Users/carinda/Elim landingpage huidverjonging"
 python3 -m http.server 8080
@@ -19,7 +21,7 @@ Open `http://127.0.0.1:8080/`.
 |---------|----------|
 | `index.html` | Teksten, structuur, secties |
 | `css/styles.css` | Kleuren, layout |
-| `js/main.js` | `BOOKING_URL`, `VIDEO_EMBED_URL` |
+| `js/main.js` | `BOOKING_URL`, `HERO_VIDEO_URL` |
 | `assets/` | Afbeeldingen vervangen |
 
 **Canonical & Open Graph:** in `index.html` staat een opmerking bij de canonical; zet na livegang jouw definitieve URL. `og:image` wijst nog naar een externe preview-URL — vervang die desgewenst door een absolute URL naar jouw gehoste afbeelding.
@@ -48,4 +50,4 @@ Als je iemand wél toegang wilt: **Settings → Collaborators** op die repo, uit
 
 ## Video
 
-Standaard staat de **Adilo**-URL van de oorspronkelijke pagina in `js/main.js`. Adilo kan afhankelijk van domein/IP beperkingen hanteren — wijzig `VIDEO_EMBED_URL` naar je eigen host (YouTube/Vimeo embed) als dat nodig is.
+De **hero** gebruikt dezelfde Adilo-URL als je oorspronkelijke pagina (`iframe` in `index.html`). Adilo kan beperkingen per domein of IP hanteren — wijzig de `src` of zet `HERO_VIDEO_URL` in `js/main.js`.
