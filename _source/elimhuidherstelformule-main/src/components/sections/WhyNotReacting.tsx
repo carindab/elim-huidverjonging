@@ -17,9 +17,9 @@ const WhyNotReacting = () => (
 
       <div className="mt-12 space-y-6 text-lg leading-relaxed text-foreground/85">
         <p>
-          De huidverzorgingsindustrie is niet gebouwd rond jouw biologie. Ze is gebouwd rond herhaalverkoop. Eén
-          product. Eén belofte. Eén symptoom. Rimpels. Pigmentvlekken. Droge of reactieve huid. Elke categorie heeft
-          zijn eigen oplossing, zijn eigen actief ingrediënt, zijn eigen marketingclaim.
+          Ze is gebouwd rond herhaalverkoop. Eén product. Eén belofte. Eén symptoom. Rimpels. Pigmentvlekken. Droge of
+          reactieve huid. Elke categorie heeft zijn eigen oplossing, zijn eigen actief ingrediënt, zijn eigen
+          marketingclaim.
         </p>
 
         <p className="standout-line my-10 rounded-2xl bg-white/70 p-8 text-center text-xl shadow-soft backdrop-blur-sm md:text-2xl">
@@ -28,8 +28,8 @@ const WhyNotReacting = () => (
         </p>
 
         <p>
-          Niet wat populair is. Niet wat goed fotografeert. Niet wat de meeste vrouwen van jouw leeftijd gebruiken. Wat
-          jóuw huid nu specifiek mist.
+          Niet wat populair is. Niet wat trending is op social media. Niet wat de meeste vrouwen van jouw leeftijd
+          gebruiken. Wat jóuw huid nu specifiek mist.
         </p>
         <p>
           Een vrouw die research doet, die serieus investeert, die begrijpt dat kwaliteit een standaard is, vindt in

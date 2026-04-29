@@ -139,8 +139,13 @@ const Method = () => (
             </p>
             <p className="mt-4 font-serif text-lg font-semibold text-ink">De lichttherapie</p>
             <p className="mt-2">
-              Na de maskers volgt onze gepatenteerde lichttherapie. Geen standaard roodlicht. Een speciaal gefilterd
-              spectrum dat precies wordt opgenomen door de huidcellen waar het werk moet gebeuren.
+              Na het eerste masker volgt onze gepatenteerde lichttherapie. Geen standaard roodlicht. Een speciaal
+              gefilterd spectrum dat precies wordt opgenomen door de huidcellen waar het werk moet gebeuren.
+            </p>
+            <p className="mt-2">
+              De lichttherapie werkt tijdens beide maskers. De warmte die het genereert opent de huidlagen en zorgt
+              ervoor dat de werkzame stoffen in de maskers dieper doordringen dan zonder lichttherapie mogelijk zou zijn.
+              Het licht en de maskers versterken elkaar. Samen bereiken ze de laag waar het verschil wordt gemaakt.
             </p>
             <p className="mt-2">Wat het doet is meetbaar:</p>
             <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[0.98rem] leading-relaxed">

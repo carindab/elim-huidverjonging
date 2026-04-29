@@ -11,7 +11,7 @@ const faq = [
   },
   {
     q: "Is de behandeling geschikt voor gevoelige huid?",
-    a: "Ja. De behandeling is niet-invasief en werkt op celniveau zonder de huid te belasten. De huidscan bepaalt vooraf wat jouw huid aankan.",
+    a: "Ja. De behandeling is niet-invasief en werkt op celniveau zonder de huid te belasten. Alle formules zijn gecertificeerd biologisch, zonder schadelijke stoffen. Volledig natuurlijk en veilig voor elk huidtype.",
   },
   {
     q: "Wat is het verschil met een gewone salonbehandeling?",

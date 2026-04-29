@@ -12,10 +12,11 @@ const Offer = () => (
     <div className="container-narrow">
       <div className="text-center">
         <span className="pill-tag">Het Aanbod</span>
-        <h2 className="mt-5 font-serif text-3xl md:text-5xl">
-          Elim Huidherstel Behandeling™
-        </h2>
-        <p className="lead mt-5">
+        <h2 className="mt-5 font-serif text-3xl md:text-5xl">Elim Huidherstel Formule</h2>
+        <p className="mx-auto mt-3 max-w-xl font-serif text-lg italic accent-italic md:text-xl">
+          Inclusief de Collageen &amp; Elastine Booster Behandeling.
+        </p>
+        <p className="lead mx-auto mt-5 max-w-xl">
           Jouw eerste stap naar celverjonging die plaatsvindt op de laag waar huidveroudering werkelijk begint.
         </p>
       </div>

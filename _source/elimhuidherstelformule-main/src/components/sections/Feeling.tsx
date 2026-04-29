@@ -34,8 +34,7 @@ const Feeling = () => (
       </p>
 
       <p className="standout-line my-10 rounded-2xl bg-white/70 p-8 text-center text-xl shadow-soft backdrop-blur-sm md:text-2xl">
-        Wat jóuw huid op dit moment nodig heeft is niet wat gemiddeld werkt voor vrouwen van jouw leeftijd. Het is wat
-        jóuw huid, met jóuw huidconditie, structureel mist om het herstelproces te activeren.
+        Niet wat gemiddeld werkt voor vrouwen van jouw leeftijd. Maar wat jóuw huid op dit moment structureel mist.
       </p>
 
       <p className="standout-line pt-4 text-center text-2xl md:text-3xl">

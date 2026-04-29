@@ -27,7 +27,7 @@ const Imagine = () => (
           aan hoeven te denken. Ze weten wat werkt. En het werkt.
         </p>
         <p>
-          Een huid die steviger aanvoelt. Egaler. Levendiger. Die complimenten krijgt zonder dat je ze verwachtte.
+          Een huid die steviger aanvoelt. Egaler. Zichtbaar vitaler. Die complimenten krijgt zonder dat je ze verwachtte.
           En een aanwezigheid die je niet hoeft te managen.
         </p>
         <p className="standout-line text-center text-2xl">

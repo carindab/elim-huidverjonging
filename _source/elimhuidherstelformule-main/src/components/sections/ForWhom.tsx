@@ -20,7 +20,7 @@ const ForWhom = () => (
         </p>
         <p className="rounded-xl border-l-2 border-amber-400 bg-cream-deep p-5 italic">
           Dit is niet voor je als je op zoek bent naar de goedkoopste optie of een snelle oplossing zonder echte aanpak.
-          De Elim Huidherstel Behandeling™ is een serieuze investering in jouw huid. Als je daar klaar voor bent, staat
+          De Elim Huidherstel Formule™ is een serieuze investering in jouw huid. Als je daar klaar voor bent, staat
           er een plek voor je klaar.
         </p>
       </div>
