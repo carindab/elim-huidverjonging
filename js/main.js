@@ -1,8 +1,67 @@
 /**
  * Boeking: zet hier je definitieve URL (Cal.com, Typeform, …).
- * Leeg = knoppen blijven naar #reserveren op deze pagina scrollen.
+ * Leeg = "Reserveer"-knoppen openen de popup met het LeadConnector-formulier.
  */
 const BOOKING_URL = "";
+
+/** Zelfde formulier-ID als in React (`ReservationDialog.tsx`). */
+const FORM_ID = "WrzSeSdSFCkx7Jv7LKS3";
+
+const FORM_IFRAME_ID = "booking-form-iframe";
+
+function loadFormEmbedScript() {
+  if (document.querySelector("script[data-elim-form-embed]")) return;
+  const script = document.createElement("script");
+  script.src = "https://link.msgsndr.com/js/form_embed.js";
+  script.async = true;
+  script.setAttribute("data-elim-form-embed", "true");
+  document.body.appendChild(script);
+}
+
+function ensureIframeSrc(iframe) {
+  if (!iframe || iframe.getAttribute("src")) return;
+  const id = iframe.getAttribute("data-form-id") || FORM_ID;
+  iframe.src = `https://api.leadconnectorhq.com/widget/form/${id}`;
+  iframe.setAttribute("data-layout", "{'id':'INLINE'}");
+  iframe.setAttribute("data-trigger-type", "alwaysShow");
+  iframe.setAttribute("data-trigger-value", "");
+  iframe.setAttribute("data-activation-type", "alwaysActivated");
+  iframe.setAttribute("data-activation-value", "");
+  iframe.setAttribute("data-deactivation-type", "neverDeactivate");
+  iframe.setAttribute("data-deactivation-value", "");
+  iframe.setAttribute("data-form-name", "Kennismakingsaanbieding afspraak 2026");
+  iframe.setAttribute("data-height", "423");
+  iframe.setAttribute("data-layout-iframe-id", FORM_IFRAME_ID);
+  iframe.setAttribute("data-form-id", id);
+}
+
+let bookingFocusReturn = null;
+
+function openBookingDialog() {
+  const root = document.getElementById("booking-dialog");
+  const iframe = document.getElementById(FORM_IFRAME_ID);
+  if (!root) return;
+
+  loadFormEmbedScript();
+  ensureIframeSrc(iframe);
+
+  root.hidden = false;
+  document.body.style.overflow = "hidden";
+
+  const closeBtn = root.querySelector(".booking-dialog__close");
+  closeBtn?.focus({ preventScroll: true });
+}
+
+function closeBookingDialog() {
+  const root = document.getElementById("booking-dialog");
+  if (!root) return;
+  root.hidden = true;
+  document.body.style.overflow = "";
+  if (bookingFocusReturn && typeof bookingFocusReturn.focus === "function") {
+    bookingFocusReturn.focus({ preventScroll: true });
+  }
+  bookingFocusReturn = null;
+}
 
 /**
  * Optioneel: andere video-URL (YouTube embed, andere Adilo-url, …).
@@ -14,13 +73,34 @@ const HERO_VIDEO_URL = "";
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  const bookingTarget = BOOKING_URL.trim() || "#reserveren";
+  loadFormEmbedScript();
+
+  const bookingUrl = BOOKING_URL.trim();
   document.querySelectorAll("[data-booking-cta]").forEach((el) => {
-    el.setAttribute("href", bookingTarget);
-    if (bookingTarget.startsWith("http")) {
-      el.setAttribute("rel", "noopener noreferrer");
-      el.setAttribute("target", "_blank");
+    if (bookingUrl) {
+      el.setAttribute("href", bookingUrl);
+      if (bookingUrl.startsWith("http")) {
+        el.setAttribute("rel", "noopener noreferrer");
+        el.setAttribute("target", "_blank");
+      }
+    } else {
+      el.setAttribute("href", "#reserveren");
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        bookingFocusReturn = document.activeElement;
+        openBookingDialog();
+      });
     }
+  });
+
+  document.querySelectorAll("[data-booking-close]").forEach((btn) => {
+    btn.addEventListener("click", () => closeBookingDialog());
+  });
+
+  document.addEventListener("keydown", (e) => {
+    const root = document.getElementById("booking-dialog");
+    if (!root || root.hidden) return;
+    if (e.key === "Escape") closeBookingDialog();
   });
 
   const v = HERO_VIDEO_URL.trim();
