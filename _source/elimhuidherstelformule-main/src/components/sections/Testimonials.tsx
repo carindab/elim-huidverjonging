@@ -8,25 +8,25 @@ const reviews = [
     img: tAnnelies,
     name: "Annelies",
     age: 52,
-    title: "Mijn rosacea is na twee sessies 80% minder zichtbaar",
+    title: "Na twee sessies is mijn rosacea meetbaar verminderd",
     quote:
-      "Ik heb tien jaar lang elk merk geprobeerd dat 'kalmerend' beloofde. Niets hielp blijvend. Bij Carinda werd voor het eerst gemeten waar de roodheid vandaan kwam. Twee behandelingen verder durf ik 's ochtends de deur uit zonder foundation. Mijn man vroeg laatst of ik bij de plastisch chirurg was geweest — dat was het moment dat ik wist dat dit anders was.",
+      "Ik had jarenlang producten gebruikt die beloofden te kalmeren. Bij Carinda werd voor het eerst gemeten waar de roodheid structureel vandaan kwam. Twee behandelingen verder ga ik 's ochtends de deur uit zonder foundation. Mijn man vroeg of ik bij de plastisch chirurg was geweest. Dat was het moment dat ik wist dat dit anders was.",
   },
   {
     img: tMarleen,
     name: "Marleen",
     age: 47,
-    title: "Eindelijk een huid die strak aanvoelt — zonder botox",
+    title: "Stevigheid die ik in jaren niet had gevoeld, zonder ingrepen",
     quote:
-      "Ik was écht klaar om aan filler te beginnen. Mijn huid voelde slap, dunner, vermoeid. De Collageen Booster behandeling gaf me direct na één sessie een stevigheid die ik in jaren niet had gevoeld. Drie maanden later: foto's van toen en nu naast elkaar, niet te geloven. Ik bespaar nu honderden euro's per jaar omdat ik eindelijk weet welke producten wél werken voor mijn huid.",
+      "Mijn huid voelde dunner, minder veerkrachtig. Ik zocht een aanpak die verder ging dan oppervlakkige verzorging. Na één sessie merkte ik al een verschil in stevigheid. Drie maanden later zie ik het verschil duidelijk in de opvolgscans. Ik weet nu precies welke producten structureel werken voor mijn huid. Dat maakt het verschil.",
   },
   {
     img: tInge,
     name: "Inge",
     age: 69,
-    title: "Voor het eerst in 20 jaar geen pigmentvlekken meer",
+    title: "Voor het eerst egale huid, zonder laser of peeling",
     quote:
-      "Ik heb mijn hele leven last gehad van pigment, laser, peelings, dure crèmes, alles geprobeerd. Carinda is de eerste die niet naar de plek keek, maar naar wat eronder zat. Na vier sessies en mijn persoonlijke Huidformule is mijn huid egaal. Mijn dochter vroeg laatst of ik glow drops had gebruikt. Dit is gewoon mijn huid nu.",
+      "Ik had jarenlang behandelingen ondergaan voor pigmentvlekken. Laser, peelings, medische crèmes. Carinda was de eerste die niet naar de pigmentvlekken keek maar naar wat er structureel onder speelde. Na drie sessies en mijn persoonlijke Huidformule is mijn huid egaal. Mijn dochter vroeg of ik glow drops had gebruikt. Dit is gewoon mijn huid nu.",
   },
 ];
 
@@ -37,7 +37,7 @@ const Testimonials = () => (
         <span className="pill-tag">Echte resultaten · Echte vrouwen</span>
         <h2 className="mt-5 font-serif text-3xl md:text-5xl">
           Wat vrouwen zeggen na{" "}
-          <span className="accent-italic">Elim Huidherstel Behandeling.</span>
+          <span className="accent-italic">Elim Huidherstel Formule.</span>
         </h2>
       </div>
 
@@ -75,9 +75,12 @@ const Testimonials = () => (
         ))}
       </div>
 
-      <p className="standout-line mt-12 text-center text-xl">
-        "Ik ken niemand die dat in Nederland doet." — RTL4
-      </p>
+      <div className="mt-12 space-y-2 text-center">
+        <p className="standout-line text-xl">"Ik ken niemand die dat in Nederland doet."</p>
+        <p className="font-body text-base font-medium text-foreground/80">
+          RTL4 over de Elim Huidherstel Formule
+        </p>
+      </div>
     </div>
   </section>
 );

@@ -8,7 +8,7 @@ const Hero = () => {
         className="pointer-events-none absolute inset-0 opacity-50 mix-blend-soft-light"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 20% 20%, hsl(54 100% 85% / 0.7), transparent 50%), radial-gradient(circle at 80% 80%, hsl(110 70% 80% / 0.6), transparent 50%)",
+            "radial-gradient(circle at 20% 20%, hsl(98 31% 89% / 0.65), transparent 50%), radial-gradient(circle at 80% 80%, hsl(46 81% 88% / 0.5), transparent 50%)",
         }}
         aria-hidden
       />
@@ -19,12 +19,13 @@ const Hero = () => {
             Uniek in Nederland · 22+ jaar ervaring
           </span>
 
-          <p className="mt-6 max-w-xl font-serif text-[clamp(1.2rem,2.4vw,1.55rem)] font-medium leading-snug tracking-tight text-jade-deep">
+          <p className="mt-6 max-w-xl font-serif text-[clamp(1.2rem,2.4vw,1.55rem)] font-medium leading-snug tracking-tight text-muted-foreground">
             Huidveroudering begint niet aan het oppervlak. Het begint in de laag die de meeste behandelingen nooit bereiken.
           </p>
 
-          <h1 className="mt-4 max-w-[40rem] font-serif text-[clamp(1.85rem,3.8vw,3.05rem)] font-medium leading-[1.12] tracking-tight text-ink">
-            De Elim Huidherstel Formule meet wat er werkelijk speelt en activeert celverjonging op de laag waar het ertoe doet.
+          <h1 className="mt-4 max-w-[42rem] font-serif text-[clamp(1.85rem,4.3vw,3rem)] font-medium leading-[1.12] tracking-tight text-ink">
+            De Elim Huidherstel Formule meet wat er werkelijk speelt en activeert{" "}
+            <span className="accent-italic">celverjonging op de laag waar het ertoe doet.</span>
           </h1>
 
           <p className="mt-4 text-lg leading-relaxed text-foreground/75">

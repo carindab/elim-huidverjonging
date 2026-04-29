@@ -139,12 +139,6 @@ const ReservationDialog = ({
                 </p>
                 <p className="mt-3 text-sm text-foreground/70">10 plekken per maand beschikbaar.</p>
               </div>
-
-              <div className="pt-1">
-                <Button variant="cta" size="xl" className="w-full max-w-xs justify-center" asChild>
-                  <a href="#booking-form-anchor">Reserveer Jouw Plek →</a>
-                </Button>
-              </div>
             </div>
 
             <div

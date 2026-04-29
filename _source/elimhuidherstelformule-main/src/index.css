@@ -11,73 +11,87 @@
 
 @layer base {
   :root {
-    --background: 40 60% 95%;            /* Cream #FAF4E8 */
-    --foreground: 40 13% 11%;            /* Ink #1F1D18 */
+    --background: 46 52% 96%;
+    --foreground: 40 11% 21%;
 
     --card: 0 0% 100%;
-    --card-foreground: 40 13% 11%;
+    --card-foreground: 40 11% 21%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 40 13% 11%;
+    --popover-foreground: 40 11% 21%;
 
-    --primary: 132 32% 36%;              /* Jade #3F7A4A */
+    /* Jade: alleen knoppen / primary */
+    --primary: 132 32% 36%;
     --primary-foreground: 40 60% 97%;
     --primary-glow: 132 28% 46%;
 
-    --secondary: 30 56% 89%;             /* Blush #F3E4D4 */
-    --secondary-foreground: 40 13% 11%;
+    --secondary: 30 56% 89%;
+    --secondary-foreground: 40 11% 21%;
 
-    --muted: 33 55% 83%;                 /* Sand #ECD8BC */
-    --muted-foreground: 40 10% 30%;
+    --muted: 33 55% 83%;
+    --muted-foreground: 42 10% 38%;
 
-    --accent: 91 22% 70%;                /* Sage #B4C4A0 */
-    --accent-foreground: 132 32% 20%;
+    --accent: 91 22% 70%;
+    --accent-foreground: 40 11% 21%;
 
     --destructive: 0 70% 45%;
     --destructive-foreground: 40 60% 97%;
 
-    --border: 33 40% 80%;
-    --input: 33 40% 80%;
-    --ring: 132 32% 36%;
+    --border: 38 40% 81%;
+    --input: 38 40% 81%;
+    --ring: 38 60% 52%;
 
     --radius: 1rem;
 
-    /* Brand-specific tokens */
-    --ink: 40 13% 11%;                   /* #1F1D18 */
-    --cream: 40 60% 95%;                 /* #FAF4E8 */
-    --cream-deep: 30 56% 89%;            /* Blush #F3E4D4 */
-    --blush: 30 56% 89%;                 /* #F3E4D4 */
-    --sand: 33 55% 83%;                  /* #ECD8BC */
-    /* Amber palette — primary accent for italics, numbers, highlights */
-    --amber-100: 41 80% 93%;             /* #FBEDC4 */
-    --amber-200: 41 80% 78%;             /* #F5DC94 */
-    --amber: 41 73% 69%;                 /* #E8C97A — main accent */
-    --amber-400: 38 60% 59%;             /* #D4AE58 */
-    --amber-500: 38 46% 45%;             /* #A8873F — deep, for text on light bg */
+    --jade-tint: 98 31% 89%;
+    --amber-tint: 46 81% 88%;
+    --ink-soft: 40 11% 21%;
+    --ink-mute: 42 10% 38%;
+    --line: 38 40% 81%;
+    --amber-deep: #c9a858;
 
-    /* Sage palette — secondary botanical, used for soft banners and tints */
-    --sage-100: 75 36% 88%;              /* #E4EAD8 */
-    --sage-200: 75 26% 78%;              /* #CBD6B6 */
-    --sage: 91 22% 70%;                  /* #B4C4A0 — main */
-    --sage-400: 95 20% 56%;              /* #8FA37A */
-    --sage-500: 95 14% 43%;              /* #6B7E58 — deep, for text on light bg */
+    --ink: 40 11% 21%;
+    --cream: 45 45% 97%;
+    --cream-deep: 30 56% 89%;
+    --blush: 30 56% 89%;
+    --sand: 33 55% 83%;
+    --amber-100: 41 80% 93%;
+    --amber-200: 41 80% 78%;
+    --amber: 41 73% 69%;
+    --amber-400: 38 60% 59%;
+    --amber-500: 38 46% 45%;
+
+    --sage-100: 75 36% 88%;
+    --sage-200: 75 26% 78%;
+    --sage: 91 22% 70%;
+    --sage-400: 95 20% 56%;
+    --sage-500: 95 14% 43%;
     --sage-soft: 91 30% 86%;
 
-    /* Jade — RESERVED for buttons only */
-    --jade: 132 32% 36%;                 /* #3F7A4A */
-    --jade-deep: 132 35% 22%;
+    --jade: 132 32% 36%;
+    --jade-deep: 40 11% 21%;
     --forest: 132 32% 36%;
     --forest-deep: 132 35% 18%;
     --lime: 91 30% 60%;
     --gold: 41 70% 60%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(40 60% 95%) 0%, hsl(33 55% 88%) 50%, hsl(91 22% 80%) 100%);
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(var(--amber-tint) / 0.45) 0%,
+      hsl(var(--jade-tint) / 0.65) 45%,
+      hsl(var(--cream)) 100%
+    );
     --gradient-soft: linear-gradient(180deg, hsl(var(--cream)) 0%, hsl(var(--blush)) 100%);
     --gradient-warm: linear-gradient(180deg, hsl(var(--blush)) 0%, hsl(var(--sand)) 100%);
-    --gradient-sage: linear-gradient(180deg, hsl(var(--cream)) 0%, hsl(91 30% 88%) 100%);
+    --gradient-sage: linear-gradient(
+      180deg,
+      hsl(var(--jade-tint)) 0%,
+      hsl(var(--amber-tint) / 0.85) 48%,
+      hsl(var(--line) / 0.65) 100%
+    );
     --gradient-cta: linear-gradient(135deg, hsl(132 32% 36%) 0%, hsl(132 35% 28%) 100%);
     --gradient-amber: linear-gradient(135deg, hsl(41 70% 75%) 0%, hsl(41 70% 65%) 100%);
-    --gradient-dark: linear-gradient(160deg, hsl(var(--jade-deep)) 0%, hsl(40 13% 14%) 100%);
+    --gradient-dark: linear-gradient(160deg, hsl(var(--ink-soft)) 0%, hsl(40 10% 14%) 100%);
 
     --shadow-soft: 0 10px 40px -10px hsl(40 20% 20% / 0.12);
     --shadow-elegant: 0 25px 60px -20px hsl(40 20% 15% / 0.22);
@@ -126,7 +140,7 @@
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     font-weight: 500;
-    color: hsl(var(--amber-400));
+    color: var(--amber-deep);
   }
 
   .standout-line {
@@ -134,7 +148,7 @@
     font-style: italic;
     font-weight: 500;
     line-height: 1.25;
-    color: hsl(var(--amber-400));
+    color: var(--amber-deep);
   }
 
   .font-display {

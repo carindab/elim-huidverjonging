@@ -22,7 +22,7 @@ const Feeling = () => (
         De levende lagen van de huid worden dunner.
       </p>
 
-      <blockquote className="my-10 rounded-2xl border-l-4 border-amber-400 bg-white/70 p-8 text-lg font-medium text-jade-deep shadow-soft backdrop-blur-sm md:text-xl">
+      <blockquote className="my-10 rounded-2xl border-l-4 border-amber-400 bg-white/70 p-8 text-lg font-medium text-ink shadow-soft backdrop-blur-sm md:text-xl">
         Dit is geen verval. Het is een biologisch proces met een mechanisme. En een mechanisme kan worden begrepen,
         gemeten en beïnvloed.
       </blockquote>

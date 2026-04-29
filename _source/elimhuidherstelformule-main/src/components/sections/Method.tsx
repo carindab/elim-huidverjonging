@@ -119,13 +119,13 @@ const Method = () => (
             structureel niet bereiken.
           </p>
           <p className="mt-2">Deze behandeling werkt anders. In twee stappen, op celniveau.</p>
-          <div className="rounded-xl border border-sage/40 bg-gradient-to-br from-white/95 to-cream/90 p-6 shadow-[0_12px_36px_-18px_hsl(132_25%_25%/0.18)]">
-            <p className="mt-0 font-serif text-lg font-semibold text-jade-deep">Stap 1 — De voorbereiding</p>
+          <div className="rounded-xl border border-line/80 bg-gradient-to-br from-white/95 to-cream/90 p-6 shadow-[0_12px_36px_-18px_hsl(40_18%_18%/0.14)]">
+            <p className="mt-0 font-serif text-lg font-semibold text-ink">Stap 1 — De voorbereiding</p>
             <p className="mt-2">
               Het eerste masker exfolieert zorgvuldig en bereidt de huid voor op wat volgt. Niet om de huid te resetten.
               Om de opname van wat daarna komt te maximaliseren.
             </p>
-            <p className="mt-4 font-serif text-lg font-semibold text-jade-deep">Stap 2 — De elastine stimulatie</p>
+            <p className="mt-4 font-serif text-lg font-semibold text-ink">Stap 2 — De elastine stimulatie</p>
             <p className="mt-2">
               Het tweede masker levert een mensidentieke vorm van tropoelastine direct aan de huidlaag waar elastine
               wordt geproduceerd. Tropoelastine is de voorvorm van elastine, de moleculaire bouwsteen die de huid
@@ -137,7 +137,7 @@ const Method = () => (
               Eenmaal opgenomen komt het in contact met het elastinemakend enzym in de huid. De aanvulling van de
               elastinevoorraad begint.
             </p>
-            <p className="mt-4 font-serif text-lg font-semibold text-jade-deep">De lichttherapie</p>
+            <p className="mt-4 font-serif text-lg font-semibold text-ink">De lichttherapie</p>
             <p className="mt-2">
               Na de maskers volgt onze gepatenteerde lichttherapie. Geen standaard roodlicht. Een speciaal gefilterd
               spectrum dat precies wordt opgenomen door de huidcellen waar het werk moet gebeuren.
@@ -159,21 +159,32 @@ const Method = () => (
               Het resultaat is niet tijdelijk. De lichttherapie versterkt wat de maskers hebben gestart en houdt het
               herstelproces actief nadat je de behandelkamer verlaat.
             </p>
-            <p className="mt-4 font-serif text-lg font-semibold text-jade-deep">Wat één sessie doet</p>
-            <p className="mt-2">
+          </div>
+          <div className="mt-8 max-w-2xl">
+            <p className="font-serif text-[clamp(1.15rem,2.2vw,1.35rem)] font-semibold leading-snug text-ink">
+              Wat één sessie doet
+            </p>
+            <p className="mt-3 leading-relaxed text-foreground/90">
               Al na één behandeling kan het elastineverlies van de afgelopen twee jaar worden hersteld. Niet als
               belofte. Als meetbaar resultaat, zichtbaar in de scan voor en na, voelbaar in de stevigheid en veerkracht
               van de huid, zichtbaar in de spiegel.
             </p>
-            <p className="mt-2">
+            <p className="mt-3 leading-relaxed text-foreground/90">
               Dit is het resultaat van meer dan 20 jaar medisch onderzoek, gecombineerd met 22 jaar klinische
               praktijkervaring in wat de huid van vrouwen van 40+ structureel nodig heeft.
             </p>
-            <p className="mt-2">Geen injecties. Geen laser. Geen ingreep die je anders laat zien dan je bent.</p>
-            <p className="mt-2">Een behandeling die werkt op de laag waar het verschil wordt gemaakt.</p>
-            <p className="mt-4 text-sm text-foreground/70">
-              Voor wie: vrouwen van 40+ die huidverslapping, verlies van stevigheid of een doffe, vermoeide huid ervaren
-              en een behandeling zoeken die verder gaat dan het oppervlak.
+            <ul className="mt-5 space-y-3 list-none p-0">
+              <li className="rounded-r-[0.65rem] border-l-[3px] border-amber-400 bg-jade-tint/40 py-[0.85rem] pl-[1.15rem] pr-4 text-[1.05rem] font-semibold leading-snug text-ink">
+                Geen injecties. Geen laser. Geen ingreep die je anders laat zien dan je bent.
+              </li>
+              <li className="rounded-r-[0.65rem] border-l-[3px] border-amber-400 bg-jade-tint/40 py-[0.85rem] pl-[1.15rem] pr-4 text-[1.05rem] font-semibold leading-snug text-ink">
+                Een behandeling die werkt op de laag waar het verschil wordt gemaakt.
+              </li>
+            </ul>
+            <p className="mt-7 rounded-[0.85rem] border border-border bg-amber-tint/30 px-5 py-[1.1rem] text-[0.98rem] leading-relaxed text-foreground/90">
+              <span className="font-semibold text-ink">Voor wie:</span> vrouwen van 40+ die huidverslapping, verlies van
+              stevigheid of een doffe, vermoeide huid ervaren en een behandeling zoeken die verder gaat dan het
+              oppervlak.
             </p>
           </div>
         </Step>

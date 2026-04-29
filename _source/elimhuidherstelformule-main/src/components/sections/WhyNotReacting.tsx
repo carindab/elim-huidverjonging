@@ -42,7 +42,7 @@ const WhyNotReacting = () => (
           komt, de behandeling, de formule, het plan.
         </p>
 
-        <div className="standout-line my-10 rounded-2xl bg-jade-deep p-8 text-cream/95 shadow-soft md:text-xl">
+        <div className="my-10 rounded-2xl bg-amber-deep px-7 py-8 text-center font-body font-semibold text-ink shadow-soft md:px-8 md:py-9 md:text-xl md:leading-snug">
           <p>Geen aannames. Geen gemiddelden. Geen symptoombestrijding.</p>
           <p className="mt-3">Een systeem dat de oorzaak aanpakt. Niet het oppervlak.</p>
         </div>

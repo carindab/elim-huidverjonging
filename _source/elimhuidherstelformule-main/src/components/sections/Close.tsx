@@ -26,7 +26,7 @@ const faq = [
 const Close = () => (
   <section className="bg-gradient-soft pt-[90px] pb-[60px] md:pt-[122px] md:pb-[92px]">
     <div className="container-narrow text-center">
-      <h2 className="font-serif text-3xl md:text-5xl">
+      <h2 className="mx-auto max-w-2xl text-left font-serif text-3xl md:text-5xl">
         Als de redenering klopt, <span className="accent-italic">beslis je.</span>
       </h2>
 

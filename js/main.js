@@ -70,9 +70,6 @@ function closeBookingDialog() {
 const HERO_VIDEO_URL = "";
 
 (() => {
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-
   loadFormEmbedScript();
 
   const bookingUrl = BOOKING_URL.trim();
