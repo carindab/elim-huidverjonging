@@ -2028,18 +2028,6 @@ h1.section-heading-lg {
   box-shadow: var(--shadow-elegant);
 }
 
-@media (max-width: 639px) {
-  .booking-dialog {
-    align-items: flex-end;
-    padding: 0;
-  }
-
-  .booking-dialog__panel {
-    max-height: min(94dvh, 100dvh - env(safe-area-inset-bottom));
-    border-radius: 1.25rem 1.25rem 0 0;
-  }
-}
-
 .booking-dialog__close {
   position: absolute;
   top: 0.65rem;
