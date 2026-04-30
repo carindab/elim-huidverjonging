@@ -1,5 +1,6 @@
 import { Sparkles } from "lucide-react";
 import ReservationDialog from "@/components/ReservationDialog";
+import heroBeforeAfter from "@/assets/hero-celverjonging.png";
 
 const Hero = () => {
   return (
@@ -45,13 +46,15 @@ const Hero = () => {
 
         <div className="relative animate-fade-up [animation-delay:200ms]">
           <div className="absolute -inset-6 rounded-[2rem] bg-white/40 blur-2xl" aria-hidden />
-          <div className="relative aspect-video w-full overflow-hidden rounded-[1.5rem] bg-ink shadow-elegant">
-            <iframe
-              src="https://adilo.bigcommand.com/watch/6GWRjnNU"
-              title="Elim Huidherstel Behandeling — introductie video"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-              className="absolute inset-0 h-full w-full border-0"
+          <div className="relative mx-auto aspect-square w-full max-h-[min(92vw,32rem)] max-w-lg overflow-hidden rounded-[1.5rem] bg-ink shadow-elegant lg:max-h-none lg:max-w-none">
+            <img
+              src={heroBeforeAfter}
+              width={1024}
+              height={1024}
+              alt="Voor en na: huidherstel op celniveau met de Elim Huidherstel Formule."
+              loading="eager"
+              decoding="async"
+              className="h-full w-full object-cover"
             />
           </div>
         </div>

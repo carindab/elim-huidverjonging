@@ -77,12 +77,6 @@ function closeBookingDialog() {
   bookingFocusReturn = null;
 }
 
-/**
- * Optioneel: andere video-URL (YouTube embed, andere Adilo-url, …).
- * Leeg = gebruikt de src uit index.html op de hero-iframe.
- */
-const HERO_VIDEO_URL = "";
-
 (() => {
   loadFormEmbedScript();
 
@@ -113,10 +107,6 @@ const HERO_VIDEO_URL = "";
     if (!root || root.hidden) return;
     if (e.key === "Escape") closeBookingDialog();
   });
-
-  const v = HERO_VIDEO_URL.trim();
-  const heroIframe = document.getElementById("hero-video-iframe");
-  if (v && heroIframe) heroIframe.src = v;
 
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.getElementById("site-nav");
