@@ -16,11 +16,12 @@ const Hero = () => {
         <div className="animate-fade-up max-w-2xl">
           <span className="pill-tag">
             <Sparkles className="h-4 w-4 text-amber-500" />
-            Uniek in Nederland · 22+ jaar ervaring
+            Elim Instituut · Klinische huidmeting op celniveau
           </span>
 
           <p className="mt-6 max-w-xl font-serif text-[clamp(1.2rem,2.4vw,1.55rem)] font-medium leading-snug tracking-tight text-muted-foreground">
-            Huidveroudering begint niet aan het oppervlak. Het begint in de laag die de meeste behandelingen nooit bereiken.
+            De meeste huidbehandelingen werken op de laag van dode en stervende cellen. Daar begint veroudering niet. Dat
+            is ook niet waar herstel plaatsvindt.
           </p>
 
           <h1 className="mt-4 max-w-[42rem] font-serif text-[clamp(1.85rem,4.3vw,3rem)] font-medium leading-[1.12] tracking-tight text-ink">
