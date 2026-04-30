@@ -1,3 +1,4 @@
+import { BookingDialogProvider } from "@/contexts/BookingDialogContext";
 import Hero from "@/components/sections/Hero";
 import SocialProofBar from "@/components/sections/SocialProofBar";
 import ForYou from "@/components/sections/ForYou";
@@ -13,21 +14,23 @@ import Close from "@/components/sections/Close";
 import Footer from "@/components/sections/Footer";
 
 const Index = () => (
-  <main>
-    <Hero />
-    <SocialProofBar />
-    <ForYou />
-    <Feeling />
-    <WhyNotReacting />
-    <Imagine />
-    <Testimonials />
-    <Method />
-    <Offer />
-    <ForWhom />
-    <Story />
-    <Close />
-    <Footer />
-  </main>
+  <BookingDialogProvider>
+    <main>
+      <Hero />
+      <SocialProofBar />
+      <ForYou />
+      <Feeling />
+      <WhyNotReacting />
+      <Imagine />
+      <Testimonials />
+      <Method />
+      <Offer />
+      <ForWhom />
+      <Story />
+      <Close />
+      <Footer />
+    </main>
+  </BookingDialogProvider>
 );
 
 export default Index;

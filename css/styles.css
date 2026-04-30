@@ -2011,17 +2011,24 @@ h1.section-heading-lg {
 .booking-dialog {
   position: fixed;
   inset: 0;
-  z-index: 10000;
+  z-index: 99999;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: max(0.5rem, env(safe-area-inset-top)) max(0.75rem, env(safe-area-inset-right))
     max(0.5rem, env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-left));
   box-sizing: border-box;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
-.booking-dialog[hidden] {
-  display: none !important;
+.booking-dialog.booking-dialog--closed {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.booking-dialog:not(.booking-dialog--closed) {
+  visibility: visible;
 }
 
 .booking-dialog__backdrop {

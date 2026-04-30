@@ -59,7 +59,8 @@ function openBookingDialog() {
 
   normalizeBookingDialogOfferCopy();
 
-  root.hidden = false;
+  root.classList.remove("booking-dialog--closed");
+  root.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
 
   const closeBtn = root.querySelector(".booking-dialog__close");
@@ -69,7 +70,8 @@ function openBookingDialog() {
 function closeBookingDialog() {
   const root = document.getElementById("booking-dialog");
   if (!root) return;
-  root.hidden = true;
+  root.classList.add("booking-dialog--closed");
+  root.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
   if (bookingFocusReturn && typeof bookingFocusReturn.focus === "function") {
     bookingFocusReturn.focus({ preventScroll: true });
@@ -104,9 +106,12 @@ function closeBookingDialog() {
 
   document.addEventListener("keydown", (e) => {
     const root = document.getElementById("booking-dialog");
-    if (!root || root.hidden) return;
+    if (!root || root.classList.contains("booking-dialog--closed")) return;
     if (e.key === "Escape") closeBookingDialog();
   });
+
+  const formIframe = document.getElementById(FORM_IFRAME_ID);
+  ensureIframeSrc(formIframe);
 
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.getElementById("site-nav");
