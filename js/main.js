@@ -37,6 +37,18 @@ function ensureIframeSrc(iframe) {
 
 let bookingFocusReturn = null;
 
+/** Vervangt verouderde popup-labels (o.a. bij gecachte oude HTML). */
+function normalizeBookingDialogOfferCopy() {
+  const root = document.getElementById("booking-dialog");
+  if (!root) return;
+  root.querySelectorAll(".booking-dialog__list li span").forEach((span) => {
+    if (span.classList.contains("booking-dialog__bullet")) return;
+    span.textContent = span.textContent
+      .replace(/geavanceerde huidscan/gi, "Huidscan op celniveau")
+      .replace(/^Bonus:\s*/i, "");
+  });
+}
+
 function openBookingDialog() {
   const root = document.getElementById("booking-dialog");
   const iframe = document.getElementById(FORM_IFRAME_ID);
@@ -44,6 +56,8 @@ function openBookingDialog() {
 
   loadFormEmbedScript();
   ensureIframeSrc(iframe);
+
+  normalizeBookingDialogOfferCopy();
 
   root.hidden = false;
   document.body.style.overflow = "hidden";

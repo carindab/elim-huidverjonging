@@ -51,7 +51,7 @@ const Close = () => (
         <ul className="mt-3 space-y-2.5 text-foreground/85">
           <li className="flex gap-2">
             <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" aria-hidden />
-            <span>Geavanceerde huidscan ter waarde van €99.</span>
+            <span>Huidscan op celniveau ter waarde van €99.</span>
           </li>
           <li className="flex gap-2">
             <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" aria-hidden />
@@ -63,7 +63,7 @@ const Close = () => (
           </li>
           <li className="flex gap-2">
             <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" aria-hidden />
-            <span>De Herstellingscode™ als bonus.</span>
+            <span>De Herstellingscode™.</span>
           </li>
         </ul>
 

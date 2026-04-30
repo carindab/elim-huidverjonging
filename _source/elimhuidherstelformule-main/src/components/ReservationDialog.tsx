@@ -90,7 +90,8 @@ const ReservationDialog = ({
                 Elim Huidherstel Formule
               </h2>
               <p id={descriptionId} className="mt-2 font-serif text-lg italic accent-italic">
-                Huidscan, Collageen &amp; Elastine Booster Behandeling en jouw persoonlijke Huidformule in één sessie.
+                Huidscan op celniveau, Collageen &amp; Elastine Booster Behandeling en jouw persoonlijke Huidformule in
+                één sessie.
               </p>
             </div>
 
@@ -105,7 +106,7 @@ const ReservationDialog = ({
                 <ul className="mt-3 space-y-3">
                   <li className="flex gap-3">
                     <span className="text-amber-500">✦</span>
-                    <span>Geavanceerde huidscan ter waarde van €99.</span>
+                    <span>Huidscan op celniveau ter waarde van €99.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-amber-500">✦</span>
@@ -118,8 +119,8 @@ const ReservationDialog = ({
                   <li className="flex gap-3">
                     <span className="text-amber-500">✦</span>
                     <span>
-                      Bonus: De Herstellingscode™, welke voeding en gewoonten collageenaanmaak blokkeren, en hoe je ze
-                      vervangt zodat je behandeling langer en dieper werkt.
+                      De Herstellingscode™, welke voeding en gewoonten collageenaanmaak blokkeren, en hoe je ze vervangt
+                      zodat je behandeling langer en dieper werkt.
                     </span>
                   </li>
                 </ul>
@@ -131,7 +132,7 @@ const ReservationDialog = ({
                   Kennismaking met de Elim Huidherstel Formule, inclusief de Collageen &amp; Elastine Booster
                   Behandeling:
                   <span className="my-3 block font-serif text-3xl leading-none text-ink md:text-4xl">€149</span>
-                  inclusief toegang tot De Herstellingscode™.
+                  inclusief De Herstellingscode™.
                 </p>
                 <p className="mt-3 text-foreground/85">
                   Dit is het instaptarief voor de vrouw die klaar is om serieus te investeren in een aanpak die begint

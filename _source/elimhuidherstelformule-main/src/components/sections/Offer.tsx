@@ -1,7 +1,7 @@
 import { Check, Gift } from "lucide-react";
 
 const includes = [
-  "Een geavanceerde huidscan die laat zien wat er werkelijk speelt in de diepere lagen van jouw huid. Objectief, meetbaar, persoonlijk.",
+  "Een huidscan op celniveau die laat zien wat er werkelijk speelt in de diepere lagen van jouw huid. Objectief, meetbaar, persoonlijk.",
   "De Collageen & Elastine Booster Behandeling op basis van jouw scanresultaten. Twee maskers die tropoelastine direct leveren aan de laag waar elastine wordt geproduceerd, versterkt door gepatenteerde lichttherapie die het herstelproces op celniveau activeert.",
   "Jouw persoonlijke Huidformule, samengesteld op basis van wat jouw scan heeft laten zien dat jouw huid structureel nodig heeft om het herstel van de behandeling te behouden.",
   "Helder advies over wat de volgende stap is voor jouw huid. Zonder protocol. Zonder verkooppraatjes.",
@@ -36,24 +36,23 @@ const Offer = () => (
           <div className="flex items-start gap-3">
             <Gift className="mt-1 h-6 w-6 shrink-0 text-amber-500" />
             <div>
-              <p className="text-sm uppercase tracking-widest text-amber-500/80">
-                En als bonus:
-              </p>
-              <p className="mt-1 font-serif text-2xl text-ink">
-                De Herstellingscode™
+              <p className="font-serif text-2xl text-ink">De Herstellingscode™</p>
+              <p className="mt-3 text-foreground/80 leading-relaxed">
+                Een behandeling die de levende lagen activeert kan worden ondermijnd door wat er daarna op de huid komt,
+                en door wat er daarna in het lichaam gebeurt.
               </p>
               <p className="mt-3 text-foreground/80 leading-relaxed">
-                Bepaalde voeding blokkeert collageenaanmaak. Bepaalde
-                leefstijlpatronen vertragen het herstel dat de behandeling in
-                gang zet.
+                Bepaalde voedingspatronen remmen collageensynthese op celniveau. Bepaalde leefstijlpatronen vertragen het
+                herstelproces dat de behandeling in gang heeft gezet. Dit is geen bijzaak. Het is het verschil tussen
+                resultaten die drie weken duren en resultaten die blijven.
               </p>
               <p className="mt-3 text-foreground/80 leading-relaxed">
-                Gerichte aanpassingen in voeding en leefstijl kunnen de
-                resultaten van je behandeling versterken en verlengen. Deze
-                gids laat zien welke, en hoe je ze vervangt.
+                De Herstellingscode™ documenteert precies welke aanpassingen het herstel versterken en welke het remmen.
+                Geen algemeenheden. Geen brede adviezen over gezonde leefstijl. Alleen wat structureel verschil maakt
+                voor de huid die net op celniveau is geactiveerd.
               </p>
               <p className="mt-3 font-serif italic accent-italic">
-                Geen algemeenheden. Alleen wat structureel verschil maakt.
+                Onderdeel van de Elim Huidherstel Formule. Niet als toevoeging. Als afsluiting van het systeem.
               </p>
             </div>
           </div>

@@ -29,7 +29,7 @@ const Hero = () => {
           </h1>
 
           <p className="mt-4 text-lg leading-relaxed text-foreground/75">
-            Geavanceerde huidscan. Collageen &amp; Elastine Booster Behandeling. Persoonlijke Huidformule. Niet op
+            Huidscan op celniveau. Collageen &amp; Elastine Booster Behandeling. Persoonlijke Huidformule. Niet op
             aanname. Niet op protocol. Op meting.
           </p>
 
