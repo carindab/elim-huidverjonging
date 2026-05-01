@@ -4,10 +4,10 @@
  */
 const BOOKING_URL = "";
 
-/** Zelfde formulier-ID als in React (`ReservationDialog.tsx`). */
-const FORM_ID = "WrzSeSdSFCkx7Jv7LKS3";
+/** Zelfde formulier-ID als in React (`BookingDialogContext.tsx`). */
+const FORM_ID = "x3PuzajO38FGDW2Guxet";
 
-const FORM_IFRAME_ID = "booking-form-iframe";
+const FORM_IFRAME_ID = `inline-${FORM_ID}`;
 
 function loadFormEmbedScript() {
   if (document.querySelector("script[data-elim-form-embed]")) return;
@@ -29,8 +29,7 @@ function ensureIframeSrc(iframe) {
   iframe.setAttribute("data-activation-value", "");
   iframe.setAttribute("data-deactivation-type", "neverDeactivate");
   iframe.setAttribute("data-deactivation-value", "");
-  iframe.setAttribute("data-form-name", "Kennismakingsaanbieding afspraak 2026");
-  iframe.setAttribute("data-height", "423");
+  iframe.setAttribute("data-form-name", "Kennismakingsaanbieding afspraak 2026 FB");
   iframe.setAttribute("data-layout-iframe-id", FORM_IFRAME_ID);
   iframe.setAttribute("data-form-id", id);
 }

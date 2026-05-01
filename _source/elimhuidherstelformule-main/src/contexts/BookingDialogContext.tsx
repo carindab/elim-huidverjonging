@@ -8,7 +8,7 @@ import {
   type ReactNode,
 } from "react";
 
-const FORM_ID = "WrzSeSdSFCkx7Jv7LKS3";
+const FORM_ID = "x3PuzajO38FGDW2Guxet";
 const FORM_IFRAME_ID = `inline-${FORM_ID}`;
 
 const loadFormEmbedScript = () => {
@@ -169,11 +169,10 @@ export const BookingDialogProvider = ({ children }: { children: ReactNode }) => 
                 data-activation-value=""
                 data-deactivation-type="neverDeactivate"
                 data-deactivation-value=""
-                data-form-name="Kennismakingsaanbieding afspraak 2026"
-                data-height="423"
+                data-form-name="Kennismakingsaanbieding afspraak 2026 FB"
                 data-layout-iframe-id={iframeId}
                 data-form-id={FORM_ID}
-                title="Kennismakingsaanbieding afspraak 2026"
+                title="Kennismakingsaanbieding afspraak 2026 FB"
                 loading="eager"
               />
             </div>
