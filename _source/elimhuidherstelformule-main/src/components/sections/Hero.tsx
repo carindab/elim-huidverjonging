@@ -20,22 +20,26 @@ const Hero = () => {
             Elim Instituut · Klinische huidmeting op celniveau
           </span>
 
-          <p className="mt-6 max-w-xl font-serif text-[clamp(1.2rem,2.4vw,1.55rem)] font-medium leading-snug tracking-tight text-muted-foreground">
-            De meeste huidbehandelingen werken op de laag van dode en stervende cellen. Daar begint veroudering niet. Dat
-            is ook niet waar herstel plaatsvindt.
+          <p className="mt-6 max-w-xl text-[clamp(0.8125rem,1.35vw,0.9375rem)] font-medium leading-snug text-foreground/70">
+            Je hebt dit gevonden omdat je al langer voelde dat het probleem niet aan het oppervlak van je huid zit.
           </p>
 
           <h1 className="mt-4 max-w-[42rem] font-serif text-[clamp(1.85rem,4.3vw,3rem)] font-medium leading-[1.12] tracking-tight text-ink">
-            De Elim Huidherstel Formule meet wat er werkelijk speelt en activeert{" "}
-            <span className="accent-italic">celverjonging op de laag waar het ertoe doet.</span>
+            Huidveroudering begint niet waar je producten werken.{" "}
+            <span className="accent-italic">Ze begint in de laag daaronder.</span>
           </h1>
 
-          <p className="mt-4 text-lg leading-relaxed text-foreground/75">
+          <p className="mt-4 max-w-[40rem] text-[clamp(1.0625rem,2vw,1.1875rem)] leading-relaxed text-foreground/80">
+            De Elim Huidherstel Formule meet wat er in de levende lagen werkelijk speelt en activeert celverjonging op de
+            laag waar het ertoe doet.
+          </p>
+
+          <p className="mt-3 max-w-[40rem] text-[clamp(0.8125rem,1.45vw,0.9375rem)] leading-snug text-foreground/70">
             Huidscan op celniveau. Collageen &amp; Elastine Booster Behandeling. Persoonlijke Huidformule. Niet op
             aanname. Niet op protocol. Op meting.
           </p>
 
-          <div className="mt-8 flex max-w-xl flex-col items-start gap-3">
+          <div className="mt-5 flex max-w-xl flex-col items-start gap-3">
             <ReservationDialog>Reserveer Jouw Plek</ReservationDialog>
             <span className="text-sm leading-snug text-foreground/60">
               Elim Instituut werkt met maximaal 10 cliënten per maand. Omdat elke behandeling volledig wordt afgestemd op

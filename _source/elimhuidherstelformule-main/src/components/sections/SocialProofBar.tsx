@@ -10,8 +10,10 @@ const SocialProofBar = () => (
       </div>
       <div className="flex flex-col items-center gap-1">
         <Star className="h-7 w-7 shrink-0" strokeWidth={2} />
-        <p className="font-serif text-lg font-semibold md:text-xl">7000+ vrouwen</p>
-        <p className="text-xs uppercase tracking-widest text-ink/85">Geholpen</p>
+        <p className="font-serif text-lg font-semibold md:text-xl">40-60%</p>
+        <p className="max-w-[12rem] text-xs leading-snug tracking-wide text-ink/85 normal-case md:max-w-[14rem]">
+          Verbetering in elasticiteit per sessie
+        </p>
       </div>
       <div className="flex flex-col items-center gap-1">
         <ShieldCheck className="h-7 w-7 shrink-0" strokeWidth={2} />

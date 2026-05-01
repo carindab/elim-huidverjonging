@@ -100,7 +100,7 @@ export const BookingDialogProvider = ({ children }: { children: ReactNode }) => 
               <h2 id={titleId} className="font-serif text-2xl leading-tight text-ink md:text-3xl">
                 Elim Huidherstel Formule
               </h2>
-              <p id={descriptionId} className="mt-2 font-serif text-lg italic accent-italic">
+              <p id={descriptionId} className="mt-2 font-serif text-lg text-ink/90">
                 Huidscan op celniveau, Collageen &amp; Elastine Booster Behandeling en jouw persoonlijke Huidformule in
                 één sessie.
               </p>
@@ -108,29 +108,38 @@ export const BookingDialogProvider = ({ children }: { children: ReactNode }) => 
 
             <div className="mt-6 space-y-5 text-foreground/85 leading-relaxed">
               <p>
-                Dit is voor de vrouw die wil weten. Niet wat gemiddeld werkt. Wat jóuw huid op dit moment precies nodig
-                heeft.
+                Dit is voor de vrouw die klaar is met gokken en klaar is om te weten. Niet wat gemiddeld werkt. Wat jouw
+                huid op dit moment precies nodig heeft.
               </p>
 
               <div>
-                <p className="font-serif text-lg text-ink">Wat je krijgt in één sessie:</p>
+                <p className="font-serif text-lg text-ink">Wat je krijgt:</p>
                 <ul className="mt-3 space-y-3">
                   <li className="flex gap-3">
                     <span className="text-amber-500">✦</span>
-                    <span>Huidscan op celniveau ter waarde van €99.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-amber-500">✦</span>
-                    <span>Collageen &amp; Elastine Booster Behandeling ter waarde van €169,50.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-amber-500">✦</span>
-                    <span>Jouw persoonlijke Huidformule op basis van de scanresultaten.</span>
+                    <span>
+                      Huidscan op celniveau: objectief, meetbaar en persoonlijk, waarbij we meten wat anderen niet zien.
+                    </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-amber-500">✦</span>
                     <span>
-                      De Herstellingscode™, welke voeding en gewoonten collageenaanmaak blokkeren, en hoe je ze vervangt
+                      Collageen &amp; Elastine Booster Behandeling: één behandeling herstelt het elastineverlies van de
+                      afgelopen twee jaar. 40 tot 60% verbetering in elasticiteit, meetbaar in de scan voor en na.
+                      Geen belofte. Een cijfer.
+                    </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-amber-500">✦</span>
+                    <span>
+                      Jouw persoonlijke Huidformule: de exacte combinatie van werkzame stoffen die jouw huid nodig heeft
+                      om te herstellen en te stralen, ook thuis.
+                    </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-amber-500">✦</span>
+                    <span>
+                      De Herstellingscode™: welke voeding en gewoonten collageenaanmaak blokkeren, en hoe je ze vervangt
                       zodat je behandeling langer en dieper werkt.
                     </span>
                   </li>
@@ -140,16 +149,16 @@ export const BookingDialogProvider = ({ children }: { children: ReactNode }) => 
               <div className="rounded-2xl bg-blush p-5">
                 <p className="text-sm uppercase tracking-[0.25em] text-amber-500">De Investering</p>
                 <p className="mt-3 text-foreground/85 leading-relaxed">
-                  Kennismaking met de Elim Huidherstel Formule, inclusief de Collageen &amp; Elastine Booster
-                  Behandeling:
-                  <span className="my-3 block font-serif text-3xl leading-none text-ink md:text-4xl">€149</span>
-                  inclusief De Herstellingscode™.
+                  De huidscan is los €99. De Collageen &amp; Elastine Booster Behandeling is los €169,50. Als
+                  kennismaking met de Elim Huidherstel Formule bied ik beide samen aan voor
                 </p>
-                <p className="mt-3 text-foreground/85">
-                  Dit is het instaptarief voor de vrouw die klaar is om serieus te investeren in een aanpak die begint
-                  met weten.
+                <p className="mt-2 font-serif text-3xl leading-none text-ink md:text-4xl">€149,50</p>
+                <p className="mt-2 text-foreground/85 leading-relaxed">inclusief toegang tot De Herstellingscode™.</p>
+                <p className="mt-3 text-foreground/85 leading-relaxed">
+                  Niet omdat het minder waard is. Maar omdat wie eenmaal ervaart wat de juiste aanpak op celniveau doet,
+                  niet meer terugkeert naar wat aan het oppervlak bleef.
                 </p>
-                <p className="mt-3 text-sm text-foreground/70">10 plekken per maand beschikbaar.</p>
+                <p className="mt-3 text-sm text-foreground/70">Slechts 10 plekken per maand beschikbaar.</p>
               </div>
             </div>
 
