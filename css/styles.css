@@ -69,9 +69,45 @@ img,
 video {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 iframe {
   max-width: 100%;
+}
+
+/*
+ * Aspect-ratio fallback voor oude in-app browsers (Facebook/Instagram WebView op iOS < 15.4
+ * en oude Android WebView). Als `aspect-ratio` niet werkt, valt het container-blok terug op
+ * de natuurlijke verhouding van de foto en blijft de hele foto zichtbaar.
+ */
+@supports not (aspect-ratio: 1) {
+  .testimonial img,
+  .testimonial--light img,
+  .testimonial-card__imgwrap,
+  .testimonial-card__imgwrap img,
+  .hero-video-frame,
+  .hero-video-frame--square {
+    aspect-ratio: auto !important;
+    height: auto !important;
+  }
+
+  .testimonial-card__imgwrap {
+    overflow: visible;
+  }
+
+  .testimonial-card__imgwrap img {
+    position: static;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .hero-video-frame .hero-media__img {
+    position: static;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
 }
 
 :root {
@@ -687,8 +723,17 @@ span.standout-line {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: center 25%;
   border-radius: 0.75rem;
   margin-bottom: 1rem;
+}
+
+@media (max-width: 639px) {
+  .testimonial img {
+    aspect-ratio: auto;
+    height: auto;
+    object-fit: contain;
+  }
 }
 
 .testimonial__meta {
@@ -1334,16 +1379,15 @@ span.standout-line {
 .about-grid__img img {
   display: block;
   width: 100%;
-  max-height: min(48vh, 380px);
   border-radius: 1.5rem;
   box-shadow: var(--shadow-elegant);
-  object-fit: cover;
-  object-position: center 18%;
 }
 
 @media (min-width: 640px) {
   .about-grid__img img {
     max-height: min(52vh, 420px);
+    object-fit: cover;
+    object-position: center 18%;
   }
 }
 
@@ -1884,6 +1928,7 @@ h1.section-heading-lg {
 .testimonial-card__imgwrap {
   aspect-ratio: 4 / 5;
   overflow: hidden;
+  background: #ECD8BC;
   background: hsl(var(--sand));
 }
 
@@ -1891,7 +1936,19 @@ h1.section-heading-lg {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 25%;
   display: block;
+}
+
+@media (max-width: 639px) {
+  .testimonial-card__imgwrap {
+    aspect-ratio: auto;
+    height: auto;
+  }
+  .testimonial-card__imgwrap img {
+    height: auto;
+    object-fit: contain;
+  }
 }
 
 .testimonial-card__body {
