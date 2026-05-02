@@ -39,9 +39,9 @@ const Hero = () => {
             aanname. Niet op protocol. Op meting.
           </p>
 
-          <div className="mt-5 flex max-w-xl flex-col items-start gap-3">
-            <ReservationDialog>Reserveer Jouw Plek</ReservationDialog>
-            <span className="text-sm leading-snug text-foreground/60">
+          <div className="mt-5 flex w-full max-w-xl flex-col items-stretch gap-4">
+            <ReservationDialog className="w-full shrink-0 sm:w-auto">Reserveer Jouw Plek</ReservationDialog>
+            <span className="block w-full text-sm leading-snug text-foreground/60 [font-feature-settings:normal] [font-variant-numeric:lining-nums]">
               Elim Instituut werkt met maximaal 10 cliënten per maand. Omdat elke behandeling volledig wordt afgestemd op
               wat de scan laat zien.
             </span>
@@ -50,7 +50,7 @@ const Hero = () => {
 
         <div className="relative animate-fade-up [animation-delay:200ms]">
           <div className="absolute -inset-6 rounded-[2rem] bg-white/40 blur-2xl" aria-hidden />
-          <div className="relative mx-auto aspect-square w-full max-h-[min(92vw,32rem)] max-w-lg overflow-hidden rounded-[1.5rem] bg-ink shadow-elegant lg:max-h-none lg:max-w-none">
+          <div className="relative mx-auto aspect-square w-full max-h-[min(85vw,min(72vh,28rem))] max-w-lg overflow-hidden rounded-[1.5rem] bg-cream shadow-elegant lg:max-h-none lg:max-w-none">
             <img
               src={heroBeforeAfter}
               width={1024}
@@ -58,7 +58,7 @@ const Hero = () => {
               alt="Voor en na: huidherstel op celniveau met de Elim Huidherstel Formule."
               loading="eager"
               decoding="async"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain object-center lg:object-cover"
             />
           </div>
         </div>

@@ -1,4 +1,78 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap");
+/* Fonts worden in index.html geladen (link + preconnect) voor betrouwbaardere mobiele weergave */
+
+/*
+ * Hex-fallback laag voor in-app browsers (Facebook/Instagram WebView).
+ * Sommige van deze browsers ondersteunen `hsl(var(--x) / 0.5)` (space-separated alpha) slecht of
+ * het CSS-variabelen-systeem onbetrouwbaar; dan worden vlakken wit en knoppen onzichtbaar.
+ * Daarom: vaste hex eerst, daarna nog steeds de var() versies in :root.
+ */
+html,
+body {
+  background-color: #FBF6EA;
+  color: #3A372F;
+}
+.section--cream {
+  background-color: #FCF8EE !important;
+}
+.section--blush {
+  background-color: #F2DECB !important;
+}
+.section--blush::before {
+  background-color: #FCF8EE !important;
+}
+.section--cream-deep {
+  background-color: #EFE6D2 !important;
+}
+.section--sand {
+  background-color: #ECD8BC !important;
+}
+.section--gradient-soft {
+  background-color: #F4E6D0 !important;
+  background-image: linear-gradient(180deg, #FBF5E5 0%, #F1DFC3 55%, #EAD3B5 100%);
+}
+.section--gradient-sage {
+  background-color: #E2ECDB !important;
+  background-image: linear-gradient(180deg, #E2ECDB 0%, #F2EAD0 48%, #E1D4BC 100%);
+}
+.section--hero {
+  background-color: #F4ECD8 !important;
+}
+.stats-bar {
+  background-color: #C9A858 !important;
+  color: #3A372F;
+}
+.section--dark {
+  background-color: #2A2722 !important;
+  color: #FCF8EE;
+}
+.investment-card {
+  background-color: #FFFFFF !important;
+  color: #3A372F;
+}
+.booking-dialog__panel {
+  background-color: #FCF8EE !important;
+  color: #3A372F;
+}
+.booking-dialog__pricebox {
+  background-color: #F2DECB !important;
+}
+.btn--primary {
+  background-color: #3F6F48 !important;
+  color: #FAF7F0 !important;
+}
+.pill-tag {
+  background-color: #FFFFFF !important;
+  color: #4A4434;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+iframe {
+  max-width: 100%;
+}
 
 :root {
   /* Brand neutrals & warmth (geen groen behalve knoppen) */
@@ -49,6 +123,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -73,7 +149,9 @@ body {
   color: hsl(var(--foreground));
   background: hsl(var(--background));
   -webkit-font-smoothing: antialiased;
-  font-feature-settings: "ss01", "kern";
+  /* Geen ss01: op sommige mobiele WebViews ontbreken glyph-substituten waardoor cijfers als □□ verschijnen */
+  font-feature-settings: "kern";
+  font-variant-numeric: lining-nums;
 }
 
 .sr-only {
@@ -171,8 +249,8 @@ a:hover {
   max-width: 72rem;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  padding-left: clamp(1rem, 4.5vw, 1.5rem);
+  padding-right: clamp(1rem, 4.5vw, 1.5rem);
 }
 
 .pill-tag {
@@ -355,6 +433,8 @@ span.standout-line {
   border: none;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .btn:focus-visible {
@@ -362,14 +442,20 @@ span.standout-line {
   outline-offset: 3px;
 }
 
+/* Vaste fallback, daarna variabelen (oude WebViews / gebroken hsl) */
 .btn--primary {
-  background: var(--gradient-cta);
+  background-color: #3f6f48;
+  background-image: linear-gradient(135deg, #3f6f48 0%, #355c3d 100%);
+  background-image: var(--gradient-cta);
+  color: #faf7f0;
   color: hsl(var(--primary-foreground));
+  box-shadow: 0 14px 30px -10px rgba(34, 78, 44, 0.42);
   box-shadow: var(--shadow-cta);
 }
 
 .btn--primary:hover {
   transform: translateY(-2px);
+  color: #faf7f0;
   color: hsl(var(--primary-foreground));
 }
 
@@ -393,6 +479,7 @@ span.standout-line {
   position: relative;
   padding-top: clamp(2rem, 6vw, 4rem);
   padding-bottom: var(--space-section);
+  background: hsl(46, 45%, 94%);
   background: var(--gradient-hero);
   overflow: hidden;
 }
@@ -795,13 +882,27 @@ span.standout-line {
   margin-top: 1.15rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 0.75rem;
+  width: 100%;
+}
+
+.hero-cta-stack .btn {
+  order: 1;
+  flex: 0 0 auto;
+}
+
+.hero-cta-stack .hero-cta-note {
+  order: 2;
 }
 
 .hero-cta-note {
+  display: block;
+  width: 100%;
   font-size: 0.875rem;
   color: hsl(var(--foreground) / 0.6);
+  font-feature-settings: normal;
+  font-variant-numeric: lining-nums;
 }
 
 .hero-cta-note--wide {
@@ -839,12 +940,12 @@ span.standout-line {
   border-radius: 1.5rem;
   overflow: hidden;
   box-shadow: var(--shadow-elegant);
-  background: hsl(var(--ink));
+  background: hsl(var(--cream));
 }
 
 .hero-video-frame--square {
   aspect-ratio: 1 / 1;
-  max-height: min(92vw, 32rem);
+  max-height: min(85vw, min(72vh, 28rem));
   margin-left: auto;
   margin-right: auto;
 }
@@ -864,12 +965,22 @@ span.standout-line {
   border: 0;
 }
 
+/* Mobiel: hele foto zichtbaar (geen zware crop). Desktop: strakker kader met cover. */
 .hero-video-frame .hero-media__img {
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
+}
+
+@media (min-width: 1024px) {
+  .hero-video-frame .hero-media__img {
+    object-fit: cover;
+    object-position: center center;
+  }
 }
 
 /* ——— Stats-balk (Amber Deep) ——— */
 .stats-bar {
+  background: #c9a858;
   background: var(--amber-deep);
   color: hsl(var(--ink-soft));
   padding: 1.15rem 1.25rem;
@@ -943,6 +1054,8 @@ span.standout-line {
   font-size: clamp(1.05rem, 1.8vw, 1.35rem);
   margin: 0;
   font-weight: 500;
+  font-feature-settings: normal;
+  font-variant-numeric: lining-nums;
 }
 
 .stats-bar .stat-value {
@@ -955,12 +1068,15 @@ span.standout-line {
   letter-spacing: 0.14em;
   opacity: 0.88;
   margin: 0;
+  font-feature-settings: normal;
+  font-variant-numeric: lining-nums;
 }
 
 .stat-label--mixed {
   text-transform: none;
   letter-spacing: 0.04em;
   font-size: 0.68rem;
+  font-feature-settings: normal;
 }
 
 .stat-label--wrap {
@@ -1938,6 +2054,10 @@ h1.section-heading-lg {
 }
 
 @media (max-width: 639px) {
+  .hero-cta-stack {
+    gap: 1rem;
+  }
+
   .hero-cta-stack .btn {
     width: 100%;
     justify-content: center;
