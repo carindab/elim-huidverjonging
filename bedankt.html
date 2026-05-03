@@ -19,153 +19,444 @@
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap"
   />
-  <link rel="stylesheet" href="/css/styles.css?v=20260503c" />
+  <style>
+    /*
+     * Self-contained styling. Geen externe CSS, geen JS-afhankelijkheid voor klikken.
+     * Alle CTA's zijn echte <a>-tags die in een nieuw tabblad openen.
+     */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #3a372f;
+      background: #fbf6ea;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, svg { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; }
+    .skip-link {
+      position: absolute; left: 1rem; top: -3rem; z-index: 100;
+      padding: 0.5rem 0.75rem; background: #3a372f; color: #faf7f0;
+      border-radius: 0.5rem; text-decoration: none;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .wrap {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: clamp(2rem, 6vw, 3.5rem) 1.25rem;
+    }
+
+    /* ——— Sectie 1: bevestiging ——— */
+    .confirm {
+      background: #efe6d2;
+      text-align: center;
+    }
+    .confirm__inner { padding: clamp(3rem, 9vw, 5rem) 1.25rem clamp(2.5rem, 8vw, 4rem); }
+    .eyebrow {
+      display: inline-block;
+      padding: 0.4rem 0.85rem;
+      background: #ffffff;
+      color: #4a4434;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(2rem, 5.6vw, 2.85rem);
+      line-height: 1.15;
+      margin: 1.25rem 0 1rem;
+      color: #2c2a23;
+    }
+    .accent { font-style: italic; color: #c9a858; }
+    .lead {
+      max-width: 36rem;
+      margin: 0 auto 1.75rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(58, 55, 47, 0.85);
+    }
+    .byline {
+      margin: 1.75rem 0 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-style: italic;
+      color: rgba(58, 55, 47, 0.7);
+    }
+
+    /* ——— Knoppen ——— */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.95rem 1.6rem;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.3;
+      text-decoration: none;
+      text-align: center;
+      border: none;
+      border-radius: 0.85rem;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    }
+    .btn--whatsapp {
+      background: #25d366;
+      color: #ffffff;
+      box-shadow: 0 12px 26px -10px rgba(37, 211, 102, 0.55);
+    }
+    .btn--whatsapp:hover { background: #1ebe5a; transform: translateY(-2px); }
+    .btn--primary {
+      background: #3f6f48;
+      color: #faf7f0;
+      box-shadow: 0 14px 30px -10px rgba(34, 78, 44, 0.5);
+    }
+    .btn--primary:hover { background: #355c3d; transform: translateY(-2px); color: #faf7f0; }
+    .btn--block {
+      display: flex;
+      width: 100%;
+      padding: 1.1rem 1.5rem;
+      font-size: 1.02rem;
+      line-height: 1.35;
+      white-space: normal;
+    }
+
+    /* ——— Sectie 2: upgrade-aanbod ——— */
+    .upgrade {
+      background: linear-gradient(180deg, #fbf5e5 0%, #f1dfc3 55%, #ead3b5 100%);
+    }
+    .upgrade__inner { padding: clamp(3rem, 9vw, 5rem) 1.25rem clamp(3.5rem, 9vw, 5rem); }
+    .upgrade__head { text-align: center; max-width: 36rem; margin: 0 auto 2rem; }
+    h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(1.75rem, 4.8vw, 2.4rem);
+      line-height: 1.2;
+      margin: 1.25rem 0 0;
+      color: #2c2a23;
+    }
+    .card {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: clamp(1.5rem, 4vw, 2.4rem);
+      background: #ffffff;
+      border-radius: 1.35rem;
+      border: 1px solid rgba(225, 212, 188, 0.55);
+      box-shadow: 0 25px 60px -20px rgba(40, 33, 18, 0.18);
+    }
+    .card p { margin: 0 0 0.85rem; line-height: 1.65; color: rgba(58, 55, 47, 0.86); }
+    .card p:last-child { margin-bottom: 0; }
+
+    .checks {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 0;
+      border-top: 1px solid rgba(225, 212, 188, 0.6);
+    }
+    .checks li {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(225, 212, 188, 0.45);
+      font-size: 1.0rem;
+      line-height: 1.55;
+    }
+    .checks li:last-child { border-bottom: none; }
+    .check-icon {
+      flex-shrink: 0;
+      margin-top: 0.18rem;
+      color: #c9a858;
+    }
+
+    .price {
+      margin-top: 1.85rem;
+      padding: 1.35rem;
+      background: #fbf6ea;
+      border-radius: 1rem;
+      border: 1px solid rgba(225, 212, 188, 0.6);
+    }
+    .price__label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(58, 55, 47, 0.6);
+      margin: 0 0 0.85rem;
+    }
+    .price__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.55rem 0;
+      font-size: 1rem;
+      color: rgba(58, 55, 47, 0.78);
+    }
+    .price__row + .price__row { border-top: 1px dashed rgba(225, 212, 188, 0.6); }
+    .price__row--strike .price__amount { text-decoration: line-through; color: rgba(58, 55, 47, 0.5); }
+    .price__final {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding-top: 0.95rem;
+      margin-top: 0.65rem;
+      border-top: 1px solid rgba(225, 212, 188, 0.8);
+    }
+    .price__final-label { font-size: 1rem; font-weight: 600; color: #3a372f; }
+    .price__final-amount {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.85rem, 4vw, 2.3rem);
+      font-weight: 500;
+      color: #c9a858;
+      line-height: 1;
+    }
+    .price__gift {
+      margin: 1rem 0 0;
+      font-size: 0.92rem;
+      color: rgba(58, 55, 47, 0.72);
+      line-height: 1.55;
+    }
+
+    .cta {
+      margin-top: 1.85rem;
+      text-align: center;
+    }
+    .cta__note {
+      margin: 0.85rem 0 0;
+      font-size: 0.875rem;
+      color: rgba(58, 55, 47, 0.6);
+    }
+
+    /* ——— Sectie 3: video review (clickable thumbnail naar Adilo) ——— */
+    .video {
+      margin: 2rem auto 0;
+      max-width: 44rem;
+    }
+    .video__title {
+      margin: 0 0 0.85rem;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1rem, 2.4vw, 1.15rem);
+      text-align: center;
+      color: rgba(58, 55, 47, 0.85);
+    }
+    .video__card {
+      position: relative;
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 1.15rem;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.25) 100%),
+        linear-gradient(135deg, #3f6f48 0%, #2c2a23 100%);
+      color: #faf7f0;
+      text-decoration: none;
+      box-shadow: 0 25px 60px -20px rgba(40, 33, 18, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .video__card:hover { transform: translateY(-2px); box-shadow: 0 30px 70px -20px rgba(40, 33, 18, 0.45); }
+    .video__card:focus-visible { outline: 3px solid #c9a858; outline-offset: 4px; }
+    .video__inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .video__play {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 5.25rem;
+      height: 5.25rem;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.95);
+      color: #3f6f48;
+      margin-bottom: 1rem;
+      box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.45);
+    }
+    .video__label {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.05rem, 2.6vw, 1.35rem);
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+    .video__sub {
+      margin-top: 0.35rem;
+      font-size: 0.875rem;
+      color: rgba(250, 247, 240, 0.85);
+    }
+
+    /* ——— Footer ——— */
+    .footer {
+      background: #2a2722;
+      color: #fcf8ee;
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      font-size: 0.875rem;
+    }
+    .footer p { margin: 0.25rem 0; }
+    .footer__brand { font-family: "Playfair Display", Georgia, serif; font-size: 1rem; }
+
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px; padding: 0;
+      margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#bedankt-main">Ga naar inhoud</a>
+  <a class="skip-link" href="#main">Ga naar inhoud</a>
 
-  <main id="bedankt-main">
+  <main id="main">
 
     <!-- 1. Bevestiging -->
-    <section class="section section-pad section--cream-deep" aria-labelledby="bedankt-confirm-title">
-      <div class="container-narrow bedankt-confirm">
-        <span class="bedankt-eyebrow">Aanmelding ontvangen</span>
-        <h1 id="bedankt-confirm-title" class="section-heading-md">Je plek is <span class="accent-italic">gereserveerd.</span></h1>
-        <p class="bedankt-confirm__lead">
-          Ik neem op werkdagen binnen 24 uur contact met je op om de afspraak in te plannen. Wil je de afspraak liever meteen maken? Stuur me een bericht via WhatsApp.
+    <section class="confirm">
+      <div class="wrap confirm__inner">
+        <span class="eyebrow">Aanmelding ontvangen</span>
+        <h1>Je plek is <span class="accent">gereserveerd.</span></h1>
+        <p class="lead">
+          Ik neem op werkdagen binnen 24 uur contact met je op om de afspraak in te plannen.
+          Wil je de afspraak liever meteen maken? Stuur me een bericht via WhatsApp.
         </p>
         <p>
-          <!-- WhatsApp Business mobiel: +31 6 1361 9209 -->
           <a
-            class="btn btn--primary bedankt-whatsapp-btn"
+            class="btn btn--whatsapp"
             href="https://wa.me/31613619209?text=Hallo%20Carinda%2C%20ik%20heb%20mijn%20plek%20gereserveerd%20en%20wil%20de%20afspraak%20graag%20inplannen."
             target="_blank"
             rel="noopener noreferrer"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.88 11.9L4 20l4.2-1.1a7.94 7.94 0 0 0 3.84.98h.01a7.94 7.94 0 0 0 7.94-7.94 7.9 7.9 0 0 0-2.39-5.62Zm-5.55 12.21h-.01a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.49.65.66-2.43-.16-.25a6.6 6.6 0 0 1 10.25-8.18 6.55 6.55 0 0 1 1.93 4.66 6.6 6.6 0 0 1-6.58 6.61Zm3.62-4.94c-.2-.1-1.18-.58-1.36-.65-.18-.07-.31-.1-.45.1-.13.2-.51.65-.63.79-.12.13-.23.15-.43.05-.2-.1-.84-.31-1.6-.99-.59-.53-.99-1.18-1.1-1.38-.12-.2-.01-.31.09-.41.09-.09.2-.23.3-.35.1-.12.13-.2.2-.33.07-.13.03-.25-.02-.35-.05-.1-.45-1.08-.62-1.48-.16-.39-.33-.34-.45-.35l-.38-.01a.74.74 0 0 0-.53.25c-.18.2-.7.69-.7 1.68s.72 1.95.82 2.08c.1.13 1.42 2.17 3.45 3.04.48.21.86.33 1.16.43.49.16.93.13 1.28.08.39-.06 1.18-.48 1.34-.95.17-.47.17-.86.12-.95-.05-.08-.18-.13-.38-.23Z"/>
             </svg>
             Stuur een WhatsApp
           </a>
         </p>
-        <p class="bedankt-byline">Carinda Brand · Elim Instituut</p>
+        <p class="byline">Carinda Brand · Elim Instituut</p>
       </div>
     </section>
 
     <!-- 2. Upgrade aanbod -->
-    <section class="section section-pad section--gradient-soft" aria-labelledby="upgrade-title">
-      <div class="container-narrow">
-        <div class="text-center">
-          <span class="pill-tag">Eénmalig aanbod · Alleen beschikbaar voor jouw sessie</span>
-          <h2 id="upgrade-title" class="aanbod-heading mt-5">
-            <span class="accent-italic">Eén stap</span> die bepaalt <span class="accent-italic">hoe diep de behandeling de huid bereikt.</span>
+    <section class="upgrade">
+      <div class="wrap upgrade__inner">
+        <div class="upgrade__head">
+          <span class="eyebrow">Eénmalig aanbod · Alleen voor jouw sessie</span>
+          <h2>
+            <span class="accent">Eén stap</span> die bepaalt
+            <span class="accent">hoe diep de behandeling de huid bereikt.</span>
           </h2>
         </div>
 
-        <div class="upgrade-card">
-          <div class="upgrade-card__mechanism">
-            <p>
-              Op je twintigste vernieuwen huidcellen zich elke 28 dagen. Op je vijftigste duurt dat 45 tot 60 dagen. Die laag opgestapelde dode cellen werkt als een barrière. Ze vertraagt de opname van de actieve stoffen in de Collageen &amp; Elastine Booster Behandeling. Microdermabrasie verwijdert die barrière. Niet als extra. Als voorbereiding.
-            </p>
-            <p>
-              De meeste behandelingen werken op de laag van dode cellen. De Elim Huidherstel Formule werkt op de levende laag eronder. Maar als de barrière te dik is, vermindert de penetratiediepte van de actieve stoffen.
-            </p>
-            <p>
-              Medische microdermabrasie verwijdert die barrière op een gecontroleerde, klinische manier. Ik beoordeel tijdens de huidscan of dit bij jou nodig is. Is het niet nodig, dan doen we het niet. Is het wel nodig, dan reserveer ik extra tijd zodat de behandeling maximaal effect heeft.
-            </p>
-          </div>
+        <div class="card">
+          <p>
+            Op je twintigste vernieuwen huidcellen zich elke 28 dagen. Op je vijftigste duurt dat 45 tot 60 dagen. Die laag opgestapelde dode cellen werkt als een barrière. Ze vertraagt de opname van de actieve stoffen in de Collageen &amp; Elastine Booster Behandeling. Microdermabrasie verwijdert die barrière. Niet als extra. Als voorbereiding.
+          </p>
+          <p>
+            De meeste behandelingen werken op de laag van dode cellen. De Elim Huidherstel Formule werkt op de levende laag eronder. Maar als de barrière te dik is, vermindert de penetratiediepte van de actieve stoffen.
+          </p>
+          <p>
+            Medische microdermabrasie verwijdert die barrière op een gecontroleerde, klinische manier. Ik beoordeel tijdens de huidscan of dit bij jou nodig is. Is het niet nodig, dan doen we het niet. Is het wel nodig, dan reserveer ik extra tijd zodat de behandeling maximaal effect heeft.
+          </p>
 
-          <ul class="upgrade-list" aria-label="Wat medische microdermabrasie doet">
+          <ul class="checks" aria-label="Wat medische microdermabrasie doet">
             <li>
-              <span class="upgrade-check" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span class="check-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
               </span>
               <span>Verwijdert de opgestapelde laag dode cellen die opname van actieve stoffen beperkt.</span>
             </li>
             <li>
-              <span class="upgrade-check" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span class="check-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
               </span>
               <span>Stimuleert celvernieuwing in de epidermis. Huid reageert direct zichtbaar helderder.</span>
             </li>
             <li>
-              <span class="upgrade-check" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span class="check-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
               </span>
               <span>Verfijnt poriën zichtbaar en vervaagt fijne lijntjes en pigmentvlekken.</span>
             </li>
             <li>
-              <span class="upgrade-check" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span class="check-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
               </span>
               <span>Vergroot de penetratiediepte van de Collageen &amp; Elastine Booster Behandeling.</span>
             </li>
             <li>
-              <span class="upgrade-check" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span class="check-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
               </span>
               <span>Resultaat zichtbaar en voelbaar direct na de behandeling.</span>
             </li>
           </ul>
 
-          <div class="upgrade-investment" aria-label="Investering">
-            <p class="upgrade-investment__label">Investering</p>
-            <div class="upgrade-pricerow upgrade-pricerow--mute">
-              <span class="upgrade-pricerow__label">Medische microdermabrasie (losse prijs)</span>
-              <span class="upgrade-pricerow__price">€159,50</span>
+          <div class="price" aria-label="Investering">
+            <p class="price__label">Investering</p>
+            <div class="price__row price__row--strike">
+              <span>Medische microdermabrasie (losse prijs)</span>
+              <span class="price__amount">€159,50</span>
             </div>
-            <div class="upgrade-pricerow">
-              <span class="upgrade-pricerow__label">Combinatie met jouw sessie</span>
-              <span class="upgrade-pricerow__price">€49,50</span>
+            <div class="price__row">
+              <span>Combinatie met jouw sessie</span>
+              <span class="price__amount">€49,50</span>
             </div>
-            <div class="upgrade-final">
-              <span class="upgrade-final__label">Je betaalt</span>
-              <span class="upgrade-final__amount font-serif">€49,50</span>
+            <div class="price__final">
+              <span class="price__final-label">Je betaalt</span>
+              <span class="price__final-amount">€49,50</span>
             </div>
-            <p class="upgrade-gift">
+            <p class="price__gift">
               Inbegrepen: een cadeaubon ter waarde van €25 voor je volgende behandeling.
             </p>
           </div>
 
-          <div class="upgrade-cta">
+          <div class="cta">
             <a
               class="btn btn--primary btn--block"
               href="https://api.leadconnectorhq.com/widget/form/Eu9aboyIAxFq1vE3oHLP"
               target="_blank"
               rel="noopener noreferrer"
-              data-upgrade-open
             >
               Ja, upgrade mijn afspraak met de microdermabrasie behandeling voor slechts €49,50
             </a>
-            <div class="upgrade-cta__notes">
-              <p class="upgrade-cta__note">Je betaalt niets extra vooraf.</p>
-            </div>
+            <p class="cta__note">Je betaalt niets extra vooraf · Opent in een nieuw tabblad</p>
           </div>
 
-          <!-- 3. Videoreview, direct onder de CTA voor sociale bevestiging -->
-          <div class="bedankt-video bedankt-video--inline" aria-labelledby="bedankt-video-title">
-            <p id="bedankt-video-title" class="bedankt-video__title">
-              De review van <span class="accent-italic">Joyce Schipper.</span>
+          <!-- 3. Video review (clickable card) -->
+          <div class="video">
+            <p class="video__title">
+              De review van <span class="accent">Joyce Schipper.</span>
             </p>
-            <div class="bedankt-video__frame bedankt-video__frame--adilo">
-              <div class="bedankt-video__adilo-inner">
-                <iframe
-                  class="bedankt-video__iframe"
-                  src="https://adilo.bigcommand.com/watch/tVV2sC1N"
-                  title="Review van Joyce Schipper · Elim Instituut"
-                  allowtransparency="true"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowfullscreen
-                  loading="lazy"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  scrolling="no"
-                ></iframe>
-              </div>
-            </div>
-            <p class="bedankt-video__fallback">
-              Speelt de video niet af?
-              <a href="https://adilo.bigcommand.com/watch/tVV2sC1N" target="_blank" rel="noopener noreferrer">Open de review in een nieuw tabblad</a>.
-            </p>
+            <a
+              class="video__card"
+              href="https://adilo.bigcommand.com/watch/tVV2sC1N"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Bekijk de videoreview van Joyce Schipper (opent in een nieuw tabblad)"
+            >
+              <span class="video__inner">
+                <span class="video__play" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7L8 5z"/>
+                  </svg>
+                </span>
+                <span class="video__label">Bekijk de video</span>
+                <span class="video__sub">Opent in een nieuw tabblad</span>
+              </span>
+            </a>
           </div>
         </div>
       </div>
@@ -173,38 +464,9 @@
 
   </main>
 
-  <!-- Upgrade popup (LeadConnector + msgsndr embed, zelfde shell als boekingspopup) -->
-  <div id="upgrade-dialog" class="booking-dialog booking-dialog--closed" aria-hidden="true">
-    <div class="booking-dialog__backdrop" data-upgrade-close tabindex="-1"></div>
-    <div
-      class="booking-dialog__panel"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Upgrade microdermabrasie — formulier"
-    >
-      <div class="booking-dialog__inner booking-dialog__inner--upgrade-only">
-        <div id="upgrade-form-anchor" class="booking-dialog__iframe-wrap booking-dialog__iframe-wrap--upgrade" tabindex="-1">
-          <iframe
-            id="inline-Eu9aboyIAxFq1vE3oHLP"
-            class="booking-dialog__iframe"
-            title="Upgrade Microdermabrasion"
-            loading="eager"
-            data-form-id="Eu9aboyIAxFq1vE3oHLP"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer class="site-footer site-footer--ink">
-    <div class="container-wide footer-inner">
-      <div class="footer-top">
-        <p class="footer-brand font-serif">Elim Instituut · Carinda Brand</p>
-        <p class="footer-copyright">© 2006-2026 Alle rechten voorbehouden.</p>
-      </div>
-    </div>
+  <footer class="footer">
+    <p class="footer__brand">Elim Instituut · Carinda Brand</p>
+    <p>© 2006-2026 Alle rechten voorbehouden.</p>
   </footer>
-
-  <script src="/js/main.js?v=20260503c" defer></script>
 </body>
 </html>
