@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Gekopieerd door npm prebuild vanuit repo-root (bedankt + statische css/js)
+public/bedankt.html
+public/css/
+public/js/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
