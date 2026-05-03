@@ -2612,3 +2612,248 @@ h1.section-heading-lg {
 .faq-answer a:hover {
   color: var(--amber-deep);
 }
+
+/* ——— Bedankpagina ——— */
+.bedankt-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0.85rem;
+}
+
+.bedankt-confirm {
+  text-align: center;
+}
+
+.bedankt-confirm__lead {
+  margin: 1.25rem auto 1.75rem;
+  max-width: 36rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: hsl(var(--foreground) / 0.82);
+}
+
+.bedankt-byline {
+  margin: 1.75rem 0 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: hsl(var(--foreground) / 0.7);
+}
+
+.bedankt-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.7rem 1.35rem;
+  border-radius: 9999px;
+  background: #ffffff;
+  background: hsl(0 0% 100% / 0.85);
+  border: 1px solid #e1d4bc;
+  border-color: hsl(var(--border));
+  color: #3a372f;
+  color: hsl(var(--ink));
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.bedankt-whatsapp:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+.bedankt-whatsapp svg {
+  flex-shrink: 0;
+  color: hsl(var(--ink) / 0.7);
+}
+
+/* Upgrade-card: extra visuele aandacht binnen section--gradient-soft */
+.upgrade-card {
+  margin: 2.5rem auto 0;
+  max-width: 44rem;
+  padding: clamp(1.5rem, 4vw, 2.4rem);
+  background: #ffffff;
+  background: hsl(0 0% 100% / 0.95);
+  border-radius: 1.35rem;
+  box-shadow: var(--shadow-elegant);
+  border: 1px solid hsl(var(--border) / 0.55);
+}
+
+.upgrade-card__mechanism {
+  margin: 0 0 1.25rem;
+}
+
+.upgrade-mech-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.6vw, 1.5rem);
+  font-weight: 500;
+  margin: 0 0 0.85rem;
+  color: var(--amber-deep);
+}
+
+.upgrade-card__mechanism p {
+  margin: 0 0 0.85rem;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: hsl(var(--foreground) / 0.86);
+}
+
+.upgrade-card__mechanism p:last-child {
+  margin-bottom: 0;
+}
+
+.upgrade-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  border-top: 1px solid hsl(var(--border) / 0.55);
+}
+
+.upgrade-list li {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid hsl(var(--border) / 0.45);
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: hsl(var(--foreground) / 0.9);
+}
+
+.upgrade-list li:last-child {
+  border-bottom: none;
+}
+
+.upgrade-check {
+  flex-shrink: 0;
+  display: flex;
+  margin-top: 0.18rem;
+  color: hsl(38 60% 59%);
+}
+
+.upgrade-investment {
+  margin-top: 1.85rem;
+  padding: clamp(1.1rem, 3vw, 1.5rem);
+  background: #fbf6ea;
+  background: hsl(46 52% 96%);
+  border-radius: 1rem;
+  border: 1px solid hsl(var(--border) / 0.5);
+}
+
+.upgrade-investment__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  margin: 0 0 0.85rem;
+}
+
+.upgrade-pricerow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.55rem 0;
+  font-size: 1rem;
+  color: hsl(var(--foreground) / 0.78);
+}
+
+.upgrade-pricerow + .upgrade-pricerow {
+  border-top: 1px dashed hsl(var(--border) / 0.6);
+}
+
+.upgrade-pricerow--mute .upgrade-pricerow__price {
+  text-decoration: line-through;
+  color: hsl(var(--foreground) / 0.55);
+}
+
+.upgrade-pricerow__label {
+  flex: 1;
+  min-width: 0;
+}
+
+.upgrade-pricerow__price {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.upgrade-final {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-top: 0.95rem;
+  margin-top: 0.65rem;
+  border-top: 1px solid hsl(var(--border));
+}
+
+.upgrade-final__label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: hsl(var(--ink));
+}
+
+.upgrade-final__amount {
+  font-family: var(--font-serif);
+  font-size: clamp(1.85rem, 4.2vw, 2.35rem);
+  font-weight: 500;
+  color: var(--amber-deep);
+  line-height: 1;
+}
+
+.upgrade-gift {
+  margin: 1rem 0 0;
+  font-size: 0.93rem;
+  color: hsl(var(--foreground) / 0.75);
+  line-height: 1.55;
+}
+
+.upgrade-cta {
+  margin-top: 1.85rem;
+  text-align: center;
+}
+
+.upgrade-cta__notes {
+  margin: 1rem 0 0;
+}
+
+.upgrade-cta__note {
+  margin: 0.25rem 0;
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Eén-zin testimonial onderaan bedankpagina */
+.bedankt-quote {
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.bedankt-quote__text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.25rem, 2.6vw, 1.6rem);
+  font-weight: 500;
+  line-height: 1.45;
+  color: hsl(var(--ink) / 0.92);
+  margin: 0;
+  quotes: none;
+}
+
+.bedankt-quote__attr {
+  margin: 1.1rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: hsl(var(--foreground) / 0.7);
+}
