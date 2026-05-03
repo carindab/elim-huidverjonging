@@ -139,7 +139,9 @@ function openUpgradeDialog() {
   document.body.style.overflow = "hidden";
 
   const closeBtn = root.querySelector(".booking-dialog__close");
-  closeBtn?.focus({ preventScroll: true });
+  const anchor = root.querySelector("#upgrade-form-anchor");
+  const focusTarget = closeBtn || anchor || iframe;
+  focusTarget?.focus?.({ preventScroll: true });
 }
 
 function closeUpgradeDialog() {
