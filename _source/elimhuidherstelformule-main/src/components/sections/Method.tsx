@@ -1,5 +1,5 @@
 import scanImg from "@/assets/huidscan-1.webp";
-import microImg from "@/assets/behandeling-2.png";
+import microImg from "@/assets/behandeling-2.webp";
 import collagenImg from "@/assets/huidformule-3.webp";
 
 const Step = ({
