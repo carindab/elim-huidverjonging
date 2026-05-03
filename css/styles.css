@@ -2897,7 +2897,7 @@ h1.section-heading-lg {
 .bedankt-video__frame {
   position: relative;
   width: 100%;
-  /* Fallback voor browsers zonder aspect-ratio (oude FB/IG WebView): vaste verhouding via padding */
+  /* Standaard 16:9 (andere pagina’s); bedankt gebruikt --adilo */
   height: 0;
   padding-bottom: 56.25%;
   border-radius: 1.15rem;
@@ -2907,17 +2907,43 @@ h1.section-heading-lg {
   box-shadow: var(--shadow-elegant);
 }
 
+/* Adilo embed: 1280×1180 zoals door Adilo geleverd (niet 16:9) */
+.bedankt-video__frame--adilo {
+  padding-bottom: calc(1180 / 1280 * 100%);
+  max-width: min(100%, 1280px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bedankt-video__adilo-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 @supports (aspect-ratio: 16 / 9) {
-  .bedankt-video__frame {
+  .bedankt-video__frame:not(.bedankt-video__frame--adilo) {
     height: auto;
     padding-bottom: 0;
     aspect-ratio: 16 / 9;
   }
 }
 
-.bedankt-video__frame iframe {
+@supports (aspect-ratio: 1280 / 1180) {
+  .bedankt-video__frame--adilo {
+    height: auto;
+    padding-bottom: 0;
+    aspect-ratio: 1280 / 1180;
+  }
+}
+
+.bedankt-video__frame iframe,
+.bedankt-video__iframe {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: 0;
