@@ -1,6 +1,6 @@
 /**
- * Kopieert root bedankt.html + /css + /js naar Vite public/ zodat Hostinger (vite build → dist)
- * de bedankpagina meeneemt. Repo-layout: deze map is _source/elimhuidherstelformule-main/scripts/.
+ * Kopieert root bedankt.html + /css + /js + /assets naar Vite public/ zodat Hostinger (vite build → dist)
+ * de bedankpagina + bijbehorende afbeeldingen meeneemt. Repo-layout: deze map is _source/.../scripts/.
  */
 import fs from "fs";
 import path from "path";
@@ -23,6 +23,7 @@ function cpDir(from, to) {
 const bedanktSrc = path.join(repoRoot, "bedankt.html");
 const cssSrc = path.join(repoRoot, "css");
 const jsSrc = path.join(repoRoot, "js");
+const assetsSrc = path.join(repoRoot, "assets");
 
 if (!fs.existsSync(bedanktSrc)) {
   console.error("sync-static-bedankt: bedankt.html niet gevonden op", bedanktSrc);
@@ -32,9 +33,14 @@ if (!fs.existsSync(cssSrc) || !fs.existsSync(jsSrc)) {
   console.error("sync-static-bedankt: css/ of js/ ontbreekt op repo-root");
   process.exit(1);
 }
+if (!fs.existsSync(assetsSrc)) {
+  console.error("sync-static-bedankt: assets/ ontbreekt op repo-root");
+  process.exit(1);
+}
 
 cpFile(bedanktSrc, path.join(publicDir, "bedankt.html"));
 cpDir(cssSrc, path.join(publicDir, "css"));
 cpDir(jsSrc, path.join(publicDir, "js"));
+cpDir(assetsSrc, path.join(publicDir, "assets"));
 
-console.log("sync-static-bedankt: bedankt.html, css/, js/ → public/");
+console.log("sync-static-bedankt: bedankt.html, css/, js/, assets/ → public/");
