@@ -1,6 +1,7 @@
 import { Sparkles } from "lucide-react";
 import ReservationDialog from "@/components/ReservationDialog";
-import heroBeforeAfter from "@/assets/hero-celverjonging.jpg";
+import heroWebp from "@/assets/hero-celverjonging.webp";
+import heroJpg from "@/assets/hero-celverjonging.jpg";
 
 const Hero = () => {
   return (
@@ -51,15 +52,19 @@ const Hero = () => {
         <div className="relative animate-fade-up [animation-delay:200ms]">
           <div className="absolute -inset-6 rounded-[2rem] bg-white/40 blur-2xl" aria-hidden />
           <div className="relative mx-auto aspect-square w-full max-h-[min(85vw,min(72vh,28rem))] max-w-lg overflow-hidden rounded-[1.5rem] bg-cream shadow-elegant lg:max-h-none lg:max-w-none">
-            <img
-              src={heroBeforeAfter}
-              width={1024}
-              height={1024}
-              alt="Voor en na: huidherstel op celniveau met de Elim Huidherstel Formule."
-              loading="eager"
-              decoding="async"
-              className="h-full w-full object-contain object-center lg:object-cover"
-            />
+            <picture className="block h-full w-full">
+              <source type="image/webp" srcSet={heroWebp} />
+              <img
+                src={heroJpg}
+                width={1024}
+                height={1024}
+                alt="Voor en na: huidherstel op celniveau met de Elim Huidherstel Formule."
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                className="h-full w-full object-contain object-center lg:object-cover"
+              />
+            </picture>
           </div>
         </div>
       </div>
