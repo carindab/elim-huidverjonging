@@ -64,6 +64,18 @@ body {
   background-color: #FFFFFF !important;
   color: #4A4434;
 }
+/* Bedankpagina: WhatsApp-knop is een primary CTA en moet niet wit blijven in FB/IG WebView */
+.bedankt-whatsapp-btn {
+  background-color: #3F6F48 !important;
+  color: #FAF7F0 !important;
+}
+.upgrade-card {
+  background-color: #FFFFFF !important;
+  color: #3A372F;
+}
+.bedankt-video__frame {
+  background-color: #EFE6D2 !important;
+}
 
 img,
 video {
@@ -2691,14 +2703,6 @@ h1.section-heading-lg {
   margin: 0 0 1.25rem;
 }
 
-.upgrade-mech-title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.2rem, 2.6vw, 1.5rem);
-  font-weight: 500;
-  margin: 0 0 0.85rem;
-  color: var(--amber-deep);
-}
-
 .upgrade-card__mechanism p {
   margin: 0 0 0.85rem;
   font-size: 1.02rem;
@@ -2867,4 +2871,58 @@ h1.section-heading-lg {
   font-weight: 500;
   letter-spacing: 0.04em;
   color: hsl(var(--foreground) / 0.7);
+}
+
+/* Video-frame: 16:9 in moderne browsers, valt netjes terug op vaste hoogte in oude WebViews */
+.bedankt-video {
+  margin: 2rem auto 0;
+  max-width: 44rem;
+}
+
+.bedankt-video__frame {
+  position: relative;
+  width: 100%;
+  /* Fallback voor browsers zonder aspect-ratio (oude FB/IG WebView): vaste verhouding via padding */
+  height: 0;
+  padding-bottom: 56.25%;
+  border-radius: 1.15rem;
+  overflow: hidden;
+  background: #efe6d2;
+  background: hsl(var(--cream-deep, 38 36% 88%));
+  box-shadow: var(--shadow-elegant);
+}
+
+@supports (aspect-ratio: 16 / 9) {
+  .bedankt-video__frame {
+    height: auto;
+    padding-bottom: 0;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.bedankt-video__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.bedankt-video__fallback {
+  margin: 1rem 0 0;
+  text-align: center;
+  font-size: 0.92rem;
+  color: hsl(var(--foreground) / 0.7);
+}
+
+.bedankt-video__fallback a {
+  color: hsl(var(--ink-soft));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+
+.bedankt-video__fallback a:hover {
+  color: var(--amber-deep);
 }
