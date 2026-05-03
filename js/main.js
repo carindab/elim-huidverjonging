@@ -18,6 +18,40 @@ function loadFormEmbedScript() {
   document.body.appendChild(script);
 }
 
+/** Eerste paint niet blokkeren: embed laadt na idle (popup doet bij open alsnog direct load). */
+function scheduleFormEmbedWhenIdle() {
+  const go = () => loadFormEmbedScript();
+  if (typeof requestIdleCallback === "function") {
+    requestIdleCallback(go, { timeout: 2800 });
+  } else {
+    window.addEventListener("load", () => setTimeout(go, 400), { once: true });
+  }
+}
+
+function loadClarityWhenIdle() {
+  if (document.querySelector("script[data-elim-clarity]")) return;
+  const inject = () => {
+    (function (c, l, a, r, i, t, y) {
+      c[a] =
+        c[a] ||
+        function () {
+          (c[a].q = c[a].q || []).push(arguments);
+        };
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = "https://www.clarity.ms/tag/" + i;
+      t.setAttribute("data-elim-clarity", "true");
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "wk1r4m0vtf");
+  };
+  if (typeof requestIdleCallback === "function") {
+    requestIdleCallback(inject, { timeout: 3200 });
+  } else {
+    window.addEventListener("load", () => setTimeout(inject, 800), { once: true });
+  }
+}
+
 function ensureIframeSrc(iframe) {
   if (!iframe || iframe.getAttribute("src")) return;
   const id = iframe.getAttribute("data-form-id") || FORM_ID;
@@ -79,7 +113,8 @@ function closeBookingDialog() {
 }
 
 (() => {
-  loadFormEmbedScript();
+  scheduleFormEmbedWhenIdle();
+  loadClarityWhenIdle();
 
   const bookingUrl = BOOKING_URL.trim();
   document.querySelectorAll("[data-booking-cta]").forEach((el) => {
