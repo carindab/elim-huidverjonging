@@ -9,6 +9,10 @@ const FORM_ID = "x3PuzajO38FGDW2Guxet";
 
 const FORM_IFRAME_ID = `inline-${FORM_ID}`;
 
+/** Microderm-upgrade op bedankpagina */
+const UPGRADE_FORM_ID = "Eu9aboyIAxFq1vE3oHLP";
+const UPGRADE_IFRAME_ID = `inline-${UPGRADE_FORM_ID}`;
+
 function loadFormEmbedScript() {
   if (document.querySelector("script[data-elim-form-embed]")) return;
   const script = document.createElement("script");
@@ -52,10 +56,10 @@ function loadClarityWhenIdle() {
   }
 }
 
-function ensureIframeSrc(iframe) {
+function ensureLeadConnectorIframe(iframe, formId, formName) {
   if (!iframe || iframe.getAttribute("src")) return;
-  const id = iframe.getAttribute("data-form-id") || FORM_ID;
-  iframe.src = `https://api.leadconnectorhq.com/widget/form/${id}`;
+  const layoutId = `inline-${formId}`;
+  iframe.src = `https://api.leadconnectorhq.com/widget/form/${formId}`;
   iframe.setAttribute("data-layout", "{'id':'INLINE'}");
   iframe.setAttribute("data-trigger-type", "alwaysShow");
   iframe.setAttribute("data-trigger-value", "");
@@ -63,12 +67,22 @@ function ensureIframeSrc(iframe) {
   iframe.setAttribute("data-activation-value", "");
   iframe.setAttribute("data-deactivation-type", "neverDeactivate");
   iframe.setAttribute("data-deactivation-value", "");
-  iframe.setAttribute("data-form-name", "Kennismakingsaanbieding afspraak 2026 FB");
-  iframe.setAttribute("data-layout-iframe-id", FORM_IFRAME_ID);
-  iframe.setAttribute("data-form-id", id);
+  iframe.setAttribute("data-form-name", formName);
+  iframe.setAttribute("data-layout-iframe-id", layoutId);
+  iframe.setAttribute("data-form-id", formId);
+}
+
+function ensureIframeSrc(iframe) {
+  const id = iframe?.getAttribute("data-form-id") || FORM_ID;
+  ensureLeadConnectorIframe(iframe, id, "Kennismakingsaanbieding afspraak 2026 FB");
+}
+
+function ensureUpgradeIframeSrc(iframe) {
+  ensureLeadConnectorIframe(iframe, UPGRADE_FORM_ID, "Upgrade Microdermabrasion");
 }
 
 let bookingFocusReturn = null;
+let upgradeFocusReturn = null;
 
 /** Vervangt verouderde popup-labels (o.a. bij gecachte oude HTML). */
 function normalizeBookingDialogOfferCopy() {
@@ -112,6 +126,34 @@ function closeBookingDialog() {
   bookingFocusReturn = null;
 }
 
+function openUpgradeDialog() {
+  const root = document.getElementById("upgrade-dialog");
+  const iframe = document.getElementById(UPGRADE_IFRAME_ID);
+  if (!root) return;
+
+  loadFormEmbedScript();
+  ensureUpgradeIframeSrc(iframe);
+
+  root.classList.remove("booking-dialog--closed");
+  root.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+
+  const closeBtn = root.querySelector(".booking-dialog__close");
+  closeBtn?.focus({ preventScroll: true });
+}
+
+function closeUpgradeDialog() {
+  const root = document.getElementById("upgrade-dialog");
+  if (!root) return;
+  root.classList.add("booking-dialog--closed");
+  root.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+  if (upgradeFocusReturn && typeof upgradeFocusReturn.focus === "function") {
+    upgradeFocusReturn.focus({ preventScroll: true });
+  }
+  upgradeFocusReturn = null;
+}
+
 (() => {
   scheduleFormEmbedWhenIdle();
   loadClarityWhenIdle();
@@ -138,14 +180,38 @@ function closeBookingDialog() {
     btn.addEventListener("click", () => closeBookingDialog());
   });
 
+  document.querySelectorAll("[data-upgrade-open]").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      upgradeFocusReturn = document.activeElement;
+      openUpgradeDialog();
+    });
+  });
+
+  document.querySelectorAll("[data-upgrade-close]").forEach((btn) => {
+    btn.addEventListener("click", () => closeUpgradeDialog());
+  });
+
   document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    const upgradeRoot = document.getElementById("upgrade-dialog");
+    if (upgradeRoot && !upgradeRoot.classList.contains("booking-dialog--closed")) {
+      closeUpgradeDialog();
+      return;
+    }
     const root = document.getElementById("booking-dialog");
     if (!root || root.classList.contains("booking-dialog--closed")) return;
-    if (e.key === "Escape") closeBookingDialog();
+    closeBookingDialog();
   });
 
   const formIframe = document.getElementById(FORM_IFRAME_ID);
   ensureIframeSrc(formIframe);
+
+  const upgradeIframe = document.getElementById(UPGRADE_IFRAME_ID);
+  if (upgradeIframe) {
+    loadFormEmbedScript();
+    ensureUpgradeIframeSrc(upgradeIframe);
+  }
 
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.getElementById("site-nav");

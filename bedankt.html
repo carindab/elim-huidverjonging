@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bedankt voor je aanmelding · Elim Instituut</title>
-  <meta name="description" content="Je plek bij de Elim Huidherstel Formule is gereserveerd. Carinda neemt binnen 24 uur contact met je op om de afspraak in te plannen." />
+  <meta name="description" content="Je plek bij de Elim Huidherstel Formule is gereserveerd. Carinda neemt op werkdagen binnen 24 uur contact met je op om de afspraak in te plannen." />
   <meta name="author" content="Carinda Brand · Elim Instituut" />
   <meta name="robots" content="noindex,follow" />
   <link rel="icon" href="favicon.ico" sizes="any" />
@@ -18,7 +18,7 @@
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap"
   />
-  <link rel="stylesheet" href="./css/styles.css?v=20260512" />
+  <link rel="stylesheet" href="./css/styles.css?v=20260513" />
 </head>
 <body>
   <a class="skip-link" href="#bedankt-main">Ga naar inhoud</a>
@@ -31,11 +31,16 @@
         <span class="bedankt-eyebrow">Aanmelding ontvangen</span>
         <h1 id="bedankt-confirm-title" class="section-heading-md">Je plek is <span class="accent-italic">gereserveerd.</span></h1>
         <p class="bedankt-confirm__lead">
-          Ik neem binnen 24 uur contact met je op om de afspraak in te plannen, op werkdagen. Wil je de afspraak liever meteen maken? Stuur me een bericht via WhatsApp.
+          Ik neem op werkdagen binnen 24 uur contact met je op om de afspraak in te plannen. Wil je de afspraak liever meteen maken? Stuur me een bericht via WhatsApp.
         </p>
         <p>
-          <!-- Vervang het nummer in beide wa.me-links hieronder door je eigen WhatsApp-nummer (E.164, zonder + of spaties). -->
-          <a class="bedankt-whatsapp" href="https://wa.me/31786911113?text=Hallo%20Carinda%2C%20ik%20heb%20mijn%20plek%20gereserveerd%20en%20wil%20de%20afspraak%20graag%20inplannen." target="_blank" rel="noopener">
+          <!-- Vervang het nummer in de wa.me-link door je WhatsApp-nummer (E.164, zonder + of spaties). -->
+          <a
+            class="btn btn--primary bedankt-whatsapp-btn"
+            href="https://wa.me/31786911113?text=Hallo%20Carinda%2C%20ik%20heb%20mijn%20plek%20gereserveerd%20en%20wil%20de%20afspraak%20graag%20inplannen."
+            target="_blank"
+            rel="noopener"
+          >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
             </svg>
@@ -52,7 +57,7 @@
         <div class="text-center">
           <span class="pill-tag">Eénmalig aanbod · Alleen beschikbaar voor jouw sessie</span>
           <h2 id="upgrade-title" class="aanbod-heading mt-5">
-            Laat de behandeling dieper werken met <span class="accent-italic">medische microdermabrasie.</span>
+            <span class="accent-italic">Eén stap</span> die bepaalt <span class="accent-italic">hoe diep de behandeling de huid bereikt.</span>
           </h2>
         </div>
 
@@ -107,7 +112,7 @@
             <p class="upgrade-investment__label">Investering</p>
             <div class="upgrade-pricerow upgrade-pricerow--mute">
               <span class="upgrade-pricerow__label">Medische microdermabrasie (losse prijs)</span>
-              <span class="upgrade-pricerow__price">€139,50</span>
+              <span class="upgrade-pricerow__price">€159,50</span>
             </div>
             <div class="upgrade-pricerow">
               <span class="upgrade-pricerow__label">Combinatie met jouw sessie</span>
@@ -123,10 +128,9 @@
           </div>
 
           <div class="upgrade-cta">
-            <!-- CTA: vervang dit URL door je eigen WhatsApp-nummer of een bevestigingsformulier-URL. -->
-            <a class="btn btn--primary btn--block" href="https://wa.me/31786911113?text=Ja%2C%20voeg%20microdermabrasie%20toe%20aan%20mijn%20sessie." target="_blank" rel="noopener">
-              Ja, voeg microdermabrasie toe aan mijn sessie
-            </a>
+            <button type="button" class="btn btn--primary btn--block" data-upgrade-open>
+              Ja, upgrade mijn afspraak met de microdermabrasie behandeling voor slechts €49,50
+            </button>
             <div class="upgrade-cta__notes">
               <p class="upgrade-cta__note">Ik bevestig dit in mijn bevestigingsmail en reserveer de extra tijd.</p>
               <p class="upgrade-cta__note">Je betaalt niets extra vooraf.</p>
@@ -151,6 +155,39 @@
 
   </main>
 
+  <!-- Upgrade popup (LeadConnector + msgsndr embed, zelfde shell als boekingspopup) -->
+  <div id="upgrade-dialog" class="booking-dialog booking-dialog--closed" aria-hidden="true">
+    <div class="booking-dialog__backdrop" data-upgrade-close tabindex="-1"></div>
+    <div
+      class="booking-dialog__panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="upgrade-dialog-title"
+      aria-describedby="upgrade-dialog-desc"
+    >
+      <button type="button" class="booking-dialog__close" data-upgrade-close aria-label="Sluit popup">
+        ×
+      </button>
+      <div class="booking-dialog__inner">
+        <h2 id="upgrade-dialog-title" class="booking-dialog__title booking-dialog__title--long">
+          Ja, upgrade mijn afspraak met de microdermabrasie behandeling voor slechts €49,50
+        </h2>
+        <p id="upgrade-dialog-desc" class="booking-dialog__subtitle booking-dialog__subtitle--upgrade">
+          Hierdoor verdubbel je het resultaat van je Collageen &amp; Elastine Booster behandeling.
+        </p>
+        <div id="upgrade-form-anchor" class="booking-dialog__iframe-wrap booking-dialog__iframe-wrap--upgrade" tabindex="-1">
+          <iframe
+            id="inline-Eu9aboyIAxFq1vE3oHLP"
+            class="booking-dialog__iframe"
+            title="Upgrade Microdermabrasion"
+            loading="eager"
+            data-form-id="Eu9aboyIAxFq1vE3oHLP"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer site-footer--ink">
     <div class="container-wide footer-inner">
       <div class="footer-top">
@@ -160,6 +197,6 @@
     </div>
   </footer>
 
-  <script src="./js/main.js?v=20260512" defer></script>
+  <script src="./js/main.js?v=20260513" defer></script>
 </body>
 </html>
