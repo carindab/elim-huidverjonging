@@ -1,6 +1,6 @@
 import { Sparkles } from "lucide-react";
 import ReservationDialog from "@/components/ReservationDialog";
-import heroBeforeAfter from "@/assets/hero-celverjonging.png";
+import heroBeforeAfter from "@/assets/hero-celverjonging.jpg";
 
 const Hero = () => {
   return (
