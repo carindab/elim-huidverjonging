@@ -215,16 +215,18 @@ function closeUpgradeDialog() {
 
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.getElementById("site-nav");
-  toggle?.addEventListener("click", () => {
-    const open = nav.classList.toggle("is-open");
-    toggle.setAttribute("aria-expanded", open);
-    toggle.setAttribute("aria-label", open ? "Menu sluiten" : "Menu openen");
-  });
-
-  nav?.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("is-open");
-      toggle?.setAttribute("aria-expanded", "false");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", open);
+      toggle.setAttribute("aria-label", open ? "Menu sluiten" : "Menu openen");
     });
-  });
+
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 })();

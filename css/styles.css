@@ -2908,21 +2908,3 @@ h1.section-heading-lg {
   border: 0;
   display: block;
 }
-
-.bedankt-video__fallback {
-  margin: 1rem 0 0;
-  text-align: center;
-  font-size: 0.92rem;
-  color: hsl(var(--foreground) / 0.7);
-}
-
-.bedankt-video__fallback a {
-  color: hsl(var(--ink-soft));
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  font-weight: 500;
-}
-
-.bedankt-video__fallback a:hover {
-  color: var(--amber-deep);
-}
