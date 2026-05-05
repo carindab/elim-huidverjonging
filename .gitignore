@@ -3,3 +3,8 @@ Thumbs.db
 *.log
 *.zip
 .venv-img/
+
+# Lokale archief- en werkbestanden — wel op laptop, niet op GitHub
+index-old-version.html
+homepage-hero-OLD-VERSION.tsx.txt
+
