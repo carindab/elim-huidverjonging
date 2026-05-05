@@ -22,29 +22,28 @@ const Hero = () => {
           </span>
 
           <p className="mt-6 max-w-xl text-[clamp(0.8125rem,1.35vw,0.9375rem)] font-medium leading-snug text-foreground/70">
-            Je hebt dit gevonden omdat je al langer voelde dat het probleem niet aan het oppervlak van je huid zit.
+            Huidveroudering gebeurt niet waar je het ziet. Ze gebeurt in de laag daaronder.
           </p>
 
-          <h1 className="mt-4 max-w-[42rem] font-serif text-[clamp(1.85rem,4.3vw,3rem)] font-medium leading-[1.12] tracking-tight text-ink">
-            Huidveroudering begint niet waar je producten werken.{" "}
-            <span className="accent-italic">Ze begint in de laag daaronder.</span>
+          <h1 className="mt-4 max-w-[44rem] font-serif text-[clamp(1.85rem,4.3vw,3rem)] font-medium leading-[1.12] tracking-tight text-ink">
+            De Elim Huidherstel Formule werkt op de laag waar elastine wordt aangemaakt{" "}
+            <span className="accent-italic">en waar de meeste huidverzorging structureel niet komt.</span>
           </h1>
 
           <p className="mt-4 max-w-[40rem] text-[clamp(1.0625rem,2vw,1.1875rem)] leading-relaxed text-foreground/80">
-            De Elim Huidherstel Formule meet wat er in de levende lagen werkelijk speelt en activeert celverjonging op de
-            laag waar het ertoe doet.
+            Een meting op celniveau van wat er werkelijk speelt in de levende lagen. Een Collageen &amp; Elastine Booster
+            Behandeling die tropoelastine levert aan de laag waar elastine wordt geproduceerd. Een persoonlijke
+            Huidformule op basis van wat de scan laat zien.
           </p>
 
-          <p className="mt-3 max-w-[40rem] text-[clamp(0.8125rem,1.45vw,0.9375rem)] leading-snug text-foreground/70">
-            Huidscan op celniveau. Collageen &amp; Elastine Booster Behandeling. Persoonlijke Huidformule. Niet op
-            aanname. Niet op protocol. Op meting.
+          <p className="mt-3 max-w-[40rem] text-[clamp(0.8125rem,1.45vw,0.9375rem)] font-semibold leading-snug text-foreground/75">
+            Geen aannames. Geen protocol. Geen gemiddelden.
           </p>
 
           <div className="mt-5 flex w-full max-w-xl flex-col items-stretch gap-4">
-            <ReservationDialog className="w-full shrink-0 sm:w-auto">Reserveer Jouw Plek</ReservationDialog>
+            <ReservationDialog className="w-full shrink-0 sm:w-auto">Reserveer jouw plek</ReservationDialog>
             <span className="block w-full text-sm leading-snug text-foreground/60 [font-feature-settings:normal] [font-variant-numeric:lining-nums]">
-              Elim Instituut werkt met maximaal 10 cliënten per maand. Omdat elke behandeling volledig wordt afgestemd op
-              wat de scan laat zien.
+              Maximaal 10 cliënten per maand.
             </span>
           </div>
         </div>
