@@ -5,6 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // Relatieve paden: `file://` lokaal én FTP naar Hostinger zonder pad-bugs.
+  base: "./",
   server: {
     host: "::",
     port: 8080,

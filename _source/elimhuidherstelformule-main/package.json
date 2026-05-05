@@ -7,6 +7,7 @@
     "dev": "vite",
     "prebuild": "node scripts/sync-static-bedankt.mjs",
     "build": "vite build",
+    "build:root": "vite build && node scripts/export-dist-to-repo-root.mjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
