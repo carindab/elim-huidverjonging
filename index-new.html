@@ -36,6 +36,90 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebPage","name":"Elim Huidherstel Formule","description":"Meting op celniveau, Collageen en Elastine Booster met tropoelastine, persoonlijke Huidformule. Maximaal 10 cliënten per maand."}
   </script>
+
+  <style>
+    /* ── Aanpak beslissingskaarten §4 ── */
+    .aanpak-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 768px) {
+      .aanpak-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+    }
+    .aanpak-card {
+      background: #fff;
+      border-radius: 1.5rem;
+      padding: 2rem 1.75rem 2rem;
+      box-shadow: 0 2px 20px hsla(38,30%,55%,.10);
+      border: 1px solid hsla(38,40%,75%,.35);
+      transition: transform .35s ease, box-shadow .35s ease;
+      position: relative;
+    }
+    .aanpak-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 40px hsla(38,30%,50%,.18);
+    }
+    .aanpak-card__badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 50%;
+      border: 1.5px solid hsl(38 50% 68%);
+      color: hsl(38 55% 42%);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 1.1rem;
+    }
+    .aanpak-card__icon {
+      width: 3.25rem;
+      height: 3.25rem;
+      border-radius: 1rem;
+      background: hsla(38,60%,59%,.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: hsl(38 55% 38%);
+      margin-bottom: 1.25rem;
+      flex-shrink: 0;
+    }
+    .aanpak-card__title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2d2a25;
+      margin: 0 0 .65rem;
+      line-height: 1.35;
+    }
+    .aanpak-card__desc {
+      font-family: 'Inter', sans-serif;
+      font-size: .95rem;
+      line-height: 1.72;
+      color: rgba(45,42,37,.72);
+      margin: 0;
+    }
+
+    /* ── Scroll-reveal animatie ── */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .aanpak-cards .reveal-on-scroll:nth-child(2) { transition-delay: .13s; }
+    .aanpak-cards .reveal-on-scroll:nth-child(3) { transition-delay: .26s; }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Ga naar inhoud</a>
@@ -167,11 +251,46 @@
           <p>Als het probleem zich op celniveau afspeelt, moet de oplossing daar beginnen. Niet bij het symptoom. Niet bij wat de spiegel laat zien. Bij een meting van wat er werkelijk speelt in de levende lagen van jóuw huid op dit moment.</p>
           <p>Wat de scan laat zien bepaalt alles wat daarna komt. Welke werkzame stoffen jouw huid mist. Welke laag het meest aandacht nodig heeft. Welke formule structureel verschil maakt en welke alleen aan het oppervlak werkt.</p>
           <p class="why-highlight-box">De Elim Huidherstel Formule is gebouwd rond drie beslissingen die het verschil bepalen tussen huidverzorging die het oppervlak raakt en celverjonging die plaatsvindt op de laag waar elastine wordt aangemaakt.</p>
-          <ul class="therapy-stats-list">
-            <li>De moleculaire grootte van de werkzame stoffen, gekozen om de huidbarrière te passeren in plaats van eraan te blijven hangen.</li>
-            <li>De drager waarin ze worden geleverd, een biologisch beschikbare structuur die de huid herkent als eigen.</li>
-            <li>De laag waarop ze werken, de dermis, waar het enzym dat elastine aanmaakt nog actief is en gestimuleerd kan worden.</li>
-          </ul>
+
+          <div class="aanpak-cards">
+
+            <div class="aanpak-card reveal-on-scroll">
+              <div class="aanpak-card__badge">01</div>
+              <div class="aanpak-card__icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/>
+                </svg>
+              </div>
+              <h4 class="aanpak-card__title">Moleculaire grootte</h4>
+              <p class="aanpak-card__desc">De werkzame stoffen zijn gekozen om de huidbarrière te passeren in plaats van eraan te blijven hangen.</p>
+            </div>
+
+            <div class="aanpak-card reveal-on-scroll">
+              <div class="aanpak-card__badge">02</div>
+              <div class="aanpak-card__icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                </svg>
+              </div>
+              <h4 class="aanpak-card__title">Biologische drager</h4>
+              <p class="aanpak-card__desc">Een biologisch beschikbare structuur die de huid herkent als eigen materiaal en opneemt in plaats van afweert.</p>
+            </div>
+
+            <div class="aanpak-card reveal-on-scroll">
+              <div class="aanpak-card__badge">03</div>
+              <div class="aanpak-card__icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                  <polyline points="2 17 12 22 22 17"/>
+                  <polyline points="2 12 12 17 22 12"/>
+                </svg>
+              </div>
+              <h4 class="aanpak-card__title">De levende laag</h4>
+              <p class="aanpak-card__desc">De dermis, waar het enzym dat elastine aanmaakt nog actief is en gestimuleerd kan worden.</p>
+            </div>
+
+          </div>
+
           <div class="why-standout-box">
             <p>Dat is geen behandeling die belooft. Dat is een aanpak die meet, levert en activeert.</p>
           </div>
@@ -547,5 +666,25 @@
   </footer>
 
   <script src="./js/main.js?v=20260516" defer></script>
+
+  <script>
+    /* Scroll-reveal voor .reveal-on-scroll elementen */
+    (function () {
+      var items = document.querySelectorAll('.reveal-on-scroll');
+      if (!items.length || !('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('is-visible'); });
+        return;
+      }
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18 });
+      items.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
 </body>
 </html>
