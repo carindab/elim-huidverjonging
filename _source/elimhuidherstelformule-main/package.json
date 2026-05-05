@@ -1,0 +1,10 @@
+{
+  "name": "elim-static-build",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Hostinger-compatibele build die de statische repo-root (index.html, bedankt.html, css/, js/, assets/) naar dist/ kopieert. Geen Vite-build, geen overschrijving van index.html.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  }
+}

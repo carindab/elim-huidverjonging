@@ -8,9 +8,18 @@ Thumbs.db
 index-old-version.html
 homepage-hero-OLD-VERSION.tsx.txt
 
-# React/Vite broncode + build-artefacten — alleen lokaal, niet meer naar GitHub
-# (Hostinger bouwde anders automatisch en overschreef de statische index.html)
-_source/
+# React/Vite broncode (lokaal werkbestand) — niet naar GitHub.
+# Uitzondering: _source/elimhuidherstelformule-main/{package.json,build.mjs}
+# blijven WEL in de repo zodat Hostinger's Vite-deploy slaagt en onze
+# statische index.html naar dist/ kopieert i.p.v. een eigen build.
+_source/*
+!_source/elimhuidherstelformule-main
+_source/elimhuidherstelformule-main/*
+!_source/elimhuidherstelformule-main/package.json
+!_source/elimhuidherstelformule-main/build.mjs
+!_source/elimhuidherstelformule-main/.gitkeep
+
+# Vite-build artefacten in repo-root — alleen lokaal
 assets/index-*.js
 assets/index-*.css
 placeholder.svg
