@@ -63,6 +63,13 @@
       transform: translateY(-5px);
       box-shadow: 0 14px 40px hsla(38,30%,50%,.18);
     }
+    .aanpak-card__head {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.1rem;
+    }
     .aanpak-card__badge {
       display: inline-flex;
       align-items: center;
@@ -76,7 +83,8 @@
       font-weight: 700;
       letter-spacing: .06em;
       font-family: 'Inter', sans-serif;
-      margin-bottom: 1.1rem;
+      margin: 0;
+      flex-shrink: 0;
     }
     .aanpak-card__icon {
       width: 3.25rem;
@@ -87,7 +95,7 @@
       align-items: center;
       justify-content: center;
       color: hsl(38 55% 38%);
-      margin-bottom: 1.25rem;
+      margin: 0;
       flex-shrink: 0;
     }
     .aanpak-card__title {
@@ -254,35 +262,41 @@
           <div class="aanpak-cards">
 
             <div class="aanpak-card reveal-on-scroll">
-              <div class="aanpak-card__badge">01</div>
-              <div class="aanpak-card__icon" aria-hidden="true">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/>
-                </svg>
+              <div class="aanpak-card__head">
+                <div class="aanpak-card__badge">01</div>
+                <div class="aanpak-card__icon" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/>
+                  </svg>
+                </div>
               </div>
               <h4 class="aanpak-card__title">Moleculaire grootte</h4>
               <p class="aanpak-card__desc">De werkzame stoffen zijn gekozen om de huidbarrière te passeren in plaats van eraan te blijven hangen.</p>
             </div>
 
             <div class="aanpak-card reveal-on-scroll">
-              <div class="aanpak-card__badge">02</div>
-              <div class="aanpak-card__icon" aria-hidden="true">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
-                </svg>
+              <div class="aanpak-card__head">
+                <div class="aanpak-card__badge">02</div>
+                <div class="aanpak-card__icon" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                  </svg>
+                </div>
               </div>
               <h4 class="aanpak-card__title">Biologische drager</h4>
               <p class="aanpak-card__desc">Een biologisch beschikbare structuur die de huid herkent als eigen materiaal en opneemt in plaats van afweert.</p>
             </div>
 
             <div class="aanpak-card reveal-on-scroll">
-              <div class="aanpak-card__badge">03</div>
-              <div class="aanpak-card__icon" aria-hidden="true">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-                  <polyline points="2 17 12 22 22 17"/>
-                  <polyline points="2 12 12 17 22 12"/>
-                </svg>
+              <div class="aanpak-card__head">
+                <div class="aanpak-card__badge">03</div>
+                <div class="aanpak-card__icon" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                    <polyline points="2 17 12 22 22 17"/>
+                    <polyline points="2 12 12 17 22 12"/>
+                  </svg>
+                </div>
               </div>
               <h4 class="aanpak-card__title">De levende laag</h4>
               <p class="aanpak-card__desc">De dermis, waar het enzym dat elastine aanmaakt nog actief is en gestimuleerd kan worden.</p>
@@ -555,23 +569,27 @@
           <div class="faq-list">
             <details class="faq-item">
               <summary>Voor wie is deze behandeling geschikt?</summary>
-              <p class="faq-answer">Voor vrouwen van 40+ die merken dat hun huid minder stevig, veerkrachtig of responsief is geworden en een aanpak zoeken die verder gaat dan het oppervlak. De huidscan bepaalt of de Collageen &amp; Elastine Booster de juiste behandeling is voor jóuw huidconditie op dit moment.</p>
+              <p class="faq-answer">Voor vrouwen van 40+ die merken dat hun huid minder stevig en responsief is geworden, en die een aanpak zoeken die verder gaat dan het oppervlak. De huidscan bepaalt wat jouw huid op dit moment specifiek nodig heeft.</p>
             </details>
             <details class="faq-item">
               <summary>Hoe lang duurt de sessie?</summary>
-              <p class="faq-answer">Reken op 45 tot 50 minuten voor de volledige Elim Huidherstel Formule, inclusief huidscan en behandeling.</p>
+              <p class="faq-answer">45 tot 50 minuten voor de volledige Elim Huidherstel Formule, inclusief huidscan en behandeling. De Booster Behandeling is geen klassieke gezichtsbehandeling. De duur wordt bepaald door wat het tropoelastine en de gepatenteerde lichttherapie nodig hebben om op celniveau te werken. Korter zou niet werken. Langer is niet nodig.</p>
             </details>
             <details class="faq-item">
               <summary>Is de behandeling geschikt voor gevoelige huid?</summary>
-              <p class="faq-answer">Ja. De behandeling is niet-invasief en werkt op celniveau zonder de huid te belasten. Alle formules zijn gecertificeerd biologisch, zonder schadelijke stoffen. Volledig natuurlijk en veilig voor elk huidtype.</p>
+              <p class="faq-answer">Ja. De behandeling is niet-invasief en werkt op celniveau zonder de huid te belasten. Alle formules zijn gecertificeerd biologisch. Geschikt voor elk huidtype.</p>
             </details>
             <details class="faq-item">
               <summary>Wat is het verschil met een gewone salonbehandeling?</summary>
               <p class="faq-answer">De meeste salonbehandelingen werken op verzorging en ontspanning. De Elim Huidherstel Formule werkt op de oorzaak. Niet wat zichtbaar is aan het oppervlak, maar wat er structureel speelt in de diepere huidlagen. De scan bepaalt wat dat is. De behandeling pakt het aan.</p>
             </details>
             <details class="faq-item">
+              <summary>Wanneer zie ik resultaat?</summary>
+              <p class="faq-answer">In de scan direct na de behandeling. In de spiegel binnen drie tot vier weken, wanneer het herstelproces dat de behandeling heeft geactiveerd zich heeft doorgezet in de levende lagen. De vervolgresultaten worden bepaald door wat de Huidformule thuis doet en wat de Herstellingscode&trade; structureel ondersteunt.</p>
+            </details>
+            <details class="faq-item">
               <summary>Waar is het Elim Instituut gevestigd?</summary>
-              <p class="faq-answer">Kerksingel 16, 2951 GE Alblasserdam. Tel. 078 69 11 11 3</p>
+              <p class="faq-answer">Kerksingel 16, 2951 GE Alblasserdam. Tel. 078 69 11 11 3.</p>
             </details>
           </div>
         </div>
