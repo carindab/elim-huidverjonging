@@ -8,37 +8,56 @@ const reviews = [
     img: tAnnelies,
     name: "Annelies",
     age: 52,
-    title: "Na twee sessies is mijn rosacea meetbaar verminderd",
+    title: "Twee sessies, en de roodheid was structureel teruggebracht.",
     quote:
-      "Ik had jarenlang producten gebruikt die beloofden te kalmeren. Bij Carinda werd voor het eerst gemeten waar de roodheid structureel vandaan kwam. Twee behandelingen verder ga ik 's ochtends de deur uit zonder foundation. Mijn man vroeg of ik bij de plastisch chirurg was geweest. Dat was het moment dat ik wist dat dit anders was.",
+      "Ik had jarenlang producten gebruikt die beloofden te kalmeren. Bij Carinda werd voor het eerst gemeten waar de roodheid structureel vandaan kwam. De scan liet zien dat het niet aan het oppervlak zat. Twee behandelingen verder laat de opvolgscan een meetbare afname zien op precies die laag. 's Ochtends ga ik de deur uit zonder foundation. Dat had ik in tien jaar niet gedaan.",
   },
   {
     img: tMarleen,
     name: "Marleen",
     age: 47,
-    title: "Stevigheid die ik in jaren niet had gevoeld, zonder ingrepen",
+    title: "Stevigheid die ik in jaren niet had gevoeld, zonder ingrepen.",
     quote:
-      "Mijn huid voelde dunner, minder veerkrachtig. Ik zocht een aanpak die verder ging dan oppervlakkige verzorging. Na één sessie merkte ik al een verschil in stevigheid. Drie maanden later zie ik het verschil duidelijk in de opvolgscans. Ik weet nu precies welke producten structureel werken voor mijn huid. Dat maakt het verschil.",
+      "Mijn huid voelde dunner, minder veerkrachtig. Ik zocht een aanpak die verder ging dan oppervlakkige verzorging. Na één sessie merkte ik al een verschil in stevigheid. Drie maanden later zie ik het verschil duidelijk in de opvolgscans. De elasticiteitswaarden zijn meetbaar gestegen. Ik weet nu precies welke producten structureel werken voor mijn huid. Dat maakt het verschil.",
   },
   {
     img: tInge,
     name: "Inge",
     age: 69,
-    title: "Voor het eerst egale huid, zonder laser of peeling",
+    title: "Voor het eerst egale huid, op basis van wat onder het oppervlak speelde.",
     quote:
-      "Ik had jarenlang behandelingen ondergaan voor pigmentvlekken. Laser, peelings, medische crèmes. Carinda was de eerste die niet naar de pigmentvlekken keek maar naar wat er structureel onder speelde. Na drie sessies en mijn persoonlijke Huidformule is mijn huid egaal. Mijn dochter vroeg of ik glow drops had gebruikt. Dit is gewoon mijn huid nu.",
+      "Ik had jarenlang behandelingen ondergaan voor pigmentvlekken. Laser, peelings, medische crèmes. Carinda was de eerste die niet naar de pigmentvlekken keek maar naar wat er structureel onder speelde. De scan liet zien wat geen enkele eerdere behandeling had gemeten. Na drie sessies en mijn persoonlijke Huidformule is mijn huid egaal. Niet bedekt. Hersteld op de laag waar het pigmentprobleem ontstond.",
   },
 ];
 
 const Testimonials = () => (
   <section className="bg-sand pt-[90px] pb-[60px] md:pt-[122px] md:pb-[92px]">
     <div className="container-wide">
-      <div className="text-center">
-        <span className="pill-tag">Echte resultaten · Echte vrouwen</span>
-        <h2 className="mt-5 font-serif text-3xl md:text-5xl">
-          Wat vrouwen zeggen na{" "}
-          <span className="accent-italic">Elim Huidherstel Formule.</span>
-        </h2>
+      <div className="mx-auto max-w-3xl text-center">
+        <span className="pill-tag">Langdurige opvolging</span>
+        <h2 className="mt-5 font-serif text-3xl md:text-5xl">Wat de scans na vijf jaar laten zien</h2>
+        <div className="mt-6 space-y-4 text-left text-foreground/85 leading-relaxed md:text-center">
+          <p>
+            In mijn praktijk komen vrouwen al vijf jaar of langer terug. Hun scanresultaten worden vastgelegd in hun
+            dossier.
+          </p>
+          <p>
+            Wat ik zie is een patroon. De elasticiteitswaarden van vrouwen die de Formule jaren volgen, liggen na vijf
+            jaar boven het niveau waarop ze begonnen. De structurele afbraak die normaal in deze leeftijdsfase doorloopt,
+            wordt gestopt en omgekeerd.
+          </p>
+          <p>
+            In foto&apos;s van toen en nu is dat zichtbaar. Vrouwen die naar hun foto van vijf jaar geleden kijken zien
+            wat de scans laten zien. De huid veroudert niet zoals de biologie voorspelt. Niet omdat de tijd stilstaat.
+            Omdat de aanmaak van elastine actief gehouden wordt in een tempo dat de afbraak compenseert.
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-16 text-center">
+        <h3 className="font-serif text-2xl md:text-4xl text-balance">
+          Wat vrouwen na de Elim Huidherstel Formule <span className="accent-italic">meten en zien</span>
+        </h3>
       </div>
 
       <div className="mt-14 grid gap-8 md:grid-cols-3">
@@ -66,9 +85,7 @@ const Testimonials = () => (
                   ))}
                 </div>
               </div>
-              <h3 className="mt-4 font-serif text-xl leading-snug text-amber-500">
-                "{r.title}"
-              </h3>
+              <h3 className="mt-4 font-serif text-xl leading-snug text-amber-500">&quot;{r.title}&quot;</h3>
               <p className="mt-3 text-foreground/80 leading-relaxed">{r.quote}</p>
             </div>
           </article>
@@ -76,7 +93,7 @@ const Testimonials = () => (
       </div>
 
       <div className="mt-12 space-y-2 text-center">
-        <p className="standout-line text-xl">"Ik ken niemand die dat in Nederland doet."</p>
+        <p className="standout-line text-xl">&quot;Ik ken niemand die dat in Nederland doet.&quot;</p>
         <p className="font-body text-base font-medium text-foreground/80">
           RTL4 over de Elim Huidherstel Formule
         </p>

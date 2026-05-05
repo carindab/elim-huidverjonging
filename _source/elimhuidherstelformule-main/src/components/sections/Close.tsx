@@ -26,22 +26,10 @@ const faq = [
 const Close = () => (
   <section className="bg-gradient-soft pt-[90px] pb-[60px] md:pt-[122px] md:pb-[92px]">
     <div className="container-narrow text-center">
-      <h2 className="mx-auto max-w-2xl text-left font-serif text-3xl md:text-5xl">
-        Als de redenering klopt, <span className="accent-italic">beslis je.</span>
-      </h2>
-
-      <div className="mx-auto mt-8 max-w-2xl space-y-5 text-left text-lg leading-relaxed text-foreground/85">
-        <p>Zonder twijfel. Zonder dat je overtuigd hoeft te worden.</p>
-        <p>
-          De Elim Huidherstel Formule geeft geen belofte. Ze geeft antwoorden. Jóuw antwoorden. Op basis van wat jouw
-          huid werkelijk laat zien. Objectief, meetbaar, persoonlijk.
-        </p>
-        <p>
-          Vrouwen die met de Elim Huidherstel Formule beginnen komen terug. Niet omdat ze moeten. Maar omdat ze voor het
-          eerst precies weten wat werkt in hun huid en waarom het werkt.
-        </p>
-        <p>10 plekken per maand beschikbaar. Elke sessie krijgt de volledige tijd en aandacht die een persoonlijke aanpak vereist.</p>
-      </div>
+      <p className="mx-auto max-w-2xl text-left text-lg leading-relaxed text-foreground/85">
+        Elke sessie krijgt de volledige tijd en aandacht die een persoonlijke aanpak vereist.{" "}
+        <span className="font-medium text-ink">10 plekken per maand beschikbaar.</span>
+      </p>
 
       <div className="mx-auto mt-16 max-w-2xl rounded-3xl bg-white p-10 text-left text-foreground shadow-elegant md:p-14">
         <p className="text-sm uppercase tracking-[0.25em] text-amber-500">De Investering</p>

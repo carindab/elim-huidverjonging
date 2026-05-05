@@ -7,31 +7,43 @@ const Imagine = () => (
     />
     <div className="container-narrow">
       <div className="text-center">
-        <span className="pill-tag">Na vijf jaar</span>
+        <span className="pill-tag">De aanpak</span>
         <h2 className="mt-6 font-serif text-3xl md:text-5xl lg:text-6xl leading-tight">
-          Wat vrouwen na vijf jaar <span className="accent-italic">zeggen</span>
+          De aanpak die <span className="accent-italic">hierop is gebouwd</span>
         </h2>
       </div>
       <div className="mt-16 space-y-7 text-lg leading-relaxed text-foreground/85">
         <p>
-          Vrouwen die de volledige Elim Huidherstel Formule volgen komen terug. Niet omdat ze moeten. Maar omdat ze voor
-          het eerst precies begrijpen wat werkt in hun huid en waarom het werkt.
+          Als het probleem zich op celniveau afspeelt, moet de oplossing daar beginnen. Niet bij het symptoom. Niet bij
+          wat de spiegel laat zien. Bij een meting van wat er werkelijk speelt in de levende lagen van jóuw huid op dit
+          moment.
         </p>
         <p>
-          Ik heb vrouwen die al vijf jaar bij mij komen. Als we hun foto&apos;s van toen en nu naast elkaar leggen, is
-          de reactie altijd hetzelfde: ze zien er jonger uit dan vijf jaar geleden. Dat merken ze zelf ook, op
-          foto&apos;s die ze thuis maken, in de spiegel, in de manier waarop anderen naar hen kijken.
+          Wat de scan laat zien bepaalt alles wat daarna komt. Welke werkzame stoffen jouw huid mist. Welke laag het
+          meest aandacht nodig heeft. Welke formule structureel verschil maakt en welke alleen aan het oppervlak werkt.
         </p>
-        <p>
-          Maar wat ze me het vaakst vertellen is niet alleen dat hun huid er beter uitziet. Het is dat ze er niet meer
-          aan hoeven te denken. Ze weten wat werkt. En het werkt.
+
+        <p className="font-medium text-ink">
+          De Elim Huidherstel Formule is gebouwd rond drie beslissingen die het verschil bepalen tussen huidverzorging die
+          het oppervlak raakt en celverjonging die plaatsvindt op de laag waar elastine wordt aangemaakt.
         </p>
-        <p>
-          Een huid die steviger aanvoelt. Egaler. Zichtbaar vitaler. Die complimenten krijgt zonder dat je ze verwachtte.
-          En een aanwezigheid die je niet hoeft te managen.
-        </p>
-        <p className="standout-line text-center text-2xl">
-          Gebouwd op een systeem dat begint met weten.
+
+        <ul className="space-y-4 border-l-2 border-amber-400 pl-6">
+          <li>
+            De moleculaire grootte van de werkzame stoffen, gekozen om de huidbarrière te passeren in plaats van eraan te
+            blijven hangen.
+          </li>
+          <li>
+            De drager waarin ze worden geleverd, een biologisch beschikbare structuur die de huid herkent als eigen.
+          </li>
+          <li>
+            De laag waarop ze werken, de dermis, waar het enzym dat elastine aanmaakt nog actief is en gestimuleerd kan
+            worden.
+          </li>
+        </ul>
+
+        <p className="standout-line text-center text-xl md:text-2xl">
+          Dat is geen behandeling die belooft. Dat is een aanpak die meet, levert en activeert.
         </p>
       </div>
     </div>

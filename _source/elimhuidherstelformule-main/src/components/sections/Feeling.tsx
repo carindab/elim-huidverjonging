@@ -6,39 +6,45 @@ const Feeling = () => (
       aria-hidden
     />
 
-    <div className="container-narrow space-y-7 text-foreground/85">
+    <div className="container-narrow space-y-6 text-foreground/85">
       <div className="text-center">
         <span className="pill-tag">De realiteit</span>
         <h2 className="mt-6 font-serif text-3xl md:text-5xl lg:text-6xl leading-tight">
           Vanaf je vijfentwintigste verandert de{" "}
           <span className="accent-italic">biologie van je huid.</span>
         </h2>
+        <p className="mx-auto mt-5 max-w-2xl text-lg font-medium text-foreground/80">
+          Vanaf de menopauze kantelt dat proces.
+        </p>
       </div>
 
-      <p className="lead pt-10">
-        Collageenproductie vertraagt met ongeveer één procent per jaar. Elastine, de structuur die stevigheid en
-        veerkracht bepaalt, wordt langzamer aangemaakt dan het wordt afgebroken. De celvernieuwingscyclus, die op je
-        twintigste nog 28 dagen duurt, verlengt naar 45 tot 60 dagen op je vijftigste. Vochtbindende eiwitten nemen af.
-        De levende lagen van de huid worden dunner.
+      <p className="lead pt-6">
+        De daling van oestrogeen remt direct het enzym dat verantwoordelijk is voor de aanmaak van nieuw elastine.
       </p>
 
-      <blockquote className="my-10 rounded-2xl border-l-4 border-amber-400 bg-white/70 p-8 text-lg font-medium text-ink shadow-soft backdrop-blur-sm md:text-xl">
-        Dit is geen verval. Het is een biologisch proces met een mechanisme. En een mechanisme kan worden begrepen,
-        gemeten en beïnvloed.
-      </blockquote>
+      <p className="text-lg font-semibold text-ink">Niet vertraagt. Remt.</p>
 
       <p className="lead">
-        Wat de meeste vrouwen op dit punt doen is producten toevoegen. Serums met retinol. Crèmes met peptiden.
-        Behandelingen die beloven wat ze niet kunnen waarmaken. Niet omdat ze de verkeerde keuzes maken, maar omdat ze
-        werken met informatie die nooit specifiek genoeg was om het verschil te maken.
+        Elastine is niet hetzelfde als collageen. Collageen geeft stevigheid. Elastine bepaalt of je huid terugveert. Na
+        een uitdrukking. Na een nacht slaap. Na de dag.
       </p>
 
-      <p className="standout-line my-10 rounded-2xl bg-white/70 p-8 text-center text-xl shadow-soft backdrop-blur-sm md:text-2xl">
-        Niet wat gemiddeld werkt voor vrouwen van jouw leeftijd. Maar wat jóuw huid op dit moment structureel mist.
+      <p className="lead">
+        Elastine wordt aangemaakt in de dermis, de levende laag onder de epidermis. Naarmate oestrogeen daalt, wordt het
+        enzym dat deze aanmaak aanstuurt minder actief. De afbraak gaat door. De aanmaak vertraagt. Het saldo wordt elke
+        maand kleiner.
       </p>
 
-      <p className="standout-line pt-4 text-center text-2xl md:text-3xl">
-        Dat verschil is precies wat de Elim Huidherstel Formule meet.
+      <p className="lead">Dit is wat de spiegel uiteindelijk laat zien. Op dat moment is het structurele verlies al jaren onderweg.</p>
+
+      <p className="lead">
+        De meeste huidverzorging bereikt deze laag niet. Ze werkt op de epidermis, de buitenste laag van dode en
+        stervende cellen, die geen capaciteit heeft om elastine te produceren. De meeste actieve stoffen zijn moleculair
+        te groot om de huidbarrière te passeren. Ze blijven aan het oppervlak.
+      </p>
+
+      <p className="standout-line my-10 rounded-2xl border-l-4 border-amber-400 bg-white/70 p-8 text-lg font-medium text-ink shadow-soft backdrop-blur-sm md:text-xl">
+        Dit is geen tekortkoming in jouw routine. Het is een feit over hoe de huid is gebouwd.
       </p>
     </div>
   </section>

@@ -1,235 +1,204 @@
-import scanImg from "@/assets/huidscan-1.webp";
-import microImg from "@/assets/behandeling-2.webp";
-import collagenImg from "@/assets/huidformule-3.webp";
+import { useState, type ReactNode } from "react";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { useBookingDialog } from "@/contexts/BookingDialogContext";
 
-const Step = ({
-  number,
-  title,
-  intro,
-  image,
-  imageRight,
-  children,
-}: {
+type Step = {
+  id: number;
   number: string;
   title: string;
-  intro: string;
-  image: string;
-  imageRight?: boolean;
-  children: React.ReactNode;
-}) => (
-  <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-    <div className={imageRight ? "lg:order-2" : ""}>
-      <img
-        src={image}
-        alt={title}
-        loading="lazy"
-        width={1024}
-        height={1024}
-        className="w-full rounded-2xl object-cover shadow-elegant"
-      />
-    </div>
-    <div>
-      <span className="font-serif text-6xl text-amber-400">{number}</span>
-      <h3 className="mt-2 font-serif text-3xl md:text-4xl">{title}</h3>
-      <p className="standout-line mt-4 text-xl">{intro}</p>
-      <div className="mt-5 space-y-4 text-foreground/80 leading-relaxed">
-        {children}
-      </div>
-    </div>
-  </div>
-);
+  subtitle: string;
+  content: ReactNode;
+};
 
-const Method = () => (
-  <section className="bg-cream-deep pt-[90px] pb-[60px] md:pt-[122px] md:pb-[92px]">
-    <div className="container-wide">
-      <div className="container-narrow text-center px-0">
-        <span className="pill-tag">De Methode</span>
-        <h2 className="mt-5 font-serif text-3xl md:text-5xl">
-          De Elim Huidherstel Formule.{" "}
-          <span className="accent-italic">Hoe het werkt.</span>
-        </h2>
-        <p className="lead mt-6">
-          Dit is geen standaard behandeling. Dit is een systeem dat begint waar
-          andere behandelingen ophouden, bij de vraag die niemand je ooit heeft
-          gesteld: wat heeft jóuw huid, op dit moment, precies nodig?
+const steps: Step[] = [
+  {
+    id: 1,
+    number: "01",
+    title: "De Huidscan",
+    subtitle: "Wat anderen zien, meten wij.",
+    content: (
+      <div className="space-y-6 text-lg leading-relaxed text-foreground/85">
+        <p className="text-xl leading-relaxed">
+          De meeste huidspecialisten kijken en stellen een diagnose. Ik meet op celniveau. Vochtbalans, lipidenniveau,
+          elasticiteit, pigmentatie, celactiviteit in de diepere lagen. Niet wat het blote oog laat zien. Wat de spiegel
+          niet kan tonen.
+        </p>
+        <p>
+          Maar wat deze scan onderscheidt van elke andere huidanalyse is wat ze daarna laat zien. Welke werkzame stoffen
+          jóuw huid op dit moment precies nodig heeft om haar eigen herstelproces te activeren.
+        </p>
+        <p>
+          Heeft jouw huid hydratatie nodig, of juist lipiden? Welke vitamines zijn op dit moment structureel essentieel?
+          Vitamine A voor celvernieuwing. Vitamine C voor bescherming en glans. Vitamine E voor stevigheid en herstel.
+        </p>
+        <p>
+          Het resultaat is jouw persoonlijke Huidformule Profiel. De exacte combinatie van werkzame stoffen die jouw huid
+          nodig heeft om haar natuurlijke stevigheid, veerkracht en balans te herstellen. Van binnenuit. Niet tijdelijk aan
+          het oppervlak.
+        </p>
+        <p className="font-serif text-xl md:text-2xl text-amber-600 italic text-ink">Geen aannames. Geen gemiddelden. Alleen wat de meting laat zien.</p>
+      </div>
+    ),
+  },
+  {
+    id: 2,
+    number: "02",
+    title: "Collageen & Elastine Booster Behandeling",
+    subtitle: "De behandeling die werkt op de laag waar elastine wordt aangemaakt.",
+    content: (
+      <div className="space-y-6 text-lg leading-relaxed text-foreground/85">
+        <p className="text-xl leading-relaxed">
+          Twee maskers. Het eerste exfolieert zorgvuldig en bereidt de huid voor om op te nemen wat daarna komt. Het
+          tweede levert een mensidentieke vorm van tropoelastine direct aan de dermis, de laag waar het elastinemakend
+          enzym nog actief is.
+        </p>
+        <p>
+          Tropoelastine is de moleculaire bouwsteen die de huid herkent als eigen materiaal. Gewonnen uit een biologisch
+          beschikbare plantaardige bron. Niet synthetisch. Niet dierlijk. De huid neemt het op in plaats van het aan het
+          oppervlak te houden, en integreert het in het bestaande elastinenetwerk.
+        </p>
+        <p>
+          De gepatenteerde lichttherapie versterkt het proces. Een gefilterd spectrum dat door de huidcellen wordt
+          opgenomen en de aanmaak van nieuw collageen, elastine en hyaluronzuur op celniveau activeert. Geen UV. Geen
+          huidbelastende straling.
+        </p>
+
+        <div className="space-y-4 border-l-2 border-amber-400 pl-6">
+          <p className="font-sans text-sm font-semibold uppercase tracking-widest text-amber-600">Wat één sessie meetbaar doet</p>
+          <ul className="space-y-4 list-none">
+            {[
+              "Een achtdubbele verhoging van de regionale bloedsomloop in de behandelde zone.",
+              "Tot zestig procent verhoging van de partiële zuurstofdruk in het bloed.",
+              "Stimulatie van nieuwe collageen, elastine en hyaluronzuurproductie.",
+              "Extra ATP cellulaire energie, de brandstof waarmee huidcellen hun eigen herstelproces uitvoeren.",
+            ].map((item) => (
+              <li key={item} className="flex gap-3">
+                <span className="mt-1.5 font-serif text-amber-500">•</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <p>
+          Al na één sessie kan het elastineverlies van de afgelopen twee jaar worden hersteld. Zichtbaar in de scan voor
+          en na. Voelbaar in de stevigheid van de huid.
+        </p>
+        <p className="font-serif text-xl md:text-2xl text-amber-600 italic text-ink">
+          Geen injecties. Geen laser. Geen ingreep die je anders laat zien dan je bent.
         </p>
       </div>
-
-      <div className="mt-14 space-y-16">
-        <Step
-          number="01"
-          title="De Huidscan"
-          intro="We meten wat anderen niet zien."
-          image={scanImg}
-        >
-          <p>
-            De meeste huidspecialisten kijken naar je huid en stellen een diagnose
-            op basis van wat ze zien. Wij meten.
-          </p>
-          <p>
-            Met geavanceerde huidanalysetechnologie en meer dan 22 jaar
-            professionele expertise breng ik in kaart wat er werkelijk speelt in
-            de diepere lagen van jouw huid, ver voorbij wat de spiegel of het
-            blote oog kan zien.
-          </p>
-          <p>
-            We meten vochtbalans, lipidenniveau, elasticiteit, pigmentatie en
-            celactiviteit. Maar wat deze scan uniek maakt is wat ze daarna laat
-            zien: welke werkzame stoffen jóuw huid op dit moment precies nodig
-            heeft. Niet wat gemiddeld werkt. Maar wat jóuw huid nu mist om te
-            herstellen en te stralen.
-          </p>
-          <p>
-            Heeft jouw huid hydratatie nodig, of juist lipiden? Welke vitamines
-            zijn op dit moment essentieel, vitamine A voor celvernieuwing,
-            vitamine C voor glans en bescherming, vitamine E voor stevigheid en
-            herstel? De scan geeft geen algemeen advies. Ze geeft een
-            kristalheldere routekaart, specifiek voor jóu, specifiek voor nu.
-          </p>
-          <p>
-            Het resultaat is jouw persoonlijke{" "}
-            <span className="standout-line">
-              Huidformule Profiel
-            </span>
-            , de exacte combinatie van werkzame stoffen die jouw huid nodig heeft
-            om haar natuurlijke uitstraling, stevigheid en balans te herstellen.
-            Van binnenuit, niet tijdelijk aan het oppervlak.
-          </p>
-          <p className="standout-line">
-            Geen aannames. Geen giswerk. Alleen feitelijke inzichten. Jouw huid
-            is zo uniek als een vingerafdruk. Wij behandelen haar ook zo.
-          </p>
-        </Step>
-
-        <Step
-          number="02"
-          title="Collageen & Elastine Booster Behandeling"
-          intro="Voor de vrouw die merkt dat haar huid zijn veerkracht verliest."
-          image={microImg}
-          imageRight
-        >
-          <p>
-            Vanaf je dertigste verlies je elastine sneller dan je het aanmaakt. Niet als gevoel. Als meetbaar biologisch
-            feit.
-          </p>
-          <p className="mt-2">
-            Elastine is de structuur die bepaalt of je huid terugveert na beweging, druk, uitdrukking. Als de aanmaak
-            vertraagt en de afbraak doorgaat, wordt de huid dunner, minder stevig, minder responsief. Geen crème lost dit
-            op. Niet omdat ze de verkeerde ingrediënten bevatten. Maar omdat ze de laag waar elastine wordt geproduceerd
-            structureel niet bereiken.
-          </p>
-          <p className="mt-2">Deze behandeling werkt anders. In twee stappen, op celniveau.</p>
-          <div className="rounded-xl border border-line/80 bg-gradient-to-br from-white/95 to-cream/90 p-6 shadow-[0_12px_36px_-18px_hsl(40_18%_18%/0.14)]">
-            <p className="mt-0 font-serif text-lg font-semibold text-ink">Stap 1 — De voorbereiding</p>
-            <p className="mt-2">
-              Het eerste masker exfolieert zorgvuldig en bereidt de huid voor op wat volgt. Niet om de huid te resetten.
-              Om de opname van wat daarna komt te maximaliseren.
-            </p>
-            <p className="mt-4 font-serif text-lg font-semibold text-ink">Stap 2 — De elastine stimulatie</p>
-            <p className="mt-2">
-              Het tweede masker levert een mensidentieke vorm van tropoelastine direct aan de huidlaag waar elastine
-              wordt geproduceerd. Tropoelastine is de voorvorm van elastine, de moleculaire bouwsteen die de huid
-              herkent als eigen en integreert in het bestaande elastinenetwerk. Niet synthetisch. Niet dierlijk. Gewonnen
-              uit een biologisch beschikbare plantaardige bron zodat de huid het opneemt in plaats van het aan het
-              oppervlak te houden.
-            </p>
-            <p className="mt-2">
-              Eenmaal opgenomen komt het in contact met het elastinemakend enzym in de huid. De aanvulling van de
-              elastinevoorraad begint.
-            </p>
-            <p className="mt-4 font-serif text-lg font-semibold text-ink">De lichttherapie</p>
-            <p className="mt-2">
-              Na het eerste masker volgt onze gepatenteerde lichttherapie. Geen standaard roodlicht. Een speciaal
-              gefilterd spectrum dat precies wordt opgenomen door de huidcellen waar het werk moet gebeuren.
-            </p>
-            <p className="mt-2">
-              De lichttherapie werkt tijdens beide maskers. De warmte die het genereert opent de huidlagen en zorgt
-              ervoor dat de werkzame stoffen in de maskers dieper doordringen dan zonder lichttherapie mogelijk zou zijn.
-              Het licht en de maskers versterken elkaar. Samen bereiken ze de laag waar het verschil wordt gemaakt.
-            </p>
-            <p className="mt-2">Wat het doet is meetbaar:</p>
-            <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[0.98rem] leading-relaxed">
-              <li>Een achtdubbele verhoging van de regionale bloedsomloop in de behandelde zone.</li>
-              <li>Tot 60% verhoging van de partiële zuurstofdruk in het bloed.</li>
-              <li>Stimulatie van nieuwe collageen-, elastine- en hyaluronzuurproductie.</li>
-              <li>
-                Extra ATP-cellulaire energie, de brandstof waarmee huidcellen hun eigen herstelproces uitvoeren.
-              </li>
-            </ul>
-            <p className="mt-2">
-              Geen UV. Geen huidbelastende straling. Alleen het spectrum dat de huid activeert om te doen wat ze
-              biologisch is ingericht om te doen.
-            </p>
-            <p className="mt-2">
-              Het resultaat is niet tijdelijk. De lichttherapie versterkt wat de maskers hebben gestart en houdt het
-              herstelproces actief nadat je de behandelkamer verlaat.
-            </p>
-          </div>
-          <div className="mt-8 max-w-2xl">
-            <p className="font-serif text-[clamp(1.15rem,2.2vw,1.35rem)] font-semibold leading-snug text-ink">
-              Wat één sessie doet
-            </p>
-            <p className="mt-3 leading-relaxed text-foreground/90">
-              Al na één behandeling kan het elastineverlies van de afgelopen twee jaar worden hersteld. Niet als
-              belofte. Als meetbaar resultaat, zichtbaar in de scan voor en na, voelbaar in de stevigheid en veerkracht
-              van de huid, zichtbaar in de spiegel.
-            </p>
-            <p className="mt-3 leading-relaxed text-foreground/90">
-              Dit is het resultaat van meer dan 20 jaar medisch onderzoek, gecombineerd met 22 jaar klinische
-              praktijkervaring in wat de huid van vrouwen van 40+ structureel nodig heeft.
-            </p>
-            <ul className="mt-5 space-y-3 list-none p-0">
-              <li className="rounded-r-[0.65rem] border-l-[3px] border-amber-400 bg-jade-tint/40 py-[0.85rem] pl-[1.15rem] pr-4 text-[1.05rem] font-semibold leading-snug text-ink">
-                Geen injecties. Geen laser. Geen ingreep die je anders laat zien dan je bent.
-              </li>
-              <li className="rounded-r-[0.65rem] border-l-[3px] border-amber-400 bg-jade-tint/40 py-[0.85rem] pl-[1.15rem] pr-4 text-[1.05rem] font-semibold leading-snug text-ink">
-                Een behandeling die werkt op de laag waar het verschil wordt gemaakt.
-              </li>
-            </ul>
-            <p className="mt-7 rounded-[0.85rem] border border-border bg-amber-tint/30 px-5 py-[1.1rem] text-[0.98rem] leading-relaxed text-foreground/90">
-              <span className="font-semibold text-ink">Voor wie:</span> vrouwen van 40+ die huidverslapping, verlies van
-              stevigheid of een doffe, vermoeide huid ervaren en een behandeling zoeken die verder gaat dan het
-              oppervlak.
-            </p>
-          </div>
-        </Step>
-
-        <Step
-          number="03"
-          title="Jouw Persoonlijke Huidformule"
-          intro="Resultaten die blijven."
-          image={collagenImg}
-        >
-          <p>
-            De behandeling werkt in de levende lagen van jouw huid. Maar wat er
-            daarna op jouw huid komt bepaalt of dat herstel blijft, of langzaam
-            wordt tenietgedaan.
-          </p>
-          <p>
-            Dit is wat de meeste vrouwen niet weten: de producten die je thuis
-            gebruikt kunnen de resultaten van de beste behandeling ter wereld
-            ondermijnen als ze de verkeerde ingrediënten bevatten. Niet omdat ze
-            goedkoop zijn. Niet omdat jij iets fout doet. Maar omdat de meeste
-            huidverzorging, ook de dure, is samengesteld om aan het oppervlak te
-            werken, niet in de levende lagen waar jouw behandeling het verschil
-            heeft gemaakt.
-          </p>
-          <p>
-            Na jouw huidscan en behandeling ontvang je daarom jouw persoonlijke
-            Huidformule, de exacte combinatie van werkzame stoffen die jouw scan
-            heeft laten zien dat jouw huid nodig heeft, samengesteld in
-            gecertificeerde organische formules die zijn ontwikkeld om precies
-            die levende lagen te bereiken.
-          </p>
-          <p className="standout-line">
-            Vrouwen die de volledige Elim Huidherstel Formule volgen, behandeling
-            én thuisroutine, zien resultaten die blijven. Niet omdat ze geluk
-            hadden. Maar omdat ze eindelijk weten wat werkt.
-          </p>
-        </Step>
+    ),
+  },
+  {
+    id: 3,
+    number: "03",
+    title: "Jouw Persoonlijke Huidformule",
+    subtitle: "Resultaten die blijven, of langzaam worden tenietgedaan.",
+    content: (
+      <div className="space-y-6 text-lg leading-relaxed text-foreground/85">
+        <p className="text-xl leading-relaxed">
+          Wat er thuis op je huid komt bepaalt of het herstel van de behandeling vasthoudt. De meeste huidverzorging, ook
+          de dure, is samengesteld om aan het oppervlak te werken. Niet in de levende lagen waar de behandeling het
+          verschil heeft gemaakt.
+        </p>
+        <p>
+          Na de scan ontvang je daarom jouw persoonlijke Huidformule. De exacte combinatie van werkzame stoffen die jouw
+          scan heeft laten zien dat jouw huid structureel nodig heeft, samengesteld in gecertificeerde organische
+          formules die zijn ontwikkeld om de levende lagen te bereiken.
+        </p>
+        <p className="font-serif text-xl md:text-2xl text-amber-600 italic text-ink">
+          Vrouwen die de volledige Formule volgen, behandeling én thuisroutine, zien resultaten die blijven. Niet omdat
+          ze geluk hadden. Omdat ze eindelijk weten wat werkt.
+        </p>
       </div>
-    </div>
-  </section>
-);
+    ),
+  },
+];
+
+const Method = () => {
+  const [activeStep, setActiveStep] = useState(0);
+  const { open } = useBookingDialog();
+  const step = steps[activeStep];
+
+  return (
+    <section id="methode" className="bg-gradient-soft pt-[90px] pb-[60px] md:pt-[122px] md:pb-[92px] scroll-mt-20">
+      <div className="container-wide">
+        <div className="mx-auto mb-16 max-w-3xl text-center md:mb-24">
+          <span className="pill-tag">In drie stappen</span>
+          <h2 className="mt-6 font-serif text-3xl md:text-5xl lg:text-6xl leading-tight">De methode</h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-foreground/80 md:text-xl">
+            De Elim Huidherstel Formule. Drie stappen die op elkaar bouwen.
+          </p>
+        </div>
+
+        <div className="flex flex-col items-start gap-12 lg:flex-row lg:gap-16">
+          <div className="hidden w-full space-y-3 lg:sticky lg:top-28 lg:block lg:w-[min(100%,380px)] lg:shrink-0">
+            {steps.map((s, index) => (
+              <button
+                key={s.id}
+                type="button"
+                onClick={() => setActiveStep(index)}
+                className={`flex w-full flex-col gap-1 rounded-2xl border px-5 py-5 text-left transition-all ${
+                  activeStep === index
+                    ? "border-amber-400/50 bg-cream shadow-elegant ring-1 ring-amber/20"
+                    : "border-transparent bg-cream/40 hover:bg-cream/80"
+                }`}
+              >
+                <span className="font-body text-xs font-semibold tracking-widest text-amber-600">{s.number}</span>
+                <span className={`font-serif text-xl ${activeStep === index ? "text-ink" : "text-foreground/70"}`}>{s.title}</span>
+                <span className="text-sm italic text-foreground/75">{s.subtitle}</span>
+              </button>
+            ))}
+          </div>
+
+          <div className="min-h-[480px] w-full flex-1">
+            <div className="mb-8 flex justify-center gap-2 pb-2 lg:hidden">
+              {steps.map((s, index) => (
+                <button
+                  key={s.id}
+                  type="button"
+                  onClick={() => setActiveStep(index)}
+                  aria-current={activeStep === index ? "step" : undefined}
+                  className={`min-w-[3rem] rounded-full border px-4 py-2 text-sm font-semibold transition-all ${
+                    activeStep === index
+                      ? "border-amber-500 bg-amber-500 text-white"
+                      : "border-border bg-card text-foreground/80"
+                  }`}
+                >
+                  {s.number}
+                </button>
+              ))}
+            </div>
+
+            <Card className="rounded-3xl border border-border/60 bg-card/80 p-8 shadow-elegant ring-1 ring-amber/10 backdrop-blur-sm md:p-12">
+              <div key={step.id} className="animate-in fade-in duration-300">
+                <div className="mb-8 border-b border-border/40 pb-8">
+                  <span className="font-body text-sm font-semibold tracking-widest text-amber-600">{step.number}</span>
+                  <h3 className="mt-3 font-serif text-2xl text-ink md:text-4xl">{step.title}</h3>
+                  <p className="mt-4 font-serif text-xl italic text-foreground/80 md:text-2xl">{step.subtitle}</p>
+                </div>
+                {step.content}
+              </div>
+            </Card>
+
+            <div className="mt-10 flex justify-center">
+              <Button
+                type="button"
+                variant="cta"
+                size="xl"
+                className="rounded-full px-10"
+                onClick={open}
+              >
+                Reserveer jouw plek
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Method;

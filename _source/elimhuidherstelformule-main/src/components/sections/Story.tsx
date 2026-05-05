@@ -14,33 +14,29 @@ const Story = () => (
         />
       </div>
       <div className="lg:col-span-3">
-        <span className="pill-tag">Wie ben ik</span>
+        <span className="pill-tag">Elim Instituut</span>
         <h2 className="mt-5 font-serif text-3xl md:text-5xl">
           Wie is <span className="accent-italic">Carinda Brand?</span>
         </h2>
         <div className="mt-6 space-y-5 text-foreground/85 leading-relaxed">
           <p>
-            Ik ben Carinda Brand, huidspecialiste met meer dan 22 jaar ervaring in natuurlijke huidverbetering bij het
-            Elim Instituut.
+            Ik ben Carinda Brand, huidspecialiste bij het Elim Instituut. Meer dan 22 jaar klinische ervaring in
+            huidverbetering, en in dat alles één constante: ik begin altijd met meten.
           </p>
           <p>
-            Mijn aanpak begint altijd met meten. Want als je weet wat er werkelijk speelt in de diepere lagen van jouw
-            huid, hoef je niet te gokken. Dan weet je wat werkt. En waarom het werkt.
-          </p>
-          <p>
-            Niet op basis van wat toevallig trending is. Niet op basis van wat een vriendin aanraadt. Op basis van wat
-            jóuw huid, op dit moment, structureel nodig heeft.
+            Niet omdat meten indrukwekkend klinkt. Omdat een diagnose op basis van wat je ziet fundamenteel anders is
+            dan een conclusie op basis van wat er werkelijk speelt in de diepere lagen. Het eerste levert een
+            behandelplan dat past bij het gemiddelde. Het tweede levert een aanpak die past bij jóuw huid, op dit moment,
+            in deze biologische fase.
           </p>
           <p>
             Ik werk met vrouwen van 40+ die begrijpen dat huidveroudering een biologisch proces is met een mechanisme.
-            En dat een mechanisme kan worden gemeten, begrepen en beïnvloed.
+            Een mechanisme dat gemeten, begrepen en beïnvloed kan worden.
           </p>
           <p className="standout-line text-xl">
-            Sommige vrouwen komen al vijf jaar bij mij. Als we hun foto&apos;s van toen en nu naast elkaar leggen zien
-            we altijd hetzelfde: ze zien er jonger uit dan toen ze begonnen. Niet als bijwerking. Als resultaat van
-            celverjonging die plaatsvindt op de laag waar huidveroudering werkelijk begint.
+            De Elim Huidherstel Formule geeft geen belofte. Ze geeft antwoorden. Op basis van wat jouw huid werkelijk laat
+            zien.
           </p>
-          <p>Dat is waar ik op bouw. Voor elke vrouw die door mijn deur komt.</p>
         </div>
       </div>
     </div>

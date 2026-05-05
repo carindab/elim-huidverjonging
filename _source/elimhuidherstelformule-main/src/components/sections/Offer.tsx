@@ -16,9 +16,6 @@ const Offer = () => (
         <p className="mx-auto mt-3 max-w-xl font-serif text-lg italic accent-italic md:text-xl">
           Inclusief de Collageen &amp; Elastine Booster Behandeling.
         </p>
-        <p className="lead mx-auto mt-5 max-w-xl">
-          Jouw eerste stap naar celverjonging die plaatsvindt op de laag waar huidveroudering werkelijk begint.
-        </p>
       </div>
 
       <div className="mt-12 rounded-3xl bg-card p-8 md:p-12 shadow-elegant ring-1 ring-border">
