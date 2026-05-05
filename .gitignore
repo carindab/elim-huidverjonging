@@ -8,3 +8,11 @@ Thumbs.db
 index-old-version.html
 homepage-hero-OLD-VERSION.tsx.txt
 
+# React/Vite broncode + build-artefacten — alleen lokaal, niet meer naar GitHub
+# (Hostinger bouwde anders automatisch en overschreef de statische index.html)
+_source/
+assets/index-*.js
+assets/index-*.css
+placeholder.svg
+robots.txt
+
