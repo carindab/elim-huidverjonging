@@ -1,0 +1,52 @@
+# Uploadt de statische landingspagina naar Hostinger (FTP) na elke push naar main.
+# Eenmalig in GitHub: Settings → Secrets → Actions, voeg toe:
+#   HOSTINGER_FTP_HOST      (bijv. ftp.afspraakeliminstituut.nl — zie hPanel → FTP Accounts)
+#   HOSTINGER_FTP_USERNAME
+#   HOSTINGER_FTP_PASSWORD
+# Optioneel:
+#   HOSTINGER_FTP_REMOTE_DIR  (remote map, bv. /public_html/formule — leeg laten als FTP-account al in de juiste map landt)
+
+name: Deploy static site to Hostinger (FTP)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: hostinger-ftp
+  cancel-in-progress: true
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    # Verhindert rode workflow op forks zonder secrets
+    if: github.repository == 'carindab/elim-huidverjonging'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Bundle static files for Hostinger
+        run: |
+          mkdir -p _deploy
+          cp index.html bedankt.html favicon.ico _deploy/
+          cp -r css js assets _deploy/
+          if [ -f .htaccess ]; then cp .htaccess _deploy/; fi
+          ls -la _deploy
+
+      - name: Bepaal remote map (standaard /)
+        run: |
+          D='${{ secrets.HOSTINGER_FTP_REMOTE_DIR }}'
+          if [ -z "$D" ]; then D="/"; fi
+          echo "FTP_SERVER_DIR=$D" >> "$GITHUB_ENV"
+
+      - name: Upload via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOSTINGER_FTP_HOST }}
+          username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
+          password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+          local-dir: ./_deploy/
+          server-dir: ${{ env.FTP_SERVER_DIR }}
+          dangerous-clean-slate: false
+          log-level: standard
