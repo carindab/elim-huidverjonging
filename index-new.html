@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- index-new.html: kopie van index-old-version.html; verder bewerken in de repo (GitHub). Live productie-homepage = Vite/React (index.html + assets/). -->
+<!-- index-new.html: werkkopie met nieuwe tekst en sectievolgorde. Live productie-homepage = Vite/React (index.html + assets/). -->
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
@@ -9,7 +9,6 @@
   <meta name="description" content="Meting op celniveau, Collageen &amp; Elastine Booster met tropoelastine, persoonlijke Huidformule op basis van je scan. Geen aannames, geen protocol, geen gemiddelden. Maximaal 10 cliënten per maand." />
   <meta name="author" content="Carinda Brand · Elim Instituut" />
   <link rel="icon" href="favicon.ico" sizes="any" />
-  <!-- Open Graph: og:image op jouw domein (FB/IG/ WhatsApp linkpreview). -->
   <link rel="canonical" href="https://formule.afspraakeliminstituut.nl/" />
   <meta property="og:url" content="https://formule.afspraakeliminstituut.nl/" />
   <meta property="og:type" content="website" />
@@ -33,7 +32,6 @@
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap"
   />
   <link rel="stylesheet" href="./css/styles.css?v=20260603" />
-  <!-- LCP: WebP voor moderne browsers; JPEG fallback in <picture> -->
   <link rel="preload" as="image" type="image/webp" href="assets/hero-celverjonging.webp?v=20260515" fetchpriority="high" />
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebPage","name":"Elim Huidherstel Formule","description":"Meting op celniveau, Collageen en Elastine Booster met tropoelastine, persoonlijke Huidformule. Maximaal 10 cliënten per maand."}
@@ -43,6 +41,7 @@
   <a class="skip-link" href="#main">Ga naar inhoud</a>
 
   <main id="main">
+
     <!-- Hero -->
     <section class="section section--hero hero-section" aria-labelledby="hero-title">
       <div class="hero-bg-lights" aria-hidden="true"></div>
@@ -117,155 +116,99 @@
       </div>
     </section>
 
-    <!-- ForYou -->
+    <!-- §2 Het echte probleem -->
     <section class="section section-pad section--cream" aria-labelledby="for-you">
       <div class="container-narrow">
         <div class="text-center">
-          <span class="pill-tag">De Elim Huidherstel Formule</span>
-          <h2 id="for-you" class="section-heading-lg mt-4">Voor wie</h2>
+          <span class="pill-tag">Het echte probleem</span>
+          <h2 id="for-you" class="section-heading-lg mt-4">De industrie is niet gebouwd rond <span class="accent-italic">jouw biologie.</span></h2>
         </div>
         <div class="mt-12 space-y-5 text-lg leading-relaxed text-muted-85">
-          <p>De Elim Huidherstel Formule is een serieuze investering in een aanpak die begint bij meting.</p>
-          <p>Voor de vrouw die haar huid serieus neemt. Niet vanuit ijdelheid, maar omdat ze weet dat hoe ze eruitziet invloed heeft op hoe ze overkomt en aanwezig is.</p>
-          <p>Voor de ondernemer. De professional. De vrouw die op elk gebied weet hoe ze resultaten behaalt, en die hetzelfde verwacht van de aanpak die ze voor haar huid kiest.</p>
-          <p>Voor wie bereid is te investeren in een formule die is afgestemd op háár huid. Niet op een gemiddelde. Op wat de meting laat zien dat zij specifiek nodig heeft.</p>
-          <p class="standout-line text-center mt-8 text-2xl md:text-3xl">Als de redenering op deze pagina klopt voor jou, is er een plek beschikbaar.</p>
+          <p>Ze is gebouwd rond herhaalverkoop.</p>
+          <p>Eén product. Eén belofte. Eén symptoom. Rimpels krijgen hun eigen serum. Pigmentvlekken hun eigen behandeling. Een doffe huid haar eigen ritueel. Elke categorie heeft een actief ingrediënt en een marketingclaim. Wat ontbreekt is het systeem dat ze met elkaar verbindt.</p>
+          <p class="why-highlight-box">De vraag die niemand stelt: wat heeft jóuw huid, in deze fase van haar biologische ontwikkeling, op celniveau nodig om haar eigen herstelproces te ondersteunen?</p>
+          <p>Niet wat populair is. Niet wat trending is. Niet wat gemiddeld werkt voor vrouwen van jouw leeftijd. Wat jóuw huid nu specifiek mist.</p>
+          <p>Die vraag wordt zelden gesteld omdat ze commercieel onhandig is. Producten die zijn samengesteld op basis van een individuele meting kunnen niet in oplages worden verkocht. Behandelingen die afhangen van wat de scan laat zien kunnen niet in een protocol worden gegoten. Een aanpak die begint met meten kost meer tijd, meer expertise en meer aandacht per cliënt dan een aanpak die begint met aannames.</p>
+          <p>Het is geen toeval dat de industrie deze richting niet inslaat. Het is een commerciële beslissing.</p>
+          <p>De Elim Huidherstel Formule begint waar die beslissing eindigt. Niet bij het symptoom. Bij de oorzaak. Met een meting op celniveau, specifiek voor jóuw huid op dit moment. Wat de scan laat zien bepaalt alles wat daarna komt: de behandeling, de formule, het plan.</p>
+          <div class="why-standout-box">
+            <p>Geen aannames. Geen gemiddelden. Geen symptoombestrijding.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Feeling -->
+    <!-- §3 De realiteit -->
     <section class="section section-pad section--blush section--divider-top-cream" aria-labelledby="feeling">
       <div class="container-narrow space-y-7 text-muted-85">
         <div class="text-center">
           <span class="pill-tag">De realiteit</span>
           <h2 id="feeling" class="section-heading-lg">Vanaf je vijfentwintigste verandert de <span class="accent-italic">biologie van je huid.</span></h2>
         </div>
-        <p class="lead pt-10">Collageenproductie vertraagt met ongeveer één procent per jaar. Elastine, de structuur die stevigheid en veerkracht bepaalt, wordt langzamer aangemaakt dan het wordt afgebroken. De celvernieuwingscyclus, die op je twintigste nog 28 dagen duurt, verlengt naar 45 tot 60 dagen op je vijftigste. Vochtbindende eiwitten nemen af. De levende lagen van de huid worden dunner.</p>
-        <blockquote class="feeling-quote">
-          Dit is geen verval. Het is een biologisch proces met een mechanisme. En een mechanisme kan worden begrepen, gemeten en beïnvloed.
-        </blockquote>
-        <p class="lead">Wat de meeste vrouwen op dit punt doen is producten toevoegen. Serums met retinol. Crèmes met peptiden. Behandelingen die beloven wat ze niet kunnen waarmaken. Niet omdat ze de verkeerde keuzes maken, maar omdat ze werken met informatie die nooit specifiek genoeg was om het verschil te maken.</p>
-        <p class="why-highlight-box">Niet wat gemiddeld werkt voor vrouwen van jouw leeftijd. Maar wat jóuw huid op dit moment structureel mist.</p>
-        <p class="standout-line pt-4 text-center text-2xl md:text-3xl">Dat verschil is precies wat de Elim Huidherstel Formule meet.</p>
+        <p class="lead pt-10">Vanaf de menopauze kantelt dat proces.</p>
+        <p class="lead">De daling van oestrogeen remt direct het enzym dat verantwoordelijk is voor de aanmaak van nieuw elastine.</p>
+        <blockquote class="feeling-quote">Niet vertraagt. Remt.</blockquote>
+        <p class="lead">Elastine is niet hetzelfde als collageen. Collageen geeft stevigheid. Elastine bepaalt of je huid terugveert. Na een uitdrukking. Na een nacht slaap. Na de dag.</p>
+        <p class="lead">Elastine wordt aangemaakt in de dermis, de levende laag onder de epidermis. Naarmate oestrogeen daalt, wordt het enzym dat deze aanmaak aanstuurt minder actief. De afbraak gaat door. De aanmaak vertraagt. Het saldo wordt elke maand kleiner.</p>
+        <p class="lead">Dit is wat de spiegel uiteindelijk laat zien. Op dat moment is het structurele verlies al jaren onderweg.</p>
+        <p class="why-highlight-box">De meeste huidverzorging bereikt deze laag niet. Ze werkt op de epidermis, de buitenste laag van dode en stervende cellen, die geen capaciteit heeft om elastine te produceren. De meeste actieve stoffen zijn moleculair te groot om de huidbarrière te passeren. Ze blijven aan het oppervlak.</p>
+        <p class="standout-line pt-4 text-center text-2xl md:text-3xl">Dit is geen tekortkoming in jouw routine. Het is een feit over hoe de huid is gebouwd.</p>
       </div>
     </section>
 
-    <!-- WhyNotReacting -->
+    <!-- §4 De aanpak die hierop is gebouwd -->
     <section class="section section-pad section--gradient-sage section--divider-top-blush" aria-labelledby="why-not">
       <div class="container-narrow">
         <div class="text-center">
-          <span class="pill-tag">Het echte probleem</span>
-          <h2 id="why-not" class="section-heading-lg">De industrie is niet gebouwd rond <span class="accent-italic">jouw biologie.</span></h2>
+          <span class="pill-tag">De aanpak</span>
+          <h2 id="why-not" class="section-heading-lg">De aanpak die <span class="accent-italic">hierop is gebouwd</span></h2>
         </div>
         <div class="mt-12 space-y-6 text-lg leading-relaxed text-muted-85">
-          <p>Ze is gebouwd rond herhaalverkoop. Eén product. Eén belofte. Eén symptoom. Rimpels. Pigmentvlekken. Droge of reactieve huid. Elke categorie heeft zijn eigen oplossing, zijn eigen actief ingrediënt, zijn eigen marketingclaim.</p>
-          <p class="why-highlight-box">Wat ontbreekt is het systeem. De vraag die niemand stelt: wat heeft jóuw huid, in deze fase van haar biologische ontwikkeling, op celniveau nodig om haar eigen herstelproces te ondersteunen?</p>
-          <p>Niet wat populair is. Niet wat trending is op social media. Niet wat de meeste vrouwen van jouw leeftijd gebruiken. Wat jóuw huid nu specifiek mist.</p>
-          <p>Een vrouw die research doet, die serieus investeert, die begrijpt dat kwaliteit een standaard is, vindt in deze industrie zelden de aanpak die haar intelligentie respecteert. Niet omdat ze de verkeerde keuzes maakt. Maar omdat de logische aanpak simpelweg niet wordt aangeboden.</p>
-          <p>De Elim Huidherstel Formule begint waar de industrie ophoudt. Niet bij het symptoom. Bij de oorzaak. Met een meting op celniveau, specifiek voor jóuw huid op dit moment. Wat de scan laat zien bepaalt alles wat daarna komt, de behandeling, de formule, het plan.</p>
+          <p>Als het probleem zich op celniveau afspeelt, moet de oplossing daar beginnen. Niet bij het symptoom. Niet bij wat de spiegel laat zien. Bij een meting van wat er werkelijk speelt in de levende lagen van jóuw huid op dit moment.</p>
+          <p>Wat de scan laat zien bepaalt alles wat daarna komt. Welke werkzame stoffen jouw huid mist. Welke laag het meest aandacht nodig heeft. Welke formule structureel verschil maakt en welke alleen aan het oppervlak werkt.</p>
+          <p class="why-highlight-box">De Elim Huidherstel Formule is gebouwd rond drie beslissingen die het verschil bepalen tussen huidverzorging die het oppervlak raakt en celverjonging die plaatsvindt op de laag waar elastine wordt aangemaakt.</p>
+          <ul class="therapy-stats-list">
+            <li>De moleculaire grootte van de werkzame stoffen, gekozen om de huidbarrière te passeren in plaats van eraan te blijven hangen.</li>
+            <li>De drager waarin ze worden geleverd, een biologisch beschikbare structuur die de huid herkent als eigen.</li>
+            <li>De laag waarop ze werken, de dermis, waar het enzym dat elastine aanmaakt nog actief is en gestimuleerd kan worden.</li>
+          </ul>
           <div class="why-standout-box">
-            <p>Geen aannames. Geen gemiddelden. Geen symptoombestrijding.</p>
-            <p class="mt-3">Een systeem dat de oorzaak aanpakt. Niet het oppervlak.</p>
+            <p>Dat is geen behandeling die belooft. Dat is een aanpak die meet, levert en activeert.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Imagine -->
-    <section class="section section-pad section--cream section--divider-top-sage" aria-labelledby="imagine">
-      <div class="container-narrow">
-        <div class="text-center">
-          <span class="pill-tag">Na vijf jaar</span>
-          <h2 id="imagine" class="section-heading-lg">Wat vrouwen na vijf jaar <span class="accent-italic">zeggen</span></h2>
-        </div>
-        <div class="mt-16 space-y-7 text-lg leading-relaxed text-muted-85">
-          <p>Vrouwen die de volledige Elim Huidherstel Formule volgen komen terug. Niet omdat ze moeten. Maar omdat ze voor het eerst precies begrijpen wat werkt in hun huid en waarom het werkt.</p>
-          <p>Ik heb vrouwen die al vijf jaar bij mij komen. Als we hun foto's van toen en nu naast elkaar leggen, is de reactie altijd hetzelfde: ze zien er jonger uit dan vijf jaar geleden. Dat merken ze zelf ook, op foto's die ze thuis maken, in de spiegel, in de manier waarop anderen naar hen kijken.</p>
-          <p>Maar wat ze me het vaakst vertellen is niet alleen dat hun huid er beter uitziet. Het is dat ze er niet meer aan hoeven te denken. Ze weten wat werkt. En het werkt.</p>
-          <p>Een huid die steviger aanvoelt. Egaler. Zichtbaar vitaler. Die complimenten krijgt zonder dat je ze verwachtte. En een aanwezigheid die je niet hoeft te managen.</p>
-          <p class="standout-line text-center text-2xl">Gebouwd op een systeem dat begint met weten.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials (vóór Method in source) -->
-    <section id="resultaten" class="section section-pad section--sand" aria-labelledby="testimonials-title">
-      <div class="container-wide">
-        <div class="text-center">
-          <span class="pill-tag">Echte resultaten · Echte vrouwen</span>
-          <h2 id="testimonials-title" class="testimonials-heading">Wat vrouwen zeggen na <span class="accent-italic">Elim Huidherstel Formule.</span></h2>
-        </div>
-        <div class="testimonial-grid">
-          <article class="testimonial-card">
-            <div class="testimonial-card__imgwrap"><img src="assets/testimonial-annelies-B6TFYjKS.webp" alt="Annelies — resultaat na Elim Huidherstel Behandeling" loading="lazy" /></div>
-            <div class="testimonial-card__body">
-              <div class="testimonial-card__top">
-                <p class="testimonial-card__name">Annelies, 52</p>
-                <div class="stars" aria-hidden="true">★★★★★</div>
-              </div>
-              <h3 class="testimonial-card__quote-title">"Na twee sessies is mijn rosacea meetbaar verminderd"</h3>
-              <p class="testimonial-card__text">Ik had jarenlang producten gebruikt die beloofden te kalmeren. Bij Carinda werd voor het eerst gemeten waar de roodheid structureel vandaan kwam. Twee behandelingen verder ga ik &rsquo;s ochtends de deur uit zonder foundation. Mijn man vroeg of ik bij de plastisch chirurg was geweest. Dat was het moment dat ik wist dat dit anders was.</p>
-            </div>
-          </article>
-          <article class="testimonial-card">
-            <div class="testimonial-card__imgwrap"><img src="assets/testimonial-marleen-BGgRRMKa.webp" alt="Marleen — resultaat na Elim Huidherstel Behandeling" loading="lazy" /></div>
-            <div class="testimonial-card__body">
-              <div class="testimonial-card__top">
-                <p class="testimonial-card__name">Marleen, 47</p>
-                <div class="stars" aria-hidden="true">★★★★★</div>
-              </div>
-              <h3 class="testimonial-card__quote-title">"Stevigheid die ik in jaren niet had gevoeld, zonder ingrepen"</h3>
-              <p class="testimonial-card__text">Mijn huid voelde dunner, minder veerkrachtig. Ik zocht een aanpak die verder ging dan oppervlakkige verzorging. Na één sessie merkte ik al een verschil in stevigheid. Drie maanden later zie ik het verschil duidelijk in de opvolgscans. Ik weet nu precies welke producten structureel werken voor mijn huid. Dat maakt het verschil.</p>
-            </div>
-          </article>
-          <article class="testimonial-card">
-            <div class="testimonial-card__imgwrap"><img src="assets/testimonial-inge-CfyJb58R.webp" alt="Inge — resultaat na Elim Huidherstel Behandeling" loading="lazy" /></div>
-            <div class="testimonial-card__body">
-              <div class="testimonial-card__top">
-                <p class="testimonial-card__name">Inge, 69</p>
-                <div class="stars" aria-hidden="true">★★★★★</div>
-              </div>
-              <h3 class="testimonial-card__quote-title">"Voor het eerst egale huid, zonder laser of peeling"</h3>
-              <p class="testimonial-card__text">Ik had jarenlang behandelingen ondergaan voor pigmentvlekken. Laser, peelings, medische crèmes. Carinda was de eerste die niet naar de pigmentvlekken keek maar naar wat er structureel onder speelde. Na drie sessies en mijn persoonlijke Huidformule is mijn huid egaal. Mijn dochter vroeg of ik glow drops had gebruikt. Dit is gewoon mijn huid nu.</p>
-            </div>
-          </article>
-        </div>
-        <div class="testimonials-press">
-          <p class="testimonials-press__quote standout-line text-xl">"Ik ken niemand die dat in Nederland doet."</p>
-          <p class="testimonials-press__source">RTL4 over de Elim Huidherstel Formule</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Method -->
+    <!-- §5 De methode -->
     <section id="formule" class="section section-pad section--cream-deep" aria-labelledby="formule-title">
       <div class="container-wide">
         <div class="container-narrow text-center px-0">
           <span class="pill-tag">De Methode</span>
-          <h2 id="formule-title" class="formule-heading mt-5">De Elim Huidherstel Formule. <span class="accent-italic">Hoe het werkt.</span></h2>
-          <p class="lead mt-6">Dit is geen standaard behandeling. Dit is een systeem dat begint waar andere behandelingen ophouden, bij de vraag die niemand je ooit heeft gesteld: wat heeft jóuw huid, op dit moment, precies nodig?</p>
+          <h2 id="formule-title" class="formule-heading mt-5">De Elim Huidherstel Formule. <span class="accent-italic">Drie stappen die op elkaar bouwen.</span></h2>
         </div>
 
         <div class="method-steps">
+
+          <!-- 01 De Huidscan -->
           <div class="method-step">
             <div class="method-step__grid">
               <div><img class="method-step__img" src="assets/huidscan-1-1-jVEMqH.webp" alt="De Huidscan" loading="lazy" /></div>
               <div class="method-step__text">
                 <span class="method-step__num">01</span>
                 <h3 class="method-step__title">De Huidscan</h3>
-                <p class="method-step__intro standout-line">We meten wat anderen niet zien.</p>
+                <p class="method-step__intro standout-line">Wat anderen zien, meten wij.</p>
                 <div class="method-step__body">
-                  <p>De meeste huidspecialisten stellen een diagnose op basis van wat ze zien. Ik meet vochtbalans, lipidenniveau, elasticiteit, pigmentatie en celactiviteit. Niet met het blote oog. Met technologie die in kaart brengt wat er werkelijk speelt in de levende lagen van jouw huid, ver voorbij wat zichtbaar is aan het oppervlak.</p>
-                  <p>Maar wat deze scan onderscheidt van elke andere huidanalyse is wat ze daarna laat zien: welke werkzame stoffen jóuw huid op dit moment precies nodig heeft om haar eigen herstelproces te activeren.</p>
-                  <p>Heeft jouw huid hydratatie nodig, of juist lipiden? Welke vitamines zijn op dit moment structureel essentieel, vitamine A voor celvernieuwing, vitamine C voor bescherming en glans, vitamine E voor stevigheid en herstel? De scan geeft geen algemeen advies. Ze geeft een kristalheldere routekaart, specifiek voor jóu, specifiek voor nu.</p>
-                  <p>Het resultaat is jouw persoonlijke <span class="standout-line">Huidformule Profiel</span>, de exacte combinatie van werkzame stoffen die jouw huid nodig heeft om haar natuurlijke stevigheid, veerkracht en balans te herstellen. Van binnenuit. Niet tijdelijk aan het oppervlak.</p>
-                  <p>Jouw huid is zo uniek als een vingerafdruk. Ik behandel haar ook zo.</p>
+                  <p>De meeste huidspecialisten kijken en stellen een diagnose. Ik meet op celniveau. Vochtbalans, lipidenniveau, elasticiteit, pigmentatie, celactiviteit in de diepere lagen. Niet wat het blote oog laat zien. Wat de spiegel niet kan tonen.</p>
+                  <p>Maar wat deze scan onderscheidt van elke andere huidanalyse is wat ze daarna laat zien. Welke werkzame stoffen jóuw huid op dit moment precies nodig heeft om haar eigen herstelproces te activeren.</p>
+                  <p>Heeft jouw huid hydratatie nodig, of juist lipiden? Welke vitamines zijn op dit moment structureel essentieel? Vitamine A voor celvernieuwing. Vitamine C voor bescherming en glans. Vitamine E voor stevigheid en herstel.</p>
+                  <p>Het resultaat is jouw persoonlijke <span class="standout-line">Huidformule Profiel</span>. De exacte combinatie van werkzame stoffen die jouw huid nodig heeft om haar natuurlijke stevigheid, veerkracht en balans te herstellen. Van binnenuit. Niet tijdelijk aan het oppervlak.</p>
+                  <p>Geen aannames. Geen gemiddelden. Alleen wat de meting laat zien.</p>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- 02 Collageen & Elastine Booster -->
           <div class="method-step">
             <div class="method-step__grid method-step__grid--reverse">
               <div>
@@ -285,73 +228,136 @@
               <div class="method-step__text">
                 <span class="method-step__num">02</span>
                 <h3 class="method-step__title">Collageen &amp; Elastine Booster Behandeling</h3>
-                <p class="method-step__intro standout-line">Voor de vrouw die merkt dat haar huid zijn veerkracht verliest.</p>
+                <p class="method-step__intro standout-line">De behandeling die werkt op de laag waar elastine wordt aangemaakt.</p>
                 <div class="method-step__body">
-                  <p>Vanaf je dertigste verlies je elastine sneller dan je het aanmaakt. Niet als gevoel. Als meetbaar biologisch feit.</p>
-                  <p>Elastine is de structuur die bepaalt of je huid terugveert na beweging, druk, uitdrukking. Als de aanmaak vertraagt en de afbraak doorgaat, wordt de huid dunner, minder stevig, minder responsief. Geen crème lost dit op. Niet omdat ze de verkeerde ingrediënten bevatten. Maar omdat ze de laag waar elastine wordt geproduceerd structureel niet bereiken.</p>
-                  <p>Deze behandeling werkt anders. In twee stappen, op celniveau.</p>
                   <div class="callout-box callout-box--treatment-flow">
                     <p class="treatment-stap-title">Stap 1 — De voorbereiding</p>
                     <p>Het eerste masker exfolieert zorgvuldig en bereidt de huid voor op wat volgt. Niet om de huid te resetten. Om de opname van wat daarna komt te maximaliseren.</p>
                     <p class="treatment-stap-title">Stap 2 — De elastine stimulatie</p>
-                    <p>Het tweede masker levert een mensidentieke vorm van tropoelastine direct aan de huidlaag waar elastine wordt geproduceerd. Tropoelastine is de voorvorm van elastine, de moleculaire bouwsteen die de huid herkent als eigen en integreert in het bestaande elastinenetwerk. Niet synthetisch. Niet dierlijk. Gewonnen uit een biologisch beschikbare plantaardige bron zodat de huid het opneemt in plaats van het aan het oppervlak te houden.</p>
+                    <p>Het tweede masker levert een mensidentieke vorm van tropoelastine direct aan de huidlaag waar elastine wordt geproduceerd. Tropoelastine is de voorvorm van elastine, de moleculaire bouwsteen die de huid herkent als eigen materiaal en integreert in het bestaande elastinenetwerk.</p>
+                    <p>Gewonnen uit een biologisch beschikbare plantaardige bron. Niet synthetisch. Niet dierlijk. De huid neemt het op in plaats van het aan het oppervlak te houden.</p>
                     <p>Eenmaal opgenomen komt het in contact met het elastinemakend enzym in de huid. De aanvulling van de elastinevoorraad begint.</p>
                     <p class="treatment-stap-title">De lichttherapie</p>
-                    <p>Na het eerste masker volgt onze gepatenteerde lichttherapie. Geen standaard roodlicht. Een speciaal gefilterd spectrum dat precies wordt opgenomen door de huidcellen waar het werk moet gebeuren.</p>
-                    <p>De lichttherapie werkt tijdens beide maskers. De warmte die het genereert opent de huidlagen en zorgt ervoor dat de werkzame stoffen in de maskers dieper doordringen dan zonder lichttherapie mogelijk zou zijn. Het licht en de maskers versterken elkaar. Samen bereiken ze de laag waar het verschil wordt gemaakt.</p>
-                    <p>Wat het doet is meetbaar:</p>
+                    <p>Na het eerste masker volgt onze gepatenteerde lichttherapie. Geen standaard roodlicht. Een gefilterd spectrum dat precies wordt opgenomen door de huidcellen waar het werk moet gebeuren.</p>
+                    <p>De lichttherapie werkt tijdens beide maskers. De warmte die ze genereert opent de huidlagen en zorgt ervoor dat de werkzame stoffen in de maskers dieper doordringen dan zonder lichttherapie mogelijk zou zijn. Het licht en de maskers versterken elkaar.</p>
+                    <p>Wat één sessie meetbaar doet:</p>
                     <ul class="therapy-stats-list">
-                      <li>Een achtdubbele verhoging van de regionale bloedsomloop in de behandelde zone.</li>
+                      <li>Tot 60% verbetering in elasticiteit, gemeten in de scan voor en na.</li>
+                      <li>Een achtvoudige verhoging van de regionale bloedsomloop in de behandelde zone.</li>
                       <li>Tot 60% verhoging van de partiële zuurstofdruk in het bloed.</li>
-                      <li>Stimulatie van nieuwe collageen-, elastine- en hyaluronzuurproductie.</li>
-                      <li>Extra ATP-cellulaire energie, de brandstof waarmee huidcellen hun eigen herstelproces uitvoeren.</li>
+                      <li>Stimulatie van nieuwe collageen, elastine en hyaluronzuurproductie.</li>
+                      <li>Extra ATP cellulaire energie, de brandstof waarmee huidcellen hun eigen herstelproces uitvoeren.</li>
                     </ul>
-                    <p>Geen UV. Geen huidbelastende straling. Alleen het spectrum dat de huid activeert om te doen wat ze biologisch is ingericht om te doen.</p>
+                    <p>Geen UV. Geen huidbelastende straling.</p>
                     <p>Het resultaat is niet tijdelijk. De lichttherapie versterkt wat de maskers hebben gestart en houdt het herstelproces actief nadat je de behandelkamer verlaat.</p>
                   </div>
                   <div class="treatment-follow-block">
                     <p class="treatment-stap-title">Wat één sessie doet</p>
-                    <p>Al na één behandeling kan het elastineverlies van de afgelopen twee jaar worden hersteld. Niet als belofte. Als meetbaar resultaat, zichtbaar in de scan voor en na, voelbaar in de stevigheid en veerkracht van de huid, zichtbaar in de spiegel.</p>
+                    <p>Eén sessie herstelt het elastineverlies van de afgelopen twee jaar. Zichtbaar in de scan voor en na. Voelbaar in de stevigheid van de huid.</p>
                     <p>Dit is het resultaat van meer dan 20 jaar medisch onderzoek, gecombineerd met 22 jaar klinische praktijkervaring in wat de huid van vrouwen van 40+ structureel nodig heeft.</p>
                     <ul class="treatment-impact-stack">
                       <li class="treatment-impact-line">Geen injecties. Geen laser. Geen ingreep die je anders laat zien dan je bent.</li>
-                      <li class="treatment-impact-line">Een behandeling die werkt op de laag waar het verschil wordt gemaakt.</li>
                     </ul>
-                    <p class="treatment-audience"><span class="treatment-audience__label">Voor wie:</span> vrouwen van 40+ die huidverslapping, verlies van stevigheid of een doffe, vermoeide huid ervaren en een behandeling zoeken die verder gaat dan het oppervlak.</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- 03 Jouw Persoonlijke Huidformule -->
           <div class="method-step">
             <div class="method-step__grid">
               <div><img class="method-step__img" src="assets/huidformule-3-CDfPsj-k.webp" alt="Jouw Persoonlijke Huidformule" loading="lazy" /></div>
               <div class="method-step__text">
                 <span class="method-step__num">03</span>
                 <h3 class="method-step__title">Jouw Persoonlijke Huidformule</h3>
-                <p class="method-step__intro standout-line">Resultaten die blijven.</p>
+                <p class="method-step__intro standout-line">Resultaten die blijven, of langzaam worden tenietgedaan.</p>
                 <div class="method-step__body">
-                  <p>De behandeling werkt in de levende lagen van jouw huid. Maar wat er daarna op jouw huid komt bepaalt of dat herstel blijft, of langzaam wordt tenietgedaan.</p>
-                  <p>Dit is wat de meeste vrouwen niet weten: de producten die je thuis gebruikt kunnen de resultaten van de beste behandeling ter wereld ondermijnen als ze de verkeerde ingrediënten bevatten. Niet omdat ze goedkoop zijn. Niet omdat jij iets fout doet. Maar omdat de meeste huidverzorging, ook de dure, is samengesteld om aan het oppervlak te werken, niet in de levende lagen waar jouw behandeling het verschil heeft gemaakt.</p>
-                  <p>Na jouw huidscan en behandeling ontvang je daarom jouw persoonlijke Huidformule, de exacte combinatie van werkzame stoffen die jouw scan heeft laten zien dat jouw huid nodig heeft, samengesteld in gecertificeerde organische formules die zijn ontwikkeld om precies die levende lagen te bereiken.</p>
-                  <p class="standout-line">Vrouwen die de volledige Elim Huidherstel Formule volgen, behandeling én thuisroutine, zien resultaten die blijven. Niet omdat ze geluk hadden. Maar omdat ze eindelijk weten wat werkt.</p>
+                  <p>Wat er thuis op je huid komt bepaalt of het herstel van de behandeling vasthoudt. De meeste huidverzorging, ook de dure, is samengesteld om aan het oppervlak te werken. Niet in de levende lagen waar de behandeling het verschil heeft gemaakt.</p>
+                  <p>Na de scan ontvang je daarom jouw persoonlijke Huidformule. De exacte combinatie van werkzame stoffen die jouw scan heeft laten zien dat jouw huid nodig heeft, samengesteld in gecertificeerde organische formules die zijn ontwikkeld om de levende lagen te bereiken.</p>
+                  <p class="standout-line">Vrouwen die de volledige Formule volgen, behandeling én thuisroutine, zien resultaten die blijven. Niet omdat ze geluk hadden. Omdat ze eindelijk weten wat werkt.</p>
                 </div>
               </div>
             </div>
           </div>
+
+        </div>
+
+        <div class="text-center mt-16">
+          <a class="btn btn--primary" href="#reserveren" data-booking-cta>Reserveer jouw plek</a>
         </div>
       </div>
     </section>
 
-    <!-- Offer -->
+    <!-- §6 Wat de scans na vijf jaar laten zien + Testimonials -->
+    <section id="resultaten" class="section section-pad section--sand" aria-labelledby="testimonials-title">
+      <div class="container-wide">
+
+        <div class="container-narrow text-center px-0 mb-16">
+          <span class="pill-tag">Langdurige opvolging</span>
+          <h2 id="testimonials-title" class="testimonials-heading">Wat de scans na vijf jaar <span class="accent-italic">laten zien</span></h2>
+          <div class="mt-8 space-y-5 text-lg leading-relaxed text-muted-85 text-left">
+            <p>In mijn praktijk komen vrouwen al vijf jaar of langer terug. Hun scanresultaten worden vastgelegd in hun dossier.</p>
+            <p>Wat ik zie is een patroon. De elasticiteitswaarden van vrouwen die de Formule jaren volgen, liggen na vijf jaar boven het niveau waarop ze begonnen. De structurele afbraak die normaal in deze leeftijdsfase doorloopt, wordt gestopt en omgekeerd.</p>
+            <p>In foto&rsquo;s van toen en nu is dat zichtbaar. Vrouwen die naar hun foto van vijf jaar geleden kijken zien wat de scans laten zien. De huid veroudert niet zoals de biologie voorspelt. Niet omdat de tijd stilstaat. Omdat de aanmaak van elastine actief gehouden wordt in een tempo dat de afbraak compenseert.</p>
+          </div>
+        </div>
+
+        <div class="text-center mb-12">
+          <h3 class="section-heading-lg">Wat vrouwen na de Elim Huidherstel Formule <span class="accent-italic">meten en zien</span></h3>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <div class="testimonial-card__imgwrap"><img src="assets/testimonial-annelies-B6TFYjKS.webp" alt="Annelies — resultaat na Elim Huidherstel Behandeling" loading="lazy" /></div>
+            <div class="testimonial-card__body">
+              <div class="testimonial-card__top">
+                <p class="testimonial-card__name">Annelies, 52</p>
+                <div class="stars" aria-hidden="true">★★★★★</div>
+              </div>
+              <h3 class="testimonial-card__quote-title">&ldquo;Twee sessies, en de roodheid was structureel teruggebracht.&rdquo;</h3>
+              <p class="testimonial-card__text">Ik had jarenlang producten gebruikt die beloofden te kalmeren. Bij Carinda werd voor het eerst gemeten waar de roodheid structureel vandaan kwam. De scan liet zien dat het niet aan het oppervlak zat. Twee behandelingen verder laat de opvolgscan een meetbare afname zien op precies die laag. &rsquo;s Ochtends ga ik de deur uit zonder foundation. Dat had ik in tien jaar niet gedaan.</p>
+            </div>
+          </article>
+          <article class="testimonial-card">
+            <div class="testimonial-card__imgwrap"><img src="assets/testimonial-marleen-BGgRRMKa.webp" alt="Marleen — resultaat na Elim Huidherstel Behandeling" loading="lazy" /></div>
+            <div class="testimonial-card__body">
+              <div class="testimonial-card__top">
+                <p class="testimonial-card__name">Marleen, 47</p>
+                <div class="stars" aria-hidden="true">★★★★★</div>
+              </div>
+              <h3 class="testimonial-card__quote-title">&ldquo;Stevigheid die ik in jaren niet had gevoeld, zonder ingrepen.&rdquo;</h3>
+              <p class="testimonial-card__text">Mijn huid voelde dunner, minder veerkrachtig. Ik zocht een aanpak die verder ging dan oppervlakkige verzorging. Na één sessie merkte ik al een verschil in stevigheid. Drie maanden later zie ik het verschil duidelijk in de opvolgscans. De elasticiteitswaarden zijn meetbaar gestegen. Ik weet nu precies welke producten structureel werken voor mijn huid. Dat maakt het verschil.</p>
+            </div>
+          </article>
+          <article class="testimonial-card">
+            <div class="testimonial-card__imgwrap"><img src="assets/testimonial-inge-CfyJb58R.webp" alt="Inge — resultaat na Elim Huidherstel Behandeling" loading="lazy" /></div>
+            <div class="testimonial-card__body">
+              <div class="testimonial-card__top">
+                <p class="testimonial-card__name">Inge, 69</p>
+                <div class="stars" aria-hidden="true">★★★★★</div>
+              </div>
+              <h3 class="testimonial-card__quote-title">&ldquo;Voor het eerst egale huid, op basis van wat onder het oppervlak speelde.&rdquo;</h3>
+              <p class="testimonial-card__text">Ik had jarenlang behandelingen ondergaan voor pigmentvlekken. Laser, peelings, medische crèmes. Carinda was de eerste die niet naar de pigmentvlekken keek maar naar wat er structureel onder speelde. De scan liet zien wat geen enkele eerdere behandeling had gemeten. Na drie sessies en mijn persoonlijke Huidformule is mijn huid egaal. Niet bedekt. Hersteld op de laag waar het pigmentprobleem ontstond.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="testimonials-press">
+          <p class="testimonials-press__quote standout-line text-xl">&ldquo;Ik ken niemand die dat in Nederland doet.&rdquo;</p>
+          <p class="testimonials-press__source">RTL4 over de Elim Huidherstel Formule</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Het Aanbod -->
     <section id="offer" class="section section-pad section--gradient-soft">
       <div class="container-narrow">
         <div class="text-center">
           <span class="pill-tag">Het Aanbod</span>
           <h2 class="aanbod-heading mt-5">Elim Huidherstel Formule</h2>
           <p class="offer-heading-sub">Inclusief de Collageen &amp; Elastine Booster Behandeling.</p>
-          <p class="lead offer-heading-tagline mt-5">Jouw eerste stap naar celverjonging die plaatsvindt op de laag waar huidveroudering werkelijk begint.</p>
         </div>
         <div class="offer-card">
           <p class="offer-card__lead font-serif text-amber-ui">In één sessie krijg je:</p>
@@ -375,36 +381,32 @@
       </div>
     </section>
 
-    <!-- Story -->
+    <!-- Wie is Carinda Brand -->
     <section id="over-carinda" class="section section-pad section--cream-deep">
       <div class="container-wide about-grid">
         <div class="about-grid__img">
           <img src="assets/carinda-portrait-DTuspRlK.webp" alt="Carinda Brand, huidspecialiste Elim Instituut" loading="lazy" width="1024" height="1280" />
         </div>
         <div class="about-grid__text">
-          <span class="pill-tag">Wie ben ik</span>
+          <span class="pill-tag">Elim Instituut</span>
           <h2 class="about-heading mt-5">Wie is <span class="accent-italic">Carinda Brand?</span></h2>
           <div class="mt-6 space-y-5 text-muted-85 leading-relaxed">
             <p>Ik ben Carinda Brand, huidspecialiste bij het Elim Instituut. Meer dan 22 jaar klinische ervaring in huidverbetering, en in dat alles één constante: ik begin altijd met meten.</p>
-            <p>Niet omdat meten indrukwekkend klinkt. Maar omdat een diagnose op basis van wat je ziet fundamenteel anders is dan een conclusie op basis van wat er werkelijk speelt in de diepere lagen. Het eerste levert een behandelplan dat past bij het gemiddelde. Het tweede levert een aanpak die past bij jóuw huid, op dit moment, in deze biologische fase.</p>
-            <p>Ik werk met vrouwen van 40+ die begrijpen dat huidveroudering een biologisch proces is met een mechanisme. En dat een mechanisme kan worden gemeten, begrepen en beïnvloed.</p>
-            <p>Sommige vrouwen komen al vijf jaar bij mij. Als we hun foto's van toen en nu naast elkaar leggen zien we altijd hetzelfde: ze zien er jonger uit dan toen ze begonnen. Niet als bijwerking. Als resultaat van celverjonging die plaatsvindt op de laag waar huidveroudering werkelijk begint.</p>
-            <p>De Elim Huidherstel Formule geeft geen belofte. Ze geeft antwoorden. Jóuw antwoorden. Op basis van wat jouw huid werkelijk laat zien.</p>
-            <p>10 plekken per maand beschikbaar. Elke sessie krijgt de volledige tijd en aandacht die een persoonlijke aanpak vereist.</p>
+            <p>Niet omdat meten indrukwekkend klinkt. Omdat een diagnose op basis van wat je ziet fundamenteel anders is dan een conclusie op basis van wat er werkelijk speelt in de diepere lagen. Het eerste levert een behandelplan dat past bij het gemiddelde. Het tweede levert een aanpak die past bij jóuw huid, op dit moment, in deze biologische fase.</p>
+            <p>Ik werk met vrouwen van 40+ die begrijpen dat huidveroudering een biologisch proces is met een mechanisme. Een mechanisme dat gemeten, begrepen en beïnvloed kan worden.</p>
+            <p class="standout-line">De Elim Huidherstel Formule geeft geen belofte. Ze geeft antwoorden. Op basis van wat jouw huid werkelijk laat zien.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Close + investment -->
+    <!-- Afsluiting + investering -->
     <section id="reserveren" class="section section-pad section--gradient-soft">
       <div class="container-narrow container-narrow--reserveren text-center">
         <h2 class="section-heading-md close-heading">Als de redenering klopt, <span class="accent-italic">beslis je.</span></h2>
         <div class="close-copy">
-          <p>Zonder twijfel. Zonder dat je overtuigd hoeft te worden.</p>
-          <p>De Elim Huidherstel Formule geeft geen belofte. Ze geeft antwoorden. Jóuw antwoorden. Op basis van wat jouw huid werkelijk laat zien. Objectief, meetbaar, persoonlijk.</p>
-          <p>Vrouwen die met de Elim Huidherstel Formule beginnen komen terug. Niet omdat ze moeten. Maar omdat ze voor het eerst precies weten wat werkt in hun huid en waarom het werkt.</p>
-          <p>10 plekken per maand beschikbaar. Elke sessie krijgt de volledige tijd en aandacht die een persoonlijke aanpak vereist.</p>
+          <p>De Elim Huidherstel Formule geeft geen belofte. Ze geeft antwoorden, op basis van wat jouw huid werkelijk laat zien.</p>
+          <p>Vrouwen die met de Formule beginnen, blijven. Niet omdat ze gebonden zijn aan een protocol, maar omdat ze voor het eerst precies weten wat werkt in hun huid en waarom. Een aanpak die meet, levert en activeert is geen behandeling die je elders vergelijkt. Het is een systeem dat je elders niet vindt.</p>
         </div>
 
         <div class="investment-card">
@@ -457,6 +459,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <div id="booking-dialog" class="booking-dialog booking-dialog--closed" aria-hidden="true">
