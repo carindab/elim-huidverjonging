@@ -236,14 +236,14 @@ function closeUpgradeDialog() {
 })();
 
 /**
- * Mobiele sticky-CTA: alleen tonen als de hero uit beeld is en het
- * reserveer-/prijsblok nog niet zichtbaar is. Niet tonen op tablet/desktop.
+ * Mobiele sticky-CTA: pas tonen als §5 (#formule) bereikt is en weer
+ * verbergen rond #reserveren / footer. Niet tonen op tablet/desktop.
  */
 function initStickyCtaMobile() {
   const cta = document.getElementById("sticky-cta-mobile");
   if (!cta) return;
 
-  const heroSection = document.querySelector(".hero-section");
+  const triggerSection = document.getElementById("formule");
   const reserveSection = document.getElementById("reserveren");
   const footer = document.querySelector(".site-footer");
 
@@ -255,26 +255,29 @@ function initStickyCtaMobile() {
 
   const isMobile = () => window.matchMedia("(max-width: 767px)").matches;
 
-  let heroOut = false;
+  let triggerHit = false;
   let reserveOrFooterIn = false;
 
   const update = () => {
-    const visible = isMobile() && heroOut && !reserveOrFooterIn;
+    const visible = isMobile() && triggerHit && !reserveOrFooterIn;
     cta.classList.toggle("is-visible", visible);
     cta.setAttribute("aria-hidden", visible ? "false" : "true");
   };
 
-  if (heroSection) {
-    const heroObs = new IntersectionObserver(
+  if (triggerSection) {
+    const triggerObs = new IntersectionObserver(
       (entries) => {
-        heroOut = !entries[0].isIntersecting;
+        const entry = entries[0];
+        triggerHit =
+          entry.isIntersecting ||
+          (entry.boundingClientRect && entry.boundingClientRect.top < 0);
         update();
       },
-      { threshold: 0, rootMargin: "-20% 0px 0px 0px" }
+      { threshold: 0 }
     );
-    heroObs.observe(heroSection);
+    triggerObs.observe(triggerSection);
   } else {
-    heroOut = true;
+    triggerHit = true;
   }
 
   const hideTargets = [reserveSection, footer].filter(Boolean);
