@@ -2991,6 +2991,21 @@ a.btn.btn--primary.btn--block {
   color: #355c3d;
 }
 
+/* Hero review-afbeelding onder de hero-foto */
+.hero-review-img {
+  margin-top: 0.85rem;
+  border-radius: 0.85rem;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+}
+
+.hero-review-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.85rem;
+}
+
 /* ===========================================================
    Mobiele sticky CTA — vol-breed, plakt aan de bodem.
    Glijdt van rechts naar links in zodra je voorbij §5 scrollt.
