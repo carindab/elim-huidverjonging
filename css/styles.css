@@ -2991,10 +2991,10 @@ a.btn.btn--primary.btn--block {
   color: #355c3d;
 }
 
-/* Facebook reviews sectie vóór prijsblok */
+/* Facebook reviews sectie vóór prijsblok — geen extra wit onder de foto */
 .facebook-reviews-section {
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 0;
 }
 
 .facebook-reviews-img {
