@@ -2991,6 +2991,19 @@ a.btn.btn--primary.btn--block {
   color: #355c3d;
 }
 
+/* Facebook reviews sectie vóór prijsblok */
+.facebook-reviews-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.facebook-reviews-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
 /* Hero review-afbeelding onder de hero-foto */
 .hero-review-img {
   margin-top: 0.85rem;
