@@ -2990,3 +2990,68 @@ a.btn.btn--primary.btn--block {
 .bedankt-video__fallback a:hover {
   color: #355c3d;
 }
+
+/* ===========================================================
+   Mobiele sticky CTA — verschijnt na de hero, verbergt zich bij
+   het reserveren-/prijsblok. Alleen actief op smalle schermen.
+   =========================================================== */
+.sticky-cta-mobile {
+  position: fixed;
+  left: 50%;
+  bottom: max(0.85rem, env(safe-area-inset-bottom));
+  transform: translate(-50%, 120%);
+  z-index: 90;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  width: min(94vw, 26rem);
+  padding: 0.95rem 1.4rem;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 9999px;
+  background-color: #C9A14C;
+  background-image: linear-gradient(135deg, #D4AE5C 0%, #B98A38 100%);
+  color: #FFFFFF;
+  box-shadow: 0 14px 32px rgba(122, 87, 33, 0.32), 0 4px 10px rgba(0, 0, 0, 0.10);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.32s ease, opacity 0.28s ease, visibility 0.28s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sticky-cta-mobile__arrow {
+  display: inline-block;
+  font-weight: 500;
+  transition: transform 0.25s ease;
+}
+
+.sticky-cta-mobile:active .sticky-cta-mobile__arrow {
+  transform: translateX(2px);
+}
+
+.sticky-cta-mobile.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+@media (max-width: 767px) {
+  .sticky-cta-mobile {
+    display: inline-flex;
+  }
+}
+
+/* Booking-popup open: sticky CTA niet meer tonen (zit dan onder de modal). */
+.booking-dialog:not(.booking-dialog--closed) ~ .sticky-cta-mobile,
+body:has(.booking-dialog:not(.booking-dialog--closed)) .sticky-cta-mobile {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

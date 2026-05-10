@@ -231,4 +231,68 @@ function closeUpgradeDialog() {
       });
     });
   }
+
+  initStickyCtaMobile();
 })();
+
+/**
+ * Mobiele sticky-CTA: alleen tonen als de hero uit beeld is en het
+ * reserveer-/prijsblok nog niet zichtbaar is. Niet tonen op tablet/desktop.
+ */
+function initStickyCtaMobile() {
+  const cta = document.getElementById("sticky-cta-mobile");
+  if (!cta) return;
+
+  const heroSection = document.querySelector(".hero-section");
+  const reserveSection = document.getElementById("reserveren");
+  const footer = document.querySelector(".site-footer");
+
+  if (!("IntersectionObserver" in window)) {
+    cta.classList.add("is-visible");
+    cta.setAttribute("aria-hidden", "false");
+    return;
+  }
+
+  const isMobile = () => window.matchMedia("(max-width: 767px)").matches;
+
+  let heroOut = false;
+  let reserveOrFooterIn = false;
+
+  const update = () => {
+    const visible = isMobile() && heroOut && !reserveOrFooterIn;
+    cta.classList.toggle("is-visible", visible);
+    cta.setAttribute("aria-hidden", visible ? "false" : "true");
+  };
+
+  if (heroSection) {
+    const heroObs = new IntersectionObserver(
+      (entries) => {
+        heroOut = !entries[0].isIntersecting;
+        update();
+      },
+      { threshold: 0, rootMargin: "-20% 0px 0px 0px" }
+    );
+    heroObs.observe(heroSection);
+  } else {
+    heroOut = true;
+  }
+
+  const hideTargets = [reserveSection, footer].filter(Boolean);
+  if (hideTargets.length) {
+    const visibleSet = new Set();
+    const hideObs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) visibleSet.add(entry.target);
+          else visibleSet.delete(entry.target);
+        });
+        reserveOrFooterIn = visibleSet.size > 0;
+        update();
+      },
+      { threshold: 0.08 }
+    );
+    hideTargets.forEach((el) => hideObs.observe(el));
+  }
+
+  window.addEventListener("resize", update, { passive: true });
+}
